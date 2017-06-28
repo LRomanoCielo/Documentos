@@ -214,10 +214,11 @@ HTTP Status: 200 – OK
 
 ### Cancelar uma transação
 
-Atualiza um link pelo seu identificador.
+Permite cancelar uma transação pelo número do pedido.
+
 **Definição**
 
-> `PUT`: https://cieloecommerce.cielo.com.br/api/public/v1/product/`{id}` 
+> `PUT` https://cieloecommerce.cielo.com.br/api/public/v2/orders/`{orderNumber}`/void  
 
 
 **Header:**
@@ -226,108 +227,29 @@ Atualiza um link pelo seu identificador.
 Authorization: Bearer {access_token}
 ```
 
-**Requisição**
-```
-{
-   "Type":"Asset",
-   "name" : "Pedido ABC",
-   "description" : "50 canetas - R$30,00 | 10 cadernos - R$50,00 | 10 Borrachas - R$10,00",
-   "price": 9000,
-   "expirationDate": "2017-06-30",
-   "weight": 4700,
-   "shipping":{
-     "type":"FixedAmount",
-     "name":"Entrega Rápida",
-     "price":1000
-   },
-   "SoftDescriptor" : "Pedido1234",
-   "maxNumberOfInstallments" : 2
-}
-```
-
- 
 **Resposta**
 ```
 HTTP Status: 200 – OK
 ```
 
 ```
-{
-    "id": "529aca91-2961-4976-8f7d-9e3f2fa8a0c9",
-    "shortUrl": "http://bit.ly/2smqdhD",
-    "type": "Asset",
-    "name": "Pedido ABC",
-    "description": "50 canetas - R$30,00 | 10 cadernos - R$50,00 | 10 Borrachas - R$10,00",
-    "showDescription": false,
-    "price": 9000,
-    "weight": 4700,
-    "shipping": {
-        "type": "FixedAmount",
-        "name": "Entrega Rápida",
-        "price": 1000
-    },
-    "softDescriptor": "Pedido1234",
-    "expirationDate": "2017-06-30",
-    "maxNumberOfInstallments": 2,
-    "links": [
-        {
-            "method": "GET",
-            "rel": "self",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        },
-        {
-            "method": "PUT",
-            "rel": "update",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        },
-        {
-            "method": "DELETE",
-            "rel": "delete",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        }
-    ]
-}
+{ 
+    "success": true, 
+    "status": 2, 
+    "returnCode": "6", 
+    "returnMessage": "Operation Successful", 
+    "links": [ 
+        { 
+            "method": "GET", 
+            "rel": "self", 
+            "href": "https://cieloecommerce.cielo.com.br/api/public/v2/orders/a9d517d81fb24b98b2d16eae2744be96" 
+        }, 
+        { 
+            "method": "PUT", 
+            "rel": "void", 
+            "href": "https://cieloecommerce.cielo.com.br/api/public/v2/orders/a9d517d81fb24b98b2d16eae2744be96/void" 
+        } 
+    ] 
+} 
 
 ```
-**OBS**: Mesmos dados retornados na resposta de criação do link.
-
-
-### Excluir um Link
-
-Exclui um link pelo seu identificador.
-
-**Definição**
-
-> `DELETE`: https://cieloecommerce.cielo.com.br/api/public/v1/product/`{id}` 
-
-
-**Header:**
-
-```
-Authorization: Bearer {access_token}
-```
-
-**Resposta**
-
-```
-HTTP Status: 204 – No Content
-```
-
-### Códigos de Status HTTP
-
-
-
-|CÓDIGO|DESCRIÇÃO|
-|200 - OK|Tudo funcionou corretamente.|
-|400 – Bad Request|A requisição não foi aceita. Algum parâmetro não foi informado ou foi informado incorretamente.|
-|401 - Unauthorized|O token de acesso enviado no header da requisição não é válido.|
-|404 – Not Found|O recurso sendo acessado não existe. Ocorre ao tentar atualizar, consultar ou excluir um link inexistente.|
-|500 – Internal Server Error|Ocorreu um erro no sistema.|
-
-
-
-
-
-
-
-
