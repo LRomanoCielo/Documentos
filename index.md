@@ -19,3 +19,4 @@ Caso deseje utiliza-las entre em contato com a Equipe de PRODUTOS CIELO, e obten
 
 1. **Pré-Cadastro** - _Permite a criação de lojas Checkout Cielo. Disponivel apenas para Plataformas cadastradas junto a Produtos Cielo._ 
 2. **Link de Paagamentos** - _Permite a Criação de links de Pagamentos/QR Codes/Botões via API. Disponivel apenas para Plataformas cadastradas junto a Produtos Cielo._
+3. **Controle de pagamento** - _Permite a captura e cancelamento de transações via API. Disponivel apenas para Plataformas cadastradas junto a Produtos Cielo._
