@@ -64,8 +64,6 @@ Para obter acesso aos serviços da API de controle transacional, será necessár
     "expires_in": 1199
 }
 ```
-
-
 |PROPRIEDADE|DESCRIÇÃO|TIPO|
 |access_token|Utilizado para acesso aos serviços da API|string|
 |token_type|Sempre será do tipo “bearer”|texto|
@@ -77,7 +75,7 @@ Como se pode observar, o token possui um tempo de expiração aproximado de 20 m
 
 ### Utilizando Serviços
 
-Para utilizar os serviços da API de Gerenciamento de Link, deve ser enviado em todas as requisições o token de acesso obtido na etapa de autorização.
+Para utilizar os serviços da API de controle transacional, deve ser enviado em todas as requisições o token de acesso obtido na etapa de autorização.
 O mesmo deve ser enviado no header da requisição, conforme abaixo:
 
 ```
@@ -91,12 +89,15 @@ Authorization: Bearer {access_token}
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRfbmFtZSI6Ik1ldUNoZWNrb3V0IE1hc3RlciBLZXkiLCJjbGllbnRfaWQiOiJjODlmZGasdasdasdmUyLTRlNzctODA2YS02ZDc1Y2QzOTdkYWMiLCJzY29wZXMiOiJ7XCJTY29wZVwiOlwiQ2hlY2tvdXRBcGlcIixcIkNsYWltc1wiOltdfSIsInJvbGUiOiJasdasdasd291dEFwaSIsImlzcyI6Imh0dHBzOi8vYXV0aGhvbasdasdnJhc3BhZy5jb20uYnIiLCJhdWQiOiJVVlF4Y1VBMmNTSjFma1EzSVVFbk9pSTNkbTl0ZmasdsadQjVKVVV1UVdnPSIsImV4cCI6MTQ5Nzk5NjY3NywibmJmIjoxNDk3OTEwMjc3fQ.ozj4xnH9PA3dji-ARPSbI7Nakn9dw5I8w6myBRkF-uA
 ```
 
-### Gerar um Link
-
-Você pode criar um link para disponibilizá-los aos seus clientes para pagamentos. Para criar diversos links, você pode efetuar várias requisições.
 
 
-> URL de POST <https://cieloecommerce.cielo.com.br/api/public/v1/product/>
+
+
+### Consultar uma transação
+
+Permite consultar uma transação pelo número do pedido
+
+> `GET` https://cieloecommerce.cielo.com.br/api/public/v2/orders/`{orderNumber}`
 
 **Header:**
 
@@ -104,123 +105,78 @@ Você pode criar um link para disponibilizá-los aos seus clientes para pagament
 Authorization: Bearer {access_token}
 ```
 
-**Requisição:**
-```
-{
-   "Type":"Asset",
-   "name" : "Pedido ABC",
-   "description" : "50 canetas - R$30,00 | 10 cadernos - R$50,00",
-   "price": 8000,
-   "expirationDate": "2017-06-30",
-   "weight": 4500,
-   "shipping":{
-     "type":"Correios",
-     "originZipCode": "06455030"
-   },
-   "SoftDescriptor" : "Pedido1234",
-   "maxNumberOfInstallments" : 2
-}
-```
-
-**Dados do produto**
-
-|PROPRIEDADE|DESCRIÇÃO|TIPO|TAMANHO|OBRIGATÓRIO|
-|-----------|---------|----|-------|-----------|
-|type|Tipo de venda a ser realizada através do link de pagamento: <br><br>**Asset** – Material Físico<br>**Digital** – Produto Digital<br>**Service** – Serviço<br>**Payment** – Pagamentos Simples<br>**Recurrent** – Pagamento Recorrente|String|255|SIM|
-|name|Nome do produto|String|128|SIM|
-|description|Descrição do produto que será exibida na tela de Checkout caso a opção show_description seja verdadeira.Pode-se utilizar o caracter pipe `|` caso seja desejável quebrar a linha ao apresentar a descrição na tela de Checkout|String|512|Não|
-|showDescription|Flag indicando se a descrição deve ou não ser exibida na tela de Checkout|String|--|Não|
-|price|Valor do produto em **centavos**|Int|1000000|SIM|
-|expirationDate|Data de expiração do link. Caso uma data senha informada, o link se torna indisponível na data informada. Se nenhuma data for informada, o link não expira.|String|YYYY-MM-DD|Não|
-|weight|Peso do produto em **gramas**|String|2000000|Não|
-|softDescriptor|Descrição a ser apresentada na fatura do cartão de crédito do portador.|String|13|Não|
-|maxNumberOf<br>Installments|Número máximo de parcelas que o comprador pode selecionar na tela de Checkout.Se não informado será utilizada as configurações da loja no Checkout Cielo.|int|2|Não|
-
-
-
-
-**Dados do Frete**
-
-|PROPRIEDADE|DESCRIÇÃO|TIPO|TAMANHO|OBRIGATÓRIO|
-|-----------|---------|----|-------|-----------|
-|shipping|Nó contendo informações de entrega do produto||||
-|shipping.type|Tipo de frete.<br>**Correios** – Entrega pelos correios<br>**FixedAmount** – Valor Fixo<br>**Free** - Grátis<br>**WithoutShippingPickUp** – Sem entrega com retirada na loja<br>**WithoutShipping** – Sem entrega<br><br>Se o tipo de produto escolhido for “**Asset**”, os tipos permitidos de frete são: _**“Correios, FixedAmount ou Free”**_.<br><br>Se o tipo produto escolhido for “**Digital**” ou “**Service**”, os tipos permitidos de frete são: _**“WithoutShipping, WithoutShippingPickUp”**_.<br><br>Se o tipo produto escolhido for “**Recurrent**” o tipo de frete permitido é: _**“WithoutShipping”**_.|string|255|Sim|
-|shipping.name|Nome do frete. **Obrigatório para frete tipo “FixedAmount”**|string|128|Sim|
-|shipping.price|O valor do frete. **Obrigatório para frete tipo “FixedAmount”**|int|100000|Sim|
-|shipping.originZipCode|Cep de origem da encomenda. Obrigatório para frete tipo “Correios”. Deve conter apenas números|string|8|Sim|
-
-
-
-
-
-**Dados da Recorrência**
-
-|PROPRIEDADE|DESCRIÇÃO|TIPO|TAMANHO|OBRIGATÓRIO|
-|-----------|---------|----|-------|-----------|
-|recurrent|Nó contendo informações da recorrência do pagamento.Pode ser informado caso o tipo do produto seja “Recurrent”|
-|recurrent.interval|Intervalo de cobrança da recorrência.<br><br>**Monthly** - Mensal<br>**Bimonthly** - Bimensal<br>**Quarterly** - Trimestral<br>**SemiAnnual** - Semestral<br>**Annual** – Anual<br>|string|128|Não|
-|recurrrent.endDate|Data de término da recorrência. Se não informado a recorrência não terá fim, a cobrança será realizada de acordo com o intervalo selecionado indefinidamente.|string|128|Não|
-
-
 
 **Resposta**
 ```
-"HTTP Status": 201 – Created
+"HTTP Status": 200 – OK
 ```
 ```
-{
-    "id": "529aca91-2961-4976-8f7d-9e3f2fa8a0c9",
-    "shortUrl": "http://bit.ly/2smqdhD",
-    "type": "Asset",
-    "name": "Pedido ABC",
-    "description": "50 canetas - R$30,00 | 10 cadernos - R$50,00",
-    "showDescription": false,
-    "price": 8000,
-    "weight": 4500,
-    "shipping": {
-        "type": "Correios",
-        "originZipcode": "06455030"
-    },
-    "softDescriptor": "Pedido1234",
-    "expirationDate": "2017-06-30T00:00:00",
-    "maxNumberOfInstallments": 2,
-    "links": [
-        {
-            "method": "GET",
-            "rel": "self",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        },
-        {
-            "method": "PUT",
-            "rel": "update",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        },
-        {
-            "method": "DELETE",
-            "rel": "delete",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        }
-    ]
+{ 
+    "merchantId": "c89fdfbb-dbe2-4e77-806a-6d75cd397dac", 
+    "orderNumber": "054f5b509f7149d6aec3b4023a6a2957", 
+    "softDescriptor": "Pedido1234", 
+    "cart": { 
+        "items": [ 
+            { 
+                "name": "Pedido ABC", 
+                "description": "50 canetas - R$30,00 | 10 cadernos - R$50,00 | 10 Borrachas - R$10,00", 
+                "unitPrice": 9000, 
+                "quantity": 1, 
+                "type": "1" 
+            } 
+        ] 
+    }, 
+    "shipping": { 
+        "type": "FixedAmount", 
+        "services": [ 
+            { 
+              "name": "Entrega Rápida", 
+                "price": 2000 
+            } 
+        ], 
+        "address": { 
+            "street": "Estrada Caetano Monteiro", 
+            "number": "391A", 
+            "complement": "BL 10 AP 208", 
+            "district": "Badu", 
+            "city": "Niterói", 
+            "state": "RJ" 
+        } 
+    }, 
+    "payment": { 
+        "status": "Paid", 
+        "antifraud": { 
+            "description": "Lojista optou não realizar a análise do antifraude." 
+        } 
+    }, 
+    "customer": { 
+        "identity": "12345678911", 
+        "fullName": "Fulano da Silva", 
+        "email": "exemplo@email.com.br", 
+        "phone": "11123456789" 
+    }, 
+    "links": [ 
+        { 
+            "method": "GET", 
+            "rel": "self", 
+            "href": "https://cieloecommerce.cielo.com.br/api/public/v2/orders/054f5b509f7149d6aec3b4023a6a2957" 
+        }, 
+        { 
+            "method": "PUT", 
+            "rel": "void", 
+            "href": "https://cieloecommerce.cielo.com.br/api/public/v2/orders/054f5b509f7149d6aec3b4023a6a2957/void" 
+        } 
+    ] 
 }
 ```
 
+### Capturar uma transação
 
-Os dados retornados na resposta contemplam todos os enviados na requisição e dados adicionais referentes a criação do link.
+Permite capturar uma transação pelo número do pedido.
 
-|PROPRIEDADE|TIPO|DESCRIÇÃO|
-|-----------|----|---------|
-|id|guid|Identificador único do link de pagamento.Pode ser utilizado para consultar, atualizar ou excluir o link.|
-|shortUrl|string|Representa o link de pagamento que ao ser aberto, em um browser, apresentará a tela do Checkout Cielo.|
-|links|object|Apresenta as operações disponíveis e possíveis (RESTful hypermedia) de serem efetuadas após a criação ou atualização do link.|
-
-
-
-### Consultar um Link
-
-Consultar um link existente pelo seu identificador.
 **Definição**
 
-> `GET`: https://cieloecommerce.cielo.com.br/api/public/v1/product/`{id}` 
+> `PUT` https://cieloecommerce.cielo.com.br/api/public/v2/orders/`{orderNumber}`/capture 
 
 
 **Header:**
@@ -234,45 +190,29 @@ Authorization: Bearer {access_token}
 HTTP Status: 200 – OK
 ```
 ```
-{
-    "id": "529aca91-2961-4976-8f7d-9e3f2fa8a0c9",
-    "shortUrl": "http://bit.ly/2smqdhD",
-    "type": "Asset",
-    "name": "Pedido ABC",
-    "description": "50 canetas - R$30,00 | 10 cadernos - R$50,00",
-    "showDescription": false,
-    "price": 8000,
-    "weight": 4500,
-    "shipping": {
-        "type": "Correios",
-        "originZipcode": "06455030"
-    },
-    "softDescriptor": "Pedido1234",
-    "expirationDate": "2017-06-30",
-    "maxNumberOfInstallments": 2,
-    "links": [
-        {
-            "method": "GET",
-            "rel": "self",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        },
-        {
-            "method": "PUT",
-            "rel": "update",
-            "href": "https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        },
-        {
-            "method": "DELETE",
-            "rel": "delete",
-            "href": " https://cieloecommerce.cielo.com.br/Api/public/v1/product/529aca91-2961-4976-8f7d-9e3f2fa8a0c9"
-        }
-    ]
-}
+{ 
+    "success": true, 
+    "status": 2, 
+    "returnCode": "6", 
+    "returnMessage": "Operation Successful", 
+    "links": [ 
+        { 
+            "method": "GET", 
+            "rel": "self", 
+            "href": "https://cieloecommerce.cielo.com.br/api/public/v2/orders/a9d517d81fb24b98b2d16eae2744be96" 
+        }, 
+        { 
+            "method": "PUT", 
+            "rel": "void", 
+            "href": "https://cieloecommerce.cielo.com.br/api/public/v2/orders/a9d517d81fb24b98b2d16eae2744be96/void" 
+        } 
+    ] 
+} 
 ```
-**OBS**: Mesmos dados retornados na resposta de criação do link.
 
 
-### Atualizar um Link
+
+### Cancelar uma transação
 
 Atualiza um link pelo seu identificador.
 **Definição**
