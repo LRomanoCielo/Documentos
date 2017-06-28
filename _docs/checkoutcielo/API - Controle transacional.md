@@ -19,27 +19,6 @@ Seu principal objetivo é permitir que lojas e plataformas possam automatizar as
 > Endereço: https://cieloecommerce.cielo.com.br/api/public/v2/orders/  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Autorização de acesso
 
 A API de controle transacional utiliza como forma de segurança o **protocolo OAUTH**.
@@ -52,7 +31,7 @@ Para acessá-la será necessário possuir:
 |ClientId|Mesmo que o **MerchantId**|guid|
 |ClientSecret|Chave secreta que deverá ser obtida junto à Cielo|string|
 
-Para obter acesso aos serviços da API de Gerenciamento de Links de Pagamento, será necessário obter um token de acesso, conforme os passos abaixo:
+Para obter acesso aos serviços da API de controle transacional, será necessário obter um token de acesso, conforme os passos abaixo:
 
 1. Concatenar o _ClientId_ e o _ClientSecret_, **ClientId:ClientSecret**
 2. Codificar o resultado em *Base64*
