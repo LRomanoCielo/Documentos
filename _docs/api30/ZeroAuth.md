@@ -23,9 +23,11 @@ O **Zero Auth** pode ser usado de 3 maneiras:
 
 ### Integração
 
-A integração é realizada vai um `POST` a nossa URL de validação:
+Para realizar a consulta ao Zero Auth, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce, simulando uma transação. O `POST` deverá ser realizado nas seguintes URL: 
 
-> https://`apisandbox`.cieloecommerce.cielo.com.br/1/`zeroauth`
+> * Sandbox: https://apisandbox.cieloecommerce.cielo.com.br/1/zeroauth 
+* Produção: https://api.cieloecommerce.cielo.com.br/1/zeroauth 
+
 
 Cada tipo de validação necessita de um contrato tecnico diferente. Eles resultarão em _responses diferenciados_.
 
