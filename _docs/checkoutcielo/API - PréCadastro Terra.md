@@ -16,7 +16,7 @@ Este processo deve acontecer seguindo duas etapas:
 
 O fluxo pode ser resumido conforme o diagrama:
 
-![](/uploads/versions/Fluxo-Pre-cadastro.png)
+![](/uploads/versions/Fluxo-Pre-cadastro---x----817-675x---.png)
 
 ### API da Autoriza&ccedil;&atilde;o
 
