@@ -21,6 +21,12 @@ O **Zero Auth** pode ser usado de 3 maneiras:
 3. Não aciona a base bancaria (dispara SMS so portador)
 
 
+O Zero Auth suporta as seguintes bandeiras:
+
+* Visa
+* MasterCard
+
+
 ### Integração
 
 Para realizar a consulta ao Zero Auth, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce, simulando uma transação. O `POST` deverá ser realizado nas seguintes URL: 
