@@ -6,7 +6,7 @@ order: 1
 
 ### O QUE É A API DE GERENCIAMENTO DE LINKS DE PAGAMENTO
 
-A **API de Gerenciamento de Link de Pagamentos* permite ao lojista criar, editar e consultar links de pagamentos. 
+A **API de Gerenciamento de Link de Pagamentos** permite ao lojista criar, editar e consultar links de pagamentos. 
 
 Seu principal objetivo é permitir que lojas possam criar links de pagamento, através de seus próprios sistemas, sem a necessidade de acessar o Backoffice do Checkout Cielo e compartilhar com seus clientes.
 
