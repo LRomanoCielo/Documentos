@@ -146,6 +146,10 @@ Response
 
 
 
+### Histórico de atualizações:
+
+|Versão|Data|Descrição|
+|1.0|20/09/2016|Versão inicial|
 
 
 
