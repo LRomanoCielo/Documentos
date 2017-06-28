@@ -165,9 +165,5 @@ Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o s
 |1.1|25/10/2016|✓ Atualização de parâmetros |
 |1.2|05/01/2017|✓ Inclusão da tabela de parâmetros obrigatórios <br> ✓ Inclusão do contrato sem AVS <br>✓ Inclusão do contrato com Cardtoken  |
 |1.3|15/05/2017|✓ Complemento da tabela com os campos do contrato de requisição <br> ✓ Alteração da tabela com os campos do contrato de resposta |
-
-
-
-
-
-
+|1.4|31/05/2017|✓ Adicionado o tópico de bandeiras suportadas <br> ✓ Indicação que tokens 1.5 não são suportados <br>✓ Resposta para cartões com bandeira não suportada <br>✓ Resposta para requisições que resultem em erro e consequentemente na não validação do cartão.<br> ✓ Atualização do tamanho dos campos do contrato de requisição|
+|1.5|07/06/2017|✓ Adicionada URL de produção <br> ✓ Adicionado código de retorno 00 para consultas que retornem cartões válidos.|
