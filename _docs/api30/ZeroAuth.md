@@ -143,14 +143,12 @@ Response: **NEGATIVA - Cartão com bandeira inválida**
   }
 ```
 
+Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o serviço irá retornar erro: 
+* 500 – Internal Server Erro
 
 
-
-
-
-
-
-> _Consulte <https://developercielo.github.io/Webservice-3.0/#códigos-de-retorno-das-vendas> para visualizar a descrição dos códigos de retorno_
+> Consulte <https://developercielo.github.io/Webservice-3.0/#códigos-de-retorno-das-vendas> para visualizar a descrição dos códigos de retorno. 
+> O código de retorno **85 representa sucesso no Zero Auth**, os demais códigos são definidos de acordo com a documentação acima.
 
 
 
