@@ -53,3 +53,8 @@ https://apiquerysandbox.cieloecommerce.cielo.com.br/1/cardBin/420020
 |**CardType**|Texto|20|Tipo do cartão em uso|
 |**ForeingCard**|Texto|255|Se o cartão é emitido no exterior (False/True): <br><br> Credito <br> Debito <br>Multiplo|
 
+### Histórico de atualizações
+
+|Versão|Data|Descrição|
+|1.0|19/09/2016|Versão inicial|
+|1.1|14/02/2017|Alteração do campo Brand e Provider|
