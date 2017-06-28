@@ -141,7 +141,7 @@ Authorization: Bearer {access_token}
 |shipping.type|Tipo de frete.<br>**Correios** – Entrega pelos correios<br>**FixedAmount** – Valor Fixo<br>**Free** - Grátis<br>**WithoutShippingPickUp** – Sem entrega com retirada na loja<br>**WithoutShipping** – Sem entrega<br><br>Se o tipo de produto escolhido for “**Asset**”, os tipos permitidos de frete são: _**“Correios, FixedAmount ou Free”**_.<br><br>Se o tipo produto escolhido for “**Digital**” ou “**Service**”, os tipos permitidos de frete são: _**“WithoutShipping, WithoutShippingPickUp”**_.<br><br>Se o tipo produto escolhido for “**Recurrent**” o tipo de frete permitido é: _**“WithoutShipping”**_.|string|255|Sim|
 |shipping.name|Nome do frete. **Obrigatório para frete tipo “FixedAmount”**|string|128|Sim|
 |shipping.price|O valor do frete. **Obrigatório para frete tipo “FixedAmount”**|int|100000|Sim|
-|shipping.originZipCode|Cep de origem da encomenda. Obrigatório para frete tipo “Correios”. Deve conter apenas números|string|8|Sim|
+|shipping.originZipCode|Cep de origem da encomenda. Obrigatório para frete tipo “Correios”. Deve conter apenas números|string|8|Não|
 
 
 
@@ -369,8 +369,6 @@ HTTP Status: 204 – No Content
 
 ### Códigos de Status HTTP
 
-
-
 |CÓDIGO|DESCRIÇÃO|
 |200 - OK|Tudo funcionou corretamente.|
 |400 – Bad Request|A requisição não foi aceita. Algum parâmetro não foi informado ou foi informado incorretamente.|
@@ -380,8 +378,11 @@ HTTP Status: 204 – No Content
 
 
 
+### Histórico de atualizações
 
-
+|Versão|Data|Descrição|
+|1.0|14/06/2017|Versão inicial|
+|1.1|22/06/2017|Correção da descrição do campo “shipping.originZipCode”|
 
 
 
