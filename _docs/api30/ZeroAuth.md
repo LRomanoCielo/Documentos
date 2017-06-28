@@ -157,4 +157,17 @@ Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o s
 > O código de retorno **85 representa sucesso no Zero Auth**, os demais códigos são definidos de acordo com a documentação acima.
 
 
+## Histórico de Atualizações:
+
+|Versão|Data |Descrição    |
+|------|-----|-------------|
+|1.0|16/09/2016|✓ Versão inicial| 
+|1.1|25/10/2016|✓ Atualização de parâmetros |
+|1.2|05/01/2017|✓ Inclusão da tabela de parâmetros obrigatórios <br> ✓ Inclusão do contrato sem AVS <br>✓ Inclusão do contrato com Cardtoken  |
+|1.3|15/05/2017|✓ Complemento da tabela com os campos do contrato de requisição <br> ✓ Alteração da tabela com os campos do contrato de resposta |
+
+
+
+
+
 
