@@ -134,6 +134,22 @@ Response: **NEGATIVA - Cartão Inválido**
 }
 ```
 
+Response: **NEGATIVA - Cartão com bandeira inválida**
+
+```
+  {    
+      "Code": 57,     
+      "Message": "Bandeira inválida"   
+  }
+```
+
+
+
+
+
+
+
+
 > _Consulte <https://developercielo.github.io/Webservice-3.0/#códigos-de-retorno-das-vendas> para visualizar a descrição dos códigos de retorno_
 
 
