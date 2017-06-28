@@ -1,5 +1,5 @@
 ---
-title: Link de Pagamentos
+title: Controle Transacional
 category: CHECKOUT CIELO
 order: 3
 ---
