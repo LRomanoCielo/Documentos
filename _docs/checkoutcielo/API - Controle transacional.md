@@ -1,21 +1,48 @@
 ---
 title: Link de Pagamentos
 category: CHECKOUT CIELO
-order: 1
+order: 3
 ---
 
-### O QUE É A API LINK DE PAGAMENTO
+### O QUE É A API DE CONTROLE TRANSACIONAL 
 
-A **API de Gerenciamento de Link de Pagamentos** permite ao lojista criar, editar e consultar links de pagamentos. 
+A **API de Controle Transacional** permite ao lojista realizar operações sobre os pedidos que antes eram possíveis somente através do Backoffice do Checkout Cielo. 
 
-Seu principal objetivo é permitir que lojas possam criar links de pagamento, através de seus próprios sistemas, sem a necessidade de acessar o Backoffice do Checkout Cielo e compartilhar com seus clientes.
 
-> Endereço: <https://cieloecommerce.cielo.com.br/api/public/v1/product>
+As operações possíveis de serem realizadas são: 
+* **Consulta** – consultar uma transação
+* **Captura** – capturar uma transação com valor total ou parcial.
+* **Cancelamento** – cancelar uma transação com valor total ou parcial
+
+Seu principal objetivo é permitir que lojas e plataformas possam automatizar as operações através de seus próprios sistemas. 
+
+> Endereço: https://cieloecommerce.cielo.com.br/api/public/v2/orders/  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Autorização de acesso
 
-A API de Gerenciamento de Links de Pagamento utiliza como forma de segurança o **protocolo OAUTH**.
+A API de controle transacional utiliza como forma de segurança o **protocolo OAUTH**.
 Para acessá-la será necessário possuir: 
 
 1. Clientd
