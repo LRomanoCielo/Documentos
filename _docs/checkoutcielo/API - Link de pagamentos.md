@@ -4,7 +4,7 @@ category: CHECKOUT CIELO
 order: 1
 ---
 
-### O QUE É A API LINKS DE PAGAMENTO
+### O QUE É A API LINK DE PAGAMENTO
 
 A **API de Gerenciamento de Link de Pagamentos** permite ao lojista criar, editar e consultar links de pagamentos. 
 
