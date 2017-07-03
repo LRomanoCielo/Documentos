@@ -3,7 +3,7 @@ title: Zero Auth
 category: API CIELO ECOMMERCE
 order: 2
 ---
-### O QUE É O ZERO AUTH
+### O QUE É O ZERO AUTH?
 
 O **Zero Auth** é uma ferramenta de validação de cartões da API Cielo. A validação permite que o lojista saiba se o cartão é valido ou não antes de enviar a transação para autorização, antecipando o motivo de uma provável não autorização.
 
