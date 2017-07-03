@@ -146,16 +146,9 @@ T – Temporariamente indisponível;<br>
 X – Serviço não suportado para esta Bandeira.<br>
 E - Dados enviados incorretos. Verificar se todos os campos foram enviados<br>
 
-* O nó contendo o XML do AVS deve estar encapsulado pelo termo “CDATA”, para evitar problemas com o parser da requisição.
-* É necessário que todos os campos contidos no nó AVS sejam preenchidos.
-* Quando o campo não for aplicável (exemplo: complemento), a tag deve ser enviada preenchia com NULL ou N/A
-* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Web Cielo eCommerce
-
-
-
-
-
-
+* É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
+* Quando o campo não for aplicável (exemplo: complemento), deve ser enviada preenchia com NULL ou N/A
+* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Cielo eCommerce
 
 
 |Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
