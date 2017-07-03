@@ -132,18 +132,19 @@ Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o s
 O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
 Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
 
-Regras do **AVS**
+**Regras do AVS**
 
 * Disponível apenas para as bandeiras Visa, Mastercard e AmEx.
 * Produtos permitidos: somente crédito.
 * O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
 * Cada um deles pode ter os seguintes valores: 
-<br>C – Confere;<br>
-N – Não confere;
-I – Indisponível;
-T – Temporariamente indisponível;
-X – Serviço não suportado para esta Bandeira.
-E - Dados enviados incorretos. Verificar se todos os campos foram enviados
+
+C – Confere;<br>
+N – Não confere;<br>
+I – Indisponível;<br>
+T – Temporariamente indisponível;<br>
+X – Serviço não suportado para esta Bandeira.<br>
+E - Dados enviados incorretos. Verificar se todos os campos foram enviados<br>
 
 * O nó contendo o XML do AVS deve estar encapsulado pelo termo “CDATA”, para evitar problemas com o parser da requisição.
 * É necessário que todos os campos contidos no nó AVS sejam preenchidos.
