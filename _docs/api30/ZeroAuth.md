@@ -51,7 +51,6 @@ Abaixo, a listagem de campos da Requisição:
 |CardToken|Token do cartão na 3.0|GUID|36|Condicional|
 
 
-
 ## Requisição
 
 
@@ -140,7 +139,7 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 * Cada um deles pode ter os seguintes valores: 
 
 |Valor|Descrição|
-|---|-------|
+|-----|-------|
 |C|Confere|
 |N|Não confere|
 |I|Indisponível|
@@ -195,8 +194,14 @@ Response: **POSITIVA - Com AVS**
        "AvsAddressReturnCode": "I"
 }
 ```
-
-
+Conteudo do Response
+|Paramêtro|Descrição|Tipo|Tamanho|
+|---|---|---|---|
+|Valid|Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido|Boolean|---|
+|ReturnCode|Código de retorno|texto|2|
+|ReturnMessage|Mensagem de retorno|texto|255|
+|AvsCepReturnCode|Situação do CEP enviado|Texto|1|
+|AvsAddressReturnCode|Analise do endereço enviado|Texto|1|
 
 ## Histórico de Atualizações:
 
