@@ -52,18 +52,6 @@ Abaixo, a listagem de campos da Requisição:
 
 
 
-Sobre o Avs, nó contendo os dados do endereço de cobrança do portador do cartão
-
-|Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
-|---|---|---|---|---|
-|Avs.Cpf|CPF do portador|texto|11|Não|
-|Avs.ZipCode|CEP do endereço de cobrança do portador|texto|8|Não|
-|Avs.Street|Logradouro do endereço de cobrança do portador|texto|50|Não|
-|Avs.Number|Número do endereço de cobrança do portador|texto|6|Não|
-|Avs.Complement|Complemento do endereço de cobrança do portador|texto|30|Não|
-|Avs.District|Bairro do endereço de cobrança do portador|texto|20|Não|
-
-
 ## Requisição
 
 
@@ -88,26 +76,6 @@ Conteudo do **POST - COM TOKEN**
 }
 ```
 
-Conteudo do **POST - COM AVS**
-```
-{
-    "CardType": "CreditCard",
-    "CardNumber":"1234123412341231",
-    "Holder":"Teste Holder",
-    "ExpirationDate":"12/2021",
-    "SecurityCode":"123",
-    "SaveCard":"false",
-    "Brand":"Visa",
-    "Avs":{
-        "Cpf": "12387719719",
-        "ZipCode": "20241180",
-        "Street": "Rua da Glória",
-        "Number": "214",
-        "Complement": "ap 203",
-        "District": "Rio de Janeiro"
-    }
-}
-```
 ## Resposta
 
 A resposta sempre retorna se o cartão pode ser autorizado no momento. Essa informação apenas significa que o _cartão está valido a transacionar_, mas não necessariamente indica que um determinado valor será autorizado.
@@ -130,17 +98,6 @@ Response: **POSITIVA - Cartão Válido**
         "Valid": true,
         "ReturnCode": “00”,
         "ReturnMessage", “Transacao autorizada”
-}
-```
-Response: **POSITIVA - Com AVS**
-
-```
-{
-       "Valid": true,
-       "ReturnCode": "85",
-       "ReturnMessage": "Transacao autorizada",
-       "AvsCepReturnCode": "I",
-       "AvsAddressReturnCode": "I"
 }
 ```
 Response: **NEGATIVA - Cartão Inválido**
@@ -168,6 +125,57 @@ Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o s
 
 > Consulte <https://developercielo.github.io/Webservice-3.0/#códigos-de-retorno-das-vendas> para visualizar a descrição dos códigos de retorno. 
 > O código de retorno **85 representa sucesso no Zero Auth**, os demais códigos são definidos de acordo com a documentação acima.
+
+
+## Zero Auth com AVS
+
+
+
+
+Sobre o Avs, nó contendo os dados do endereço de cobrança do portador do cartão
+
+|Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
+|---|---|---|---|---|
+|Avs.Cpf|CPF do portador|texto|11|Não|
+|Avs.ZipCode|CEP do endereço de cobrança do portador|texto|8|Não|
+|Avs.Street|Logradouro do endereço de cobrança do portador|texto|50|Não|
+|Avs.Number|Número do endereço de cobrança do portador|texto|6|Não|
+|Avs.Complement|Complemento do endereço de cobrança do portador|texto|30|Não|
+|Avs.District|Bairro do endereço de cobrança do portador|texto|20|Não|
+
+Conteudo do **POST - COM AVS**
+```
+{
+    "CardType": "CreditCard",
+    "CardNumber":"1234123412341231",
+    "Holder":"Teste Holder",
+    "ExpirationDate":"12/2021",
+    "SecurityCode":"123",
+    "SaveCard":"false",
+    "Brand":"Visa",
+    "Avs":{
+        "Cpf": "12387719719",
+        "ZipCode": "20241180",
+        "Street": "Rua da Glória",
+        "Number": "214",
+        "Complement": "ap 203",
+        "District": "Rio de Janeiro"
+    }
+}
+```
+
+Response: **POSITIVA - Com AVS**
+
+```
+{
+       "Valid": true,
+       "ReturnCode": "85",
+       "ReturnMessage": "Transacao autorizada",
+       "AvsCepReturnCode": "I",
+       "AvsAddressReturnCode": "I"
+}
+```
+
 
 
 ## Histórico de Atualizações:
