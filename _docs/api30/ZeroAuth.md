@@ -129,10 +129,33 @@ Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o s
 
 ## Zero Auth com AVS
 
+O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
+Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
+
+Regras do **AVS**
+
+* Disponível apenas para as bandeiras Visa, Mastercard e AmEx.
+* Produtos permitidos: somente crédito.
+* O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
+* Cada um deles pode ter os seguintes valores: 
+<br>C – Confere;<br>
+N – Não confere;
+I – Indisponível;
+T – Temporariamente indisponível;
+X – Serviço não suportado para esta Bandeira.
+E - Dados enviados incorretos. Verificar se todos os campos foram enviados
+
+* O nó contendo o XML do AVS deve estar encapsulado pelo termo “CDATA”, para evitar problemas com o parser da requisição.
+* É necessário que todos os campos contidos no nó AVS sejam preenchidos.
+* Quando o campo não for aplicável (exemplo: complemento), a tag deve ser enviada preenchia com NULL ou N/A
+* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Web Cielo eCommerce
 
 
 
-Sobre o Avs, nó contendo os dados do endereço de cobrança do portador do cartão
+
+
+
+
 
 |Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
 |---|---|---|---|---|
