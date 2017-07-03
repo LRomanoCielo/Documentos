@@ -41,7 +41,7 @@ Abaixo, a listagem de campos da Requisição:
 
 |Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
 |---------|---------|----|-------|-----------|
-|CardType|Define o tipo de cartão utilizados:<br><br>*CreditCard* - Cartão de crédito <br>*DebitCard* - Cartão de crédito <br><br>Se não enviado, CreditCard como default|Texto|255|Não|
+|CardType|Define o tipo de cartão utilizados:<br><br>*CreditCard*<br>*DebitCard*<br><br>Se não enviado, CreditCard como default|Texto|255|Não|
 |CardNumber|Número do Cartão do Comprador|Texto|16|sim|
 |Holder|Nome do Comprador impresso no cartão.|Texto|25|não|
 |ExpirationDate|Data de e validade impresso no cartão.|Texto|7|sim|
@@ -130,6 +130,17 @@ Response: **POSITIVA - Cartão Válido**
         "Valid": true,
         "ReturnCode": “00”,
         "ReturnMessage", “Transacao autorizada”
+}
+```
+Response: **POSITIVA - Com AVS**
+
+```
+{
+       "Valid": true,
+       "ReturnCode": "85",
+       "ReturnMessage": "Transacao autorizada",
+       "AvsCepReturnCode": "I",
+       "AvsAddressReturnCode": "I"
 }
 ```
 Response: **NEGATIVA - Cartão Inválido**
