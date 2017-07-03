@@ -139,12 +139,14 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 * O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
 * Cada um deles pode ter os seguintes valores: 
 
-C – Confere;<br>
-N – Não confere;<br>
-I – Indisponível;<br>
-T – Temporariamente indisponível;<br>
-X – Serviço não suportado para esta Bandeira.<br>
-E - Dados enviados incorretos. Verificar se todos os campos foram enviados<br>
+|-|--------|
+|C|Confere|
+|N|Não confere|
+|I|Indisponível|
+|T|Temporariamente indisponível|
+|X|Serviço não suportado para esta Bandeira|
+|E|Dados enviados incorretos. Verificar se todos os campos foram enviados|
+
 
 * É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
 * Quando o campo não for aplicável (exemplo: complemento), deve ser enviada preenchia com NULL ou N/A
