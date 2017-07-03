@@ -40,13 +40,14 @@ Cada tipo de validação necessita de um contrato tecnico diferente. Eles result
 Abaixo, a listagem de campos da Requisição:
 
 |Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
-|---|---|---|---|---|
+|---------|---------|----|-------|-----------|
+|CardType|Define o tipo de cartão utilizados:<br><br>*CreditCard* - Cartão de crédito <br>*DebitCard* - Cartão de crédito <br><br>Se não enviado, CreditCard como default|Texto|255|Não|
 |CardNumber|Número do Cartão do Comprador|Texto|16|sim|
 |Holder|Nome do Comprador impresso no cartão.|Texto|25|não|
 |ExpirationDate|Data de e validade impresso no cartão.|Texto|7|sim|
 |SecurityCode|Código de segurança impresso no verso do cartão.|Texto|4|não|
 |SaveCard|Booleano que identifica se o cartão será salvo para gerar o CardToken.|Boolean|---|Não|
-|Brand|Bandeira do cartão: <br>Visa<br>Master<br>Amex<br>Elo<br>Aura<br>JCB<br>Diners<br>Discover|Texto|10|não|
+|Brand|Bandeira do cartão: <br><br>Visa<br>Master<br>Amex<br>Elo<br>Aura<br>JCB<br>Diners<br>Discover<br>|Texto|10|não|
 |CardToken|Token do cartão na 3.0|GUID|36|Condicional|
 
 
@@ -90,6 +91,7 @@ Conteudo do **POST - COM TOKEN**
 Conteudo do **POST - COM AVS**
 ```
 {
+    "CardType": "CreditCard",
     "CardNumber":"1234123412341231",
     "Holder":"Teste Holder",
     "ExpirationDate":"12/2021",
