@@ -195,6 +195,7 @@ Response: **POSITIVA - Com AVS**
 }
 ```
 Conteudo do Response
+
 |Paramêtro|Descrição|Tipo|Tamanho|
 |---|---|---|---|
 |Valid|Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido|Boolean|---|
