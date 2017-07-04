@@ -40,7 +40,7 @@ Cada tipo de validação necessita de um contrato tecnico diferente. Eles result
 Abaixo, a listagem de campos da Requisição:
 
 | Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
-|----------------|-----------------------------------------------------------------------------------------------------------------------|---------|---------|-------------|
+|----------------|-----------------------------------------------------------------------------------------------------------------------|---------|---------|:-----------:|
 | CardType       | Define o tipo de cartão utilizados:<br><br>*CreditCard*<br>*DebitCard*<br><br>Se não enviado, CreditCard como default | Texto   | 255     | Não         |
 | CardNumber     | Número do Cartão do Comprador                                                                                         | Texto   | 16      | sim         |
 | Holder         | Nome do Comprador impresso no cartão.                                                                                 | Texto   | 25      | não         |
@@ -83,7 +83,7 @@ Abaixo os campos retornados após a validação:
 
 
 | Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
-|---------------|---------------------------------------------------------------------------------|---------|---------|
+|---------------|---------------------------------------------------------------------------------|---------|:-------:|
 | Valid         | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido | Boolean | ---     |
 | ReturnCode    | Código de retorno                                                               | texto   | 2       |
 | ReturnMessage | Mensagem de retorno                                                             | texto   | 255     |
@@ -145,7 +145,7 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 * Cada um deles pode ter os seguintes valores: 
 
 | Valor | Descrição                                                              |
-|-------|------------------------------------------------------------------------|
+|:-----:|------------------------------------------------------------------------|
 | C     | Confere                                                                |
 | N     | Não confere                                                            |
 | I     | Indisponível                                                           |
@@ -160,7 +160,7 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 
 
 | Paramêtro      | Descrição                                       | Tipo  | Tamanho | Obrigatório |
-|----------------|-------------------------------------------------|-------|---------|-------------|
+|----------------|-------------------------------------------------|-------|:-------:|:-----------:|
 | Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
 | Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
 | Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
