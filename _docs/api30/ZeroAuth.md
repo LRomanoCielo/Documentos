@@ -82,11 +82,11 @@ A resposta sempre retorna se o cartão pode ser autorizado no momento. Essa info
 Abaixo os campos retornados após a validação:
 
 
-|Paramêtro|Descrição|Tipo|Tamanho|
-|---|---|---|---|
-|Valid|Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido|Boolean|---|
-|ReturnCode|Código de retorno|texto|2|
-|ReturnMessage|Mensagem de retorno|texto|255|
+| Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
+|---------------|---------------------------------------------------------------------------------|---------|---------|
+| Valid         | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido | Boolean | ---     |
+| ReturnCode    | Código de retorno                                                               | texto   | 2       |
+| ReturnMessage | Mensagem de retorno                                                             | texto   | 255     |
 
 
 
@@ -144,14 +144,14 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 * O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
 * Cada um deles pode ter os seguintes valores: 
 
-|Valor|Descrição|
-|-----|-------|
-|C|Confere|
-|N|Não confere|
-|I|Indisponível|
-|T|Temporariamente indisponível|
-|X|Serviço não suportado para esta Bandeira|
-|E|Dados enviados incorretos. Verificar se todos os campos foram enviados|
+| Valor | Descrição                                                              |
+|-------|------------------------------------------------------------------------|
+| C     | Confere                                                                |
+| N     | Não confere                                                            |
+| I     | Indisponível                                                           |
+| T     | Temporariamente indisponível                                           |
+| X     | Serviço não suportado para esta Bandeira                               |
+| E     | Dados enviados incorretos. Verificar se todos os campos foram enviados |
 
 
 * É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
@@ -159,14 +159,14 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 * Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Cielo eCommerce
 
 
-|Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
-|---|---|---|---|---|
-|Avs.Cpf|CPF do portador|texto|11|Não|
-|Avs.ZipCode|CEP do endereço de cobrança do portador|texto|8|Não|
-|Avs.Street|Logradouro do endereço de cobrança do portador|texto|50|Não|
-|Avs.Number|Número do endereço de cobrança do portador|texto|6|Não|
-|Avs.Complement|Complemento do endereço de cobrança do portador|texto|30|Não|
-|Avs.District|Bairro do endereço de cobrança do portador|texto|20|Não|
+| Paramêtro      | Descrição                                       | Tipo  | Tamanho | Obrigatório |
+|----------------|-------------------------------------------------|-------|---------|-------------|
+| Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
+| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
+| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
+| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | Não         |
+| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      | Não         |
+| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      | Não         |
 
 Conteudo do **POST - COM AVS**
 ```
@@ -202,13 +202,13 @@ Response: **POSITIVA - Com AVS**
 ```
 Conteudo do Response
 
-|Paramêtro|Descrição|Tipo|Tamanho|
-|---|---|---|---|
-|Valid|Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido|Boolean|---|
-|ReturnCode|Código de retorno|texto|2|
-|ReturnMessage|Mensagem de retorno|texto|255|
-|AvsCepReturnCode|Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br>|Texto|1|
-|AvsAddressReturnCode|Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br>|Texto|1|
+| Paramêtro            | Descrição                                                                                                                                                                                                                                                                            | Tipo    | Tamanho |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|---------|
+| Valid                | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido                                                                                                                                                                                                      | Boolean | ---     |
+| ReturnCode           | Código de retorno                                                                                                                                                                                                                                                                    | texto   | 2       |
+| ReturnMessage        | Mensagem de retorno                                                                                                                                                                                                                                                                  | texto   | 255     |
+| AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br>     | Texto   | 1       |
+| AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
 
 
 
