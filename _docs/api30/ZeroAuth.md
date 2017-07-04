@@ -206,11 +206,6 @@ Conteudo do Response
 
 
 
-
-
-
-
-
 ## Histórico de Atualizações:
 
 |Versão|Data |Descrição    |
