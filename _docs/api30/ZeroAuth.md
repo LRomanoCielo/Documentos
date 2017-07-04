@@ -215,7 +215,7 @@ Conteudo do Response
 ## Histórico de Atualizações:
 
 | Versão | Data       | Descrição                                                                                                      |
-|--------|------------|----------------------------------------------------------------------------------------------------------------|
+|:------:|------------|----------------------------------------------------------------------------------------------------------------|
 | 1.0    | 16/09/2016 | ✓ Versão inicial                                                                                               |
 | 1.1    | 25/10/2016 | ✓ Atualização de parâmetros                                                                                    |
 | 1.2    | 05/01/2017 | ✓ Inclusão da tabela de parâmetros obrigatórios <br> ✓ Inclusão do contrato sem AVS <br>✓ Inclusão do contrato com Cardtoken 
