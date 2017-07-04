@@ -46,12 +46,13 @@ https://apiquerysandbox.cieloecommerce.cielo.com.br/1/cardBin/420020
 }
 ```
 
-|Paramêtro|Tipo|Tamanho|Descrição|
-|---------|----|------|---------|
-|**Status**|Texto|2|Status da requisição de análise de Bins: <br><br> 00 – Analise autorizada <br> 01 – Bandeira não suportada <br> 02 – Cartão não suportado na consulta de bin <br> 73 – Afiliação bloqueada|
-|**Provider**|Texto|255|Bandeira do cartão|
-|**CardType**|Texto|20|Tipo do cartão em uso|
-|**ForeingCard**|Texto|255|Se o cartão é emitido no exterior (False/True): <br><br> Credito <br> Debito <br>Multiplo|
+| Paramêtro       | Tipo  | Tamanho | Descrição     |
+|-----------------|-------|---------|---------------|
+| **Status**      | Texto | 2       | Status da requisição de análise de Bins: <br><br> 00 – Analise autorizada <br> 01 – Bandeira não suportada <br> 02 – Cartão não suportado na consulta de bin <br> 73 – Afiliação bloqueada |
+| **Provider**    | Texto | 255     | Bandeira do cartão|
+| **CardType**    | Texto | 20      | Tipo do cartão em uso|
+| **ForeingCard** | Texto | 255     | Se o cartão é emitido no exterior (False/True): <br><br> Credito <br> Debito <br>Multiplo|
+
 
 ### Histórico de atualizações
 
