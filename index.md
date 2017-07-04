@@ -1,5 +1,5 @@
 ---
-title: Features Especiais Cielo00000000000000
+title: Features Especiais Cielo
 ---
 
 Está documentação é um compêndio de novas features lançadas pela Cielo.<br><br>
