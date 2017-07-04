@@ -17,11 +17,11 @@ Para utilizar o MPI externo, os lojistas que integrarem a [API CIELO ECOMMERCE](
 
 Abaixo, os campos necessarios para o uso do **MPI Externo**
 
-|Paramêtro|Descrição|Tipo|Tamanho|Obrigatório|
-|---|---|---|---|---|
-|Cavv|Cardholder authentication verification value – Chave criptográfica|Texto|255|Sim|  
-|XId|Identificador de transação retornado pelo Banco|Texto|255|Sim|
-|Eci|Eletronic Commerce Indicator - Representa o quão segura é uma transação|Texto|10|Sim|
+| Paramêtro | Descrição                                                               | Tipo  | Tamanho | Obrigatório |
+|-----------|-------------------------------------------------------------------------|-------|---------|-------------|
+| Cavv      | Cardholder authentication verification value – Chave criptográfica      | Texto | 255     | Sim         |
+| XId       | Identificador de transação retornado pelo Banco                         | Texto | 255     | Sim         |
+| Eci       | Eletronic Commerce Indicator - Representa o quão segura é uma transação | Texto | 10      | Sim         |
 
 
 ### Requisição
@@ -148,9 +148,9 @@ Response
 
 ### Histórico de atualizações:
 
-|Versão|Data|Descrição|
-|1.0|20/09/2016|Versão inicial|
-
+| Versão | Data       | Descrição      |
+|--------|------------|----------------|
+| 1.0    | 20/09/2016 | Versão inicial |
 
 
 
