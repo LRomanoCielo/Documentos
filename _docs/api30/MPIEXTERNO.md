@@ -6,7 +6,7 @@ order: 3
 
 ### O QUE É O MPI EXTERNO
 
-O **MPI** é um processo de autenticação bancário, onde o Banco valida a identidade do comprador durante o fluxo transacional.  O Banco retorna à loja o resultado da validação de identidade, confirmando ou não a autenticação.
+O **MPI** é um processo de autenticação bancário, onde o Banco valida a identidade do comprador durante o fluxo transacional.  O Banco retorna à loja o resultado da validação de identidade, confirmando ou não a autenticação..
 
 ### Integração
 
