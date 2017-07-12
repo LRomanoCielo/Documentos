@@ -7,7 +7,7 @@ order: 1
 
 ### **O QUE &Eacute; O “CONSULTA BINS”**
 
-A “**Consulta de Bins**” &eacute;; um servi&ccedil;o de **pesquisa de dados do cart&atilde;o**, de cr&eacute;dito ou d&eacute;bito, que os lojistas da API Cielo Ecommerce podem utilizar para validar se os dados preenchidos em tela sobre o cart&atilde;o s&atilde;o v&aacute;lidos
+A “**Consulta de Bins**” &eacute;; um servi&ccedil;o de **pesquisa de dados do cart&atilde;o**, de cr&eacute;dito ou d&eacute;bito, que os lojistas da API Cielo Ecommerce podem utilizar para validar se os dados preenchidos em tela sobre o cart&atilde;o s&atilde;o v&aacute;lidos.
 
 A “**consulta de Bins”** &eacute; capaz retornar os seguintes dados sobre o cart&atilde;o:
 
