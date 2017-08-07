@@ -27,6 +27,68 @@ O Zero Auth suporta as seguintes bandeiras:
 * MasterCard
 
 
+### Caso de uso
+
+
+Este é um exemplo de como usar o zero auth para melhorar sua conversão de vendas
+
+O Zero Auth é uma ferramenta da Cielo que permite verificar se um cartão está valido para realizar uma compra antes que o pedido seja finalizado. Ele faz isso simulando uma autorização, mas sem afetar o limite de crédito ou alertar o portados do cartão sobre o teste.
+
+Ela não informa o limite ou características do cartão ou portador, mas simula uma autorização Cielo, validando dados como:
+
+1. Se  o cartão está valido junto ao banco emissor
+2. Se o cartão possui limite disponível
+3. Se o cartão funciona no Brasil
+4. Se o número do cartão está correto
+5. Se o CVV é valido
+
+O Zero Auth também funciona com Cartões tokenizados na Api Cielo Ecommerce 
+
+Veja um exemplo de uso: 
+	Ø Zero auth como validador de cartão
+
+Uma empresa de Streaming chamada FlixNet possui um serviço via assinatura, onde além de realizar uma recorrência, ela possui cartões salvos e recebe novas inscrições diariamente. 
+Todas essas etapas exigem que transações sejam realizadas para obter acesso a ferramenta, o que eleva o custo da FlixNet caso as transações não sejam autorizadas. 
+
+Como ela poderia reduzir esse custo? Validando o cartão antes de envia-lo a autorizado.
+
+A FlixNet usa o Zero Auth em 2 momento diferente:
+
+	• Cadastro: é necessário incluir um cartão para ganhar 30 dias grátis no primeiro mês. 
+	
+	O problema é que ao se encerrar esse período, se o cartão for invalido, o novo cadastro existe, mas não funciona, pois, o cartão salvo é invalido. 
+	A Flix Net resolveu esse problema testando o cartão com o Zero Auth no momento do cadastro, assim, ela já sabe se o cartão está valido e libera a criação da conta. 
+	Caso não o cartão não seja aceito, a FlixNet pode sugerir o uso de um outro cartão.
+	
+	• Recorrência: todo mês, antes de realizar a cobrança da Assinatura, a Flixnet testa o cartão com o zero auth, assim sabendo se ele será autorizado ou não. 
+	Isso ajuda o FlixNet a prever quais cartões serão negados, já acionando o assinante para atualização do cadastro antes do dia de pagamento.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Integração
 
 Para realizar a consulta ao Zero Auth, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce, simulando uma transação. O `POST` deverá ser realizado nas seguintes URL: 
