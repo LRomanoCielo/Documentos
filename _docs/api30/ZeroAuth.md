@@ -45,7 +45,8 @@ Ela não informa o limite ou características do cartão ou portador, mas simula
 O Zero Auth também funciona com Cartões tokenizados na Api Cielo Ecommerce 
 
 Veja um exemplo de uso: 
-	Ø Zero auth como validador de cartão
+
+*Zero auth como validador de cartão*
 
 Uma empresa de Streaming chamada FlixNet possui um serviço via assinatura, onde além de realizar uma recorrência, ela possui cartões salvos e recebe novas inscrições diariamente. 
 Todas essas etapas exigem que transações sejam realizadas para obter acesso a ferramenta, o que eleva o custo da FlixNet caso as transações não sejam autorizadas. 
@@ -54,13 +55,13 @@ Como ela poderia reduzir esse custo? Validando o cartão antes de envia-lo a aut
 
 A FlixNet usa o Zero Auth em 2 momento diferente:
 
-	• Cadastro: é necessário incluir um cartão para ganhar 30 dias grátis no primeiro mês. 
+	• *Cadastro*: é necessário incluir um cartão para ganhar 30 dias grátis no primeiro mês. 
 	
 	O problema é que ao se encerrar esse período, se o cartão for invalido, o novo cadastro existe, mas não funciona, pois, o cartão salvo é invalido. 
 	A Flix Net resolveu esse problema testando o cartão com o Zero Auth no momento do cadastro, assim, ela já sabe se o cartão está valido e libera a criação da conta. 
 	Caso não o cartão não seja aceito, a FlixNet pode sugerir o uso de um outro cartão.
 	
-	• Recorrência: todo mês, antes de realizar a cobrança da Assinatura, a Flixnet testa o cartão com o zero auth, assim sabendo se ele será autorizado ou não. 
+	• *Recorrência*: todo mês, antes de realizar a cobrança da Assinatura, a Flixnet testa o cartão com o zero auth, assim sabendo se ele será autorizado ou não. 
 	Isso ajuda o FlixNet a prever quais cartões serão negados, já acionando o assinante para atualização do cadastro antes do dia de pagamento.
 
 
