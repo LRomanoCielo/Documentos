@@ -23,4 +23,4 @@ Para acessar com mais facilidade os exemplos, utilize a Coleção de POSTMAN aba
 Os ambientes e credenciais utilizadas são as mesmas de sua loja.
 Para aprender como configurar ambientes, credenciais e Coleções POSTMAN, veja nosso tutorial
 
-> 
+> https://developercielo.github.io/Tutorial//Postman
