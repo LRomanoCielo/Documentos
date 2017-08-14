@@ -1,101 +1,31 @@
 ---
-title: Zero Auth
+title: Split de pagamentos
 category: API CIELO ECOMMERCE
-order: 2
+order: 4
 ---
-### O QUE É O ZERO AUTH?
+### O que é o Split de pagamentos ?
 
-O **Zero Auth** é uma ferramenta de validação de cartões da API Cielo. A validação permite que o lojista saiba se o cartão é valido ou não antes de enviar a transação para autorização, antecipando o motivo de uma provável não autorização..
+Lorem ipsum dolor sit amet, id interdum eget, amet lectus commodo malesuada etiam turpis orci, est malesuada placerat neque nascetur, cras adipiscing vel nulla. Quam sapien donec quod quisque auctor venenatis, a scelerisque amet maecenas pulvinar, vitae massa eu vitae eu sed. Nec proin vestibulum et metus aliquet quis. Est magna ac. Et posuere quam erat ipsum, est quae, sollicitudin vivamus, ligula sit. Euismod per wisi, platea elit suspendisse lobortis interdum ante, faucibus sed. Et in tincidunt, risus maecenas neque. Porta dolor lacinia imperdiet amet nullam, inceptos luctus eu taciti consequat vestibulum, mollis nihil a. Vehicula nunc conubia metus egestas pellentesque at, in purus, nunc id tristique, dolor sem rhoncus a.
 
-O **Zero Auth** pode ser usado de 3 maneiras:
+Suscipit tincidunt id feugiat ut lorem ea, urna molestie ipsum placerat conubia mauris convallis, hymenaeos nullam. Auctor sodales sed faucibus ultricies egestas, integer lorem vel ut in vitae. Bibendum leo quam. Quo lacus scelerisque amet dis, elit enim dictum mattis nonummy. Id nec ac phasellus pede sem, risus in pede placerat, ante wisi. Et vel magna bibendum ultricies, augue hac, sapien nulla morbi ante suscipit ipsum vestibulum. Libero diam, a aliquid nunc pede duis suspendisse pede, ultrices elit suscipit nullam, vel ligula. Faucibus lacus vestibulum. Sollicitudin ac in.
 
-1. **Padrão** - Envio de um cartão padrão, sem tokenização ou analises adicionais
-2. **Com cartão Tokenizado** - Envio de um TOKEN 3.0 para analise
-3. **Com AVS** - Utilizando o AVS Cielo para validar o cartão
-
-
-É importante destacar que o Zero Auth **não retorna ou analisa** os seguintes itens:
-
-1. Limite de crédito do cartão
-2. Informações sobre o portador
-3. Não aciona a base bancaria (dispara SMS so portador)
-
-
-O Zero Auth suporta as seguintes bandeiras:
-
-* Visa
-* MasterCard
+Ullamcorper augue urna sem arcu vestibulum. Mauris integer. Magna ut. Pretium volutpat condimentum tempor. Purus nulla sed at sit, ac dis. Phasellus congue lacinia a faucibus orci. Auctor urna, tortor blandit vivamus nibh quisque, sed magna netus mollis et, mauris dapibus nulla.
+Senectus adipiscing donec natoque, tortor tellus sagittis, erat quis id posuere sed curae, est lorem quam ornare magna montes, imperdiet quis tellus eu arcu odio a. Varius pellentesque quis, fringilla neque vehicula velit semper, lacus sit, at leo fusce. Felis luctus minima pulvinar porta a, suscipit sollicitudin sed ut adipiscing nunc in. Id vel cursus potenti facilisis tempus eget, tincidunt est, sodales lacus erat quam eget aliquam penatibus, varius pharetra ipsum pede nulla. Orci vel tempor risus nostra elit rhoncus, elit mauris hendrerit eget aliquam, lorem est tincidunt massa maxime ante massa. Tellus ea aliquam sed orci scelerisque, eget suscipit vel a tristique elit, praesent tempus quam, interdum erat pellentesque sit pellentesque id. Quis odio sit ut lacinia eu, aliquam amet felis, suspendisse volutpat diam elit, habitasse orci metus et quis nulla erat. Convallis risus vestibulum venenatis ab neque odio, dignissim minus nulla vel nec, venenatis metus, mauris et. Nunc ad faucibus, taciti sodales tincidunt mauris, dolor sed leo, magna egestas ac vehicula cursus.
 
 
 ### Caso de uso
 
 
-Este é um exemplo de como usar o zero auth para melhorar sua conversão de vendas
-
-O Zero Auth é uma ferramenta da Cielo que permite verificar se um cartão está valido para realizar uma compra antes que o pedido seja finalizado. Ele faz isso simulando uma autorização, mas sem afetar o limite de crédito ou alertar o portados do cartão sobre o teste.
-
-Ela não informa o limite ou características do cartão ou portador, mas simula uma autorização Cielo, validando dados como:
-
-1. Se  o cartão está valido junto ao banco emissor
-2. Se o cartão possui limite disponível
-3. Se o cartão funciona no Brasil
-4. Se o número do cartão está correto
-5. Se o CVV é valido
-
-O Zero Auth também funciona com Cartões tokenizados na Api Cielo Ecommerce 
-
-Veja um exemplo de uso: 
-
-**Zero auth como validador de cartão**
-
-Uma empresa de Streaming chamada FlixNet possui um serviço via assinatura, onde além de realizar uma recorrência, ela possui cartões salvos e recebe novas inscrições diariamente. 
-Todas essas etapas exigem que transações sejam realizadas para obter acesso a ferramenta, o que eleva o custo da FlixNet caso as transações não sejam autorizadas. 
-
-Como ela poderia reduzir esse custo? Validando o cartão antes de envia-lo a autorizado.
-
-A FlixNet usa o Zero Auth em 2 momento diferente:
-
-* **Cadastro**: é necessário incluir um cartão para ganhar 30 dias grátis no primeiro mês. 
-	
-O problema é que ao se encerrar esse período, se o cartão for invalido, o novo cadastro existe, mas não funciona, pois, o cartão salvo é invalido. A Flix Net resolveu esse problema testando o cartão com o Zero Auth no momento do cadastro, assim, ela já sabe se o cartão está valido e libera a criação da conta. Caso não o cartão não seja aceito, a FlixNet pode sugerir o uso de um outro cartão.
-	
-* **Recorrência**: todo mês, antes de realizar a cobrança da Assinatura, a Flixnet testa o cartão com o zero auth, assim sabendo se ele será autorizado ou não.  Isso ajuda o FlixNet a prever quais cartões serão negados, já acionando o assinante para atualização do cadastro antes do dia de pagamento.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Lorem ipsum dolor sit amet, id interdum eget, amet lectus commodo malesuada etiam turpis orci, est malesuada placerat neque nascetur, cras adipiscing vel nulla. Quam sapien donec quod quisque auctor venenatis, a scelerisque amet maecenas pulvinar, vitae massa eu vitae eu sed. Nec proin vestibulum et metus aliquet quis. Est magna ac. Et posuere quam erat ipsum, est quae, sollicitudin vivamus, ligula sit. Euismod per wisi, platea elit suspendisse lobortis interdum ante, faucibus sed. Et in tincidunt, risus maecenas neque. Porta dolor lacinia imperdiet amet nullam, inceptos luctus eu taciti consequat vestibulum, mollis nihil a. Vehicula nunc conubia metus egestas pellentesque at, in purus, nunc id tristique, dolor sem rhoncus a.
 
 
 ### Integração
 
-Para realizar a consulta ao Zero Auth, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce, simulando uma transação. O `POST` deverá ser realizado nas seguintes URL: 
+Lorem ipsum dolor sit amet, id interdum eget, amet lectus commodo malesuada etiam turpis orci, est malesuada placerat neque nascetur, cras adipiscing vel nulla. Quam sapien donec quod quisque auctor venenatis, a scelerisque amet maecenas pulvinar, vitae massa eu vitae eu sed. Nec proin vestibulum et metus aliquet quis. Est magna ac. Et posuere quam erat ipsum, est quae, sollicitudin vivamus, ligula sit. Euismod per wisi, platea elit suspendisse lobortis interdum ante, faucibus sed. Et in tincidunt, risus maecenas neque. Porta dolor lacinia imperdiet amet nullam, inceptos luctus eu taciti consequat vestibulum, mollis nihil a. Vehicula nunc conubia metus egestas pellentesque at, in purus, nunc id tristique, dolor sem rhoncus a.
 
-> Sandbox: https://`apisandbox`.cieloecommerce.cielo.com.br/1/`zeroauth`
 
-> Produção: https://`api`.cieloecommerce.cielo.com.br/1/`zeroauth`
+> POST: www.lerom.com.br
 
-Cada tipo de validação necessita de um contrato tecnico diferente. Eles resultarão em _responses diferenciados_.
 
 Abaixo, a listagem de campos da Requisição:
 
@@ -150,139 +80,12 @@ Abaixo os campos retornados após a validação:
 
 
 
-Response: **POSITIVA - Cartão Válido**
-
-```
-{
-        "Valid": true,
-        "ReturnCode": “00”,
-        "ReturnMessage", “Transacao autorizada”
-}
-```
-
-> Consulte <https://developercielo.github.io/Webservice-3.0/#códigos-de-retorno-das-vendas> para visualizar a descrição dos códigos de retorno. 
-
-> O código de retorno **85 representa sucesso no Zero Auth**, os demais códigos são definidos de acordo com a documentação acima.
-
-
-
-
-
-
-Response: **NEGATIVA - Cartão Inválido**
-
-```
-{
-       "Valid": false,
-       "ReturnCode": "57",
-       "ReturnMessage": "Autorizacao negada"
-}
-```
-
-Response: **NEGATIVA - Cartão com bandeira inválida**
-
-```
-  {    
-      "Code": 57,     
-      "Message": "Bandeira inválida"   
-  }
-```
-
-Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o serviço irá retornar erro: 
-* 500 – Internal Server Erro
-
-
-## Zero Auth com AVS
-
-O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
-Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
-
-**Regras do AVS**
-
-* Disponível apenas para as bandeiras Visa, Mastercard e AmEx.
-* Produtos permitidos: somente crédito.
-* O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
-* Cada um deles pode ter os seguintes valores: 
-
-| Valor | Descrição                                                              |
-|:-----:|------------------------------------------------------------------------|
-| C     | Confere                                                                |
-| N     | Não confere                                                            |
-| I     | Indisponível                                                           |
-| T     | Temporariamente indisponível                                           |
-| X     | Serviço não suportado para esta Bandeira                               |
-| E     | Dados enviados incorretos. Verificar se todos os campos foram enviados |
-
-
-* É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
-* Quando o campo não for aplicável (exemplo: complemento), deve ser enviada preenchia com NULL ou N/A
-* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Cielo eCommerce
-
-
-| Paramêtro      | Descrição                                       | Tipo  | Tamanho | Obrigatório |
-|----------------|-------------------------------------------------|-------|:-------:|:-----------:|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | Não         |
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      | Não         |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      | Não         |
-
-Conteudo do **POST - COM AVS**
-```
-{
-    "CardType": "CreditCard",
-    "CardNumber":"1234123412341231",
-    "Holder":"Teste Holder",
-    "ExpirationDate":"12/2021",
-    "SecurityCode":"123",
-    "SaveCard":"false",
-    "Brand":"Visa",
-    "Avs":{
-        "Cpf": "12387719719",
-        "ZipCode": "20241180",
-        "Street": "Rua da Glória",
-        "Number": "214",
-        "Complement": "ap 203",
-        "District": "Rio de Janeiro"
-    }
-}
-```
-
-Response: **POSITIVA - Com AVS**
-
-```
-{
-       "Valid": true,
-       "ReturnCode": "85",
-       "ReturnMessage": "Transacao autorizada",
-       "AvsCepReturnCode": "I",
-       "AvsAddressReturnCode": "I"
-}
-```
-Conteudo do Response
-
-| Paramêtro            | Descrição                                                             | Tipo    | Tamanho |
-|----------------------|-----------------------------------------------------------------------|---------|---------|
-| Valid                | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido | Boolean | ---     |
-| ReturnCode           | Código de retorno                                                     | texto   | 2       |
-| ReturnMessage        | Mensagem de retorno                                                   | texto   | 255     |
-| AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-| AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-
-
-
 ## Histórico de Atualizações:
 
 | Versão | Data       | Descrição                                                                                                      |
 |:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 16/09/2016 | ✓ Versão inicial                                                                                               |
-| 1.1    | 25/10/2016 | ✓ Atualização de parâmetros                                                                                    |
-| 1.2    | 05/01/2017 | ✓ Inclusão da tabela de parâmetros obrigatórios <br> ✓ Inclusão do contrato sem AVS <br>✓ Inclusão do contrato com Cardtoken 
-| 1.3    | 15/05/2017 | ✓ Complemento da tabela com os campos do contrato de requisição <br> ✓ Alteração da tabela com os campos do contrato de resposta 
-| 1.4    | 31/05/2017 | ✓ Adicionado o tópico de bandeiras suportadas <br> ✓ Indicação que tokens 1.5 não são suportados <br>✓ Resposta para cartões com bandeira não suportada <br>✓ Resposta para requisições que resultem em erro e consequentemente na não validação do cartão.<br> ✓ Atualização do tamanho dos campos do contrato de requisição  |
-| 1.5    | 07/06/2017 | ✓ Adicionada URL de produção <br> ✓ Adicionado código de retorno 00 para consultas que retornem cartões válidos.|
-| 1.6    | 03/07/2017 | ✓ Adicionada retorno do AVS <br> ✓ Adicionado regras do AVS                                                    |
+| 1.0    | 14/08/2017 | ✓ Versão inicial                                                                                               |
+
 
 
 
