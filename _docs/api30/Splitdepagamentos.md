@@ -56,6 +56,21 @@ Abaixo, a listagem de campos da Requisição:
 Lorem ipsum dolor sit amet, id interdum eget, amet lectus commodo malesuada etiam turpis orci, est malesuada placerat neque nascetur, cras adipiscing vel nulla. Quam sapien donec quod quisque auctor venenatis
 
 
+```
+{
+    "CardNumber":"1234123412341231",
+    "Holder":"Alexsander Rosa",
+    "ExpirationDate":"12/2021",
+    "SecurityCode":"123",
+    "SaveCard":"false",
+    "Brand":"Visa"
+}
+```
+
+
+
+
+
 | Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
 |---------------|---------------------------------------------------------------------------------|---------|:-------:|
 | Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
