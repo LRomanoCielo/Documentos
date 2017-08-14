@@ -31,20 +31,15 @@ Abaixo, a listagem de campos da Requisição:
 
 | Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
 |----------------|-----------------------------------------------------------------------------------------------------------------------|---------|---------|:-----------:|
-| CardType       | Define o tipo de cartão utilizados:<br><br>*CreditCard*<br>*DebitCard*<br><br>Se não enviado, CreditCard como default | Texto   | 255     | Não         |
-| CardNumber     | Número do Cartão do Comprador                                                                                         | Texto   | 16      | sim         |
-| Holder         | Nome do Comprador impresso no cartão.                                                                                 | Texto   | 25      | não         |
-| ExpirationDate | Data de e validade impresso no cartão.                                                                                | Texto   | 7       | sim         |
-| SecurityCode   | Código de segurança impresso no verso do cartão.                                                                      | Texto   | 4       | não         |
-| SaveCard       | Booleano que identifica se o cartão será salvo para gerar o CardToken.                                                | Boolean | ---     | Não         |
-| Brand          | Bandeira do cartão: <br><br>Visa<br>Master<br>                                                                        | Texto   | 10      | não         |
-| CardToken      | Token do cartão na 3.0                                                                                                | GUID    | 36      | Condicional |
+| Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
+| Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
+| Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
+| Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
+
 
 
 ## Requisição
 
-
-Conteudo do **POST - PADRÃO**
 ```
 {
     "CardNumber":"1234123412341231",
@@ -56,28 +51,17 @@ Conteudo do **POST - PADRÃO**
 }
 ```
 
-Conteudo do **POST - COM TOKEN**
-```
-{
-  "CardToken":"23712c39-bb08-4030-86b3-490a223a8cc9",
-    "SaveCard":"false",
-    "Brand":"Visa"
-}
-```
-
 ## Resposta
 
-A resposta sempre retorna se o cartão pode ser autorizado no momento. Essa informação apenas significa que o _cartão está valido a transacionar_, mas não necessariamente indica que um determinado valor será autorizado.
-
-Abaixo os campos retornados após a validação:
+Lorem ipsum dolor sit amet, id interdum eget, amet lectus commodo malesuada etiam turpis orci, est malesuada placerat neque nascetur, cras adipiscing vel nulla. Quam sapien donec quod quisque auctor venenatis
 
 
 | Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
 |---------------|---------------------------------------------------------------------------------|---------|:-------:|
-| Valid         | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido | Boolean | ---     |
-| ReturnCode    | Código de retorno                                                               | texto   | 2       |
-| ReturnMessage | Mensagem de retorno                                                             | texto   | 255     |
-
+| Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
+| Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
+| Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
+                                          
 
 
 ## Histórico de Atualizações:
