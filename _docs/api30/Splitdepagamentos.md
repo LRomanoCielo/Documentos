@@ -37,7 +37,7 @@ Abaixo, a listagem de campos da Requisição:
 | ExpirationDate | Data de e validade impresso no cartão.                                                                                | Texto   | 7       | sim         |
 | SecurityCode   | Código de segurança impresso no verso do cartão.                                                                      | Texto   | 4       | não         |
 | SaveCard       | Booleano que identifica se o cartão será salvo para gerar o CardToken.                                                | Boolean | ---     | Não         |
-| Brand          | Bandeira do cartão: <br><br>Visa<br>Master<br>| Texto   | 10      | não         |
+| Brand          | Bandeira do cartão: <br><br>Visa<br>Master<br>                                                                        | Texto   | 10      | não         |
 | CardToken      | Token do cartão na 3.0                                                                                                | GUID    | 36      | Condicional |
 
 
