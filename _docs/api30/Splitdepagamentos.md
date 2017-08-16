@@ -21,4 +21,4 @@ Nesse modelo de integração existem  3 entidades:
 |----------|-----------|
 | Marketplace | Dono do carrinho e da Transação. <br> Possui Sellers que fornecem o contudo do Carrinho.<br> Realiza a cobrança de uma Taxa sobre a venda do Seller <br>|
 | Seller | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<br> Um Marketplace possui inumeros Seller. <br> Recebem parte da venda, descontado o valor da taxa do MarketPlace |
-| Braspag | Repson|
+| Braspag | Responsavel pela auytorização da transação <br> Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação <br> Deposita o valor da Transação na conta do Seller <br> Deposita o valor da taxa cobrada pelo Marketplace so Seller |
