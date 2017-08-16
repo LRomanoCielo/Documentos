@@ -51,7 +51,7 @@ Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta
 O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada. 
 A Taxa braspag é cobrada sobre o valor da transação
 
-> *Custo MKP:* TAXA BRASPAG + R$0,30
+> **Custo MKP:** TAXA BRASPAG + R$0,30
 
 
 O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
@@ -60,6 +60,6 @@ O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
 
 O Custo total operacional para o Seller é baseado na Taxa Braspag a ser retirada da participação do marketplace. Ela é gerada com base no valor da transação e a margem do MKP
 
-> *Custo Seller:*   Taxa MKP = Margem MKP + (TAXA BRASPAG + R$0,30)
+> **Custo Seller:**   Taxa MKP = Margem MKP + (TAXA BRASPAG + R$0,30)
 
 
