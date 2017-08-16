@@ -27,11 +27,17 @@ O Fluxo transacional de autoriza&ccedil;&atilde;o e retirada de ocorre como na i
 
 ![](/uploads/versions/Split---x----1398-720x---.png)
 
+
 Descrevendo os Passos: 
 
 1. O Marketplace cria o carrinho contendo dados sobre Sellers e a Taxa que deseja Cobrar
 2. A Taxa do Marketplace é na verdade constituidade do Custo da operação e a margem que o Marketplace deseja obter.
+3. A Braspag identifica e realiza a partilha dos valores.
+4. O Seller recebe o valor da transação, menos o valor da Taxa de MKP.
+5. A Braspag retira sua taxa de operação do Valor contindo no MKP. Esse valor é calculado sobre o valor total da transação e não sobre a participação do MKP na venda
+6. 
+
+
 
 > Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
 
-3. A Braspag identifica qual o va
