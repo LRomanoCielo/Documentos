@@ -17,18 +17,11 @@ O Split funciona como parte da integra&ccedil;&atilde;o transacional da Braspag.
 
 Nesse modelo de integra&ccedil;&atilde;o existem 3 entidades:
 
-| Entidade | Descrição |
-| --- | --- |
-| Marketplace | Dono do carrinho e da Transa&ccedil;&atilde;o.
-<br>Possui Sellers que fornecem o contudo do Carrinho.
-<br>Realiza a cobran&ccedil;a de uma Taxa sobre a venda do Seller |
-| Seller | Lojas do Marketplace que fornecem os produtos que formam o carrinho.
-<br>Um Marketplace possui inumeros Seller.
-<br>Recebem parte da venda, descontado o valor da taxa do MarketPlace |
-| Braspag | Responsavel pela auytoriza&ccedil;&atilde;o da transa&ccedil;&atilde;o
-<br>Realiza a cobran&ccedil;a da Taxa definida pelo Marketplace, retirando esse valor da transa&ccedil;&atilde;o
-<br>Deposita o valor da Transa&ccedil;&atilde;o na conta do Seller
-<br>Deposita o valor da taxa cobrada pelo Marketplace so Seller |
+| Entidade    | Descrição                                                                                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Marketplace | Dono do carrinho e da Transação. <br> Possui Sellers que fornecem o contudo do Carrinho.<br> Realiza a cobrança de uma Taxa sobre a venda do Seller <br>                                 |
+| Seller      | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<br> Um Marketplace possui inumeros Seller. <br> Recebem parte da venda, descontado o valor da taxa do MarketPlace   |
+| Braspag     | Responsavel pela auytorização da transação <br> Realiza a cobrança da Taxa definida pelo Marketplace, retirando esse valor da transação <br> Deposita o valor da Transação na conta do Seller <br> Deposita o valor da taxa cobrada pelo Marketplace so Seller |
 
 O Fluxo transacional de autoriza&ccedil;&atilde;o e retirada de ocorre como na imagem abaixo:
 
