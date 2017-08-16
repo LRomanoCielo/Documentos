@@ -17,7 +17,7 @@ O Split funciona como parte da integra&ccedil;&atilde;o transacional da Braspag.
 
 Nesse modelo de integra&ccedil;&atilde;o existem 3 entidades:
 
-| Entidade | Descri&ccedil;&atilde;o |
+| Entidade | Descrição |
 | --- | --- |
 | Marketplace | Dono do carrinho e da Transa&ccedil;&atilde;o.
 <br>Possui Sellers que fornecem o contudo do Carrinho.
@@ -33,3 +33,12 @@ Nesse modelo de integra&ccedil;&atilde;o existem 3 entidades:
 O Fluxo transacional de autoriza&ccedil;&atilde;o e retirada de ocorre como na imagem abaixo:
 
 ![](/uploads/versions/Split---x----1398-720x---.png)
+
+Descrevendo os Passos: 
+
+1. O Marketplace cria o carrinho contendo dados sobre Sellers e a Taxa que deseja Cobrar
+2. A Taxa do Marketplace é na verdade constituidade do Custo da operação e a margem que o Marketplace deseja obter.
+
+> Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
+
+3. A Braspag identifica qual o va
