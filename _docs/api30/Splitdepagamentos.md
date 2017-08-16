@@ -17,7 +17,7 @@ O Split funciona como parte da integra&ccedil;&atilde;o transacional da Braspag.
 
 Nesse modelo de integra&ccedil;&atilde;o existem 3 entidades:
 
-| Entidade    | Descrição                                                                                                                                                                                |
+| Entidades   | Descrição                                                                                                                                                                                |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Marketplace | Dono do carrinho e da Transação. <br> Possui Sellers que fornecem o contudo do Carrinho.<br> Realiza a cobrança de uma Taxa sobre a venda do Seller <br>                                 |
 | Seller      | Lojas do Marketplace que fornecem os produtos que formam o carrinho.<br> Um Marketplace possui inumeros Seller. <br> Recebem parte da venda, descontado o valor da taxa do MarketPlace   |
@@ -39,4 +39,16 @@ Descrevendo os Passos:
 
 
 > Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
+
+
+
+### Tarifas e Custos
+
+Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta cada uma das entidades envolvidas no Split
+
+#### Tarifas e Custos
+
+O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada
+
+> TAXA BRASPAG + R$0,30
 
