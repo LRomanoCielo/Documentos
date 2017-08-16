@@ -57,6 +57,6 @@ O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
 
 #### Custo Seller
 
-O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada
+O Custo total operacional para o Seller é definido pelo Marketplace. A Taxa 
 
 > TAXA BRASPAG + R$0,30
