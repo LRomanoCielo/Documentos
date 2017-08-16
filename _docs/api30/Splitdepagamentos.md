@@ -35,8 +35,7 @@ Descrevendo os Passos:
 3. A Braspag identifica e realiza a partilha dos valores.
 4. O Seller recebe o valor da transação, menos o valor da Taxa de MKP.
 5. A Braspag retira sua taxa de operação do Valor contindo no MKP. Esse valor é calculado sobre o valor total da transação e não sobre a participação do MKP na venda
-6. 
-
+6. O Marketplace recebe o valor restante da participação gerada com a taxa de Marketplace
 
 
 > Na integração braspag, é possivel que dentro de um carrinho, o MarketPlace possa cobrar taxas diferentes dependendo o Seller.
