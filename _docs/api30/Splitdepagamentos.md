@@ -46,9 +46,17 @@ Descrevendo os Passos:
 
 Nesta área do manual vamos detalhar como o processo de cobrança e custos afeta cada uma das entidades envolvidas no Split
 
-#### Tarifas e Custos
+#### Custo Marketplace
 
 O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada
 
 > TAXA BRASPAG + R$0,30
 
+
+O valor da tarifa fixa Braspag é retirada do montante destinado ao marketplace.
+
+#### Custo Seller
+
+O Split de pagamentos Braspag funciona com base em uma taxa basica tabelada contratada pelo Marketplace e uma tarifa fixa sobre a transação executada
+
+> TAXA BRASPAG + R$0,30
