@@ -16,7 +16,7 @@ O Velocity oferece 4 tipos de funcionalidades para validar dados transacionais:
 | Funcionalidade                   | Descrição                                                                                                                                          |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Regras de segurança velocity** | O Lojista defini um grupo de regras de segurança que vão avaliar se determinados dados transacionais se repetem em um intervalo de tempo suspeito  |
-| **Quarentena**                   | XXXXXXXXXXXXXXXX                                                                                                                                   |
+| **Quarentena**                   | Criação de uma lista de dados que serão analisados por um periodo de tempo determinado antes de serem considerados validos ou fraudulentos         |
 | **BlackList**                    | Criação de uma lista de dados que ao serem identificados impedem a transação de ser executada, evitando a criação de uma transação fraudulenta     |
 | **Whitelist**                    | Criação de uma lista de dados que ao serem identificados permitem que a transação de seja executada, mesmo que existam regras de segurança em ação |
 
