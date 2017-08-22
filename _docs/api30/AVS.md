@@ -1,7 +1,7 @@
 ---
-title: Zero Auth
+title: AVS
 category: API CIELO ECOMMERCE
-order: 2
+order: 5
 ---
 ### O QUE É O ZERO AUTH?
 
