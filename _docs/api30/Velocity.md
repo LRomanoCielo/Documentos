@@ -5,16 +5,56 @@ order: 6
 ---
 ### O que é Velocity
 
-O Velocity é um produto que identifica os comportamentos suspeitos de fraude. A ferramenta tem o intuito de auxiliar na análise de fraude por um custo bem menor que uma ferramenta mais tradicional de mercado. Ela é uma aliada na avaliação de comportamentos suspeitos de compra, pois os cálculos serão baseados em elementos de rastreabilidade.
+O Velocity é um tipo de mecanismo de prevenção às tentativas de fraude, que analisa especificamente o conceito de "velocidade X dados transacionais". Ele analisa a frequência que determinados dados seão sutilizados em transações de um determinado lojista. A ferramnete analisa dados chamados de "Elementos de rastreabilidade" tais como:
+
+* Número do Cartão
+* CPF
+* CEP de entrega
+
+A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja pela equipe de Suporte Cielo Ecommer. 
+
+
 
 * Auxiliar na detecção de suspeitas de fraude. 
 * Aliada para bloquear ataques em rajada (testes de cartão, por exemplo), bem como avaliações de comportamentos suspeitos de compra. 
 * Cálculos baseados em análise de velocidade de elementos rastreáveis e a incidência dos mesmos em determinados intervalos de tempo
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Transação com Velocity 
 
-O Velocity Check é um tipo de mecanismo de prevenção às tentativas de fraude, que analisa especificamente o conceito de "velocidade". Ele analisa a frequência de elementos de rastreabilidade tais como Número do Cartão, CPF, CEP de entrega, entre outros. A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja. Quando o Velocity está ativo, a resposta da transação trará um nó específico chamado "Velocity", com os detalhes da análise.
+
+Quando o Velocity está ativo, a resposta da transação trará um nó específico chamado "Velocity", com os detalhes da análise.
 
 No caso da rejeição pela regra de Velocity, o ProviderReasonCode será BP171 - Rejected by fraud risk (velocity, com ReasonCode 16 - AbortedByFraud 
 
