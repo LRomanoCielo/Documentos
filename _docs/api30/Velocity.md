@@ -123,42 +123,42 @@ curl
 --verbose
 ```
 
-|Propriedade|Tipo|Tamanho|Obrigatório|Descrição|
-|-----------|----|-------|-----------|---------|
-|`MerchantId`|Guid|36|Sim|Identificador da loja na Braspag|
-|`MerchantKey`|Texto|40|Sim|Chave Publica para Autenticação Dupla na Braspag|
-|`RequestId`|Guid|36|Não|Identificador do Request definido pela loja, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT|
-|`MerchantOrderId`|Texto|50|Sim|Numero de identificação do Pedido|
-|`Customer.Name`|Texto|255|Sim|Nome do comprador|
-|`Customer.Identity`|Texto |14 |Sim|Número do RG, CPF ou CNPJ do Cliente| 
-|`Customer.IdentityType`|Texto|255|Sim|Tipo de documento de identificação do comprador (CPF ou CNPJ)|
-|`Customer.Email`|Texto|255|Sim|Email do comprador|
-|`Customer.IpAddress`|Texto|255|Sim|Ip do comprador|
-|`Customer.Address.Street`|Texto|255|Não|Endereço de contato do comprador|
-|`Customer.Address.Number`|Texto|15|Não|Número endereço de contato do comprador|
-|`Customer.Address.Complement`|Texto|50|Não|Complemento do endereço de contato do Comprador|
-|`Customer.Address.ZipCode`|Texto|9|Sim|CEP do endereço de contato do comprador|
-|`Customer.Address.City`|Texto|50|Não|Cidade do endereço de contato do comprador|
-|`Customer.Address.State`|Texto|2|Não|Estado do endereço de contato do comprador|
-|`Customer.Address.Country`|Texto|35|Não|Pais do endereço de contato do comprador|
-|`Customer.Address.District`|Texto |50 |Não|Bairro do Comprador. |
-|`Customer.DeliveryAddress.Street`|Texto|255|Não|Endereço do comprador|
-|`Customer.DeliveryAddress.Number`|Texto|15|Não|Número do endereço de entrega do pedido|
-|`Customer.DeliveryAddress.Complement`|Texto|50|Não|Complemento do endereço de entrega do pedido|
-|`Customer.DeliveryAddress.ZipCode`|Texto|9|Sim|CEP do endereço de entrega do pedido|
-|`Customer.DeliveryAddress.City`|Texto|50|Não|Cidade do endereço de entrega do pedido|
-|`Customer.DeliveryAddress.State`|Texto|2|Não|Estado do endereço de entrega do pedido|
-|`Customer.DeliveryAddress.Country`|Texto|35|Não|Pais do endereço de entrega do pedido|
-|`Customer.DeliveryAddress.District`|Texto |50 |Não|Bairro do Comprador. |
-|`Payment.Provider`|Texto|15|Sim|Nome da provedora de Meio de Pagamento|
-|`Payment.Type`|Texto|100|Sim|Tipo do Meio de Pagamento|
-|`Payment.Amount`|Número|15|Sim|Valor do Pedido (ser enviado em centavos)|
-|`Payment.Installments`|Número|2|Sim|Número de Parcelas|
-|`CreditCard.CardNumber`|Texto|16|Sim|Número do Cartão do comprador|
-|`CreditCard.Holder`|Texto|25|Sim|Nome do Comprador impresso no cartão|
-|`CreditCard.ExpirationDate`|Texto|7|Sim|Data de validade impresso no cartão, no formato MM/AAAA|
-|`CreditCard.SecurityCode`|Texto|4|Sim|Código de segurança impresso no verso do cartão|
-|`CreditCard.Brand`|Texto|10|Sim |Bandeira do cartão|
+| Propriedade                           | Tipo   | Tamanho | Obrigatório | Descrição                                                                                                                |
+|---------------------------------------|--------|---------|-------------|--------------------------------------------------------------------------------------------------------------------------|
+| `MerchantId`                          | Guid   | 36      | Sim         | Identificador da loja na Braspag                                                                                         |
+| `MerchantKey`                         | Texto  | 40      | Sim         | Chave Publica para Autenticação Dupla na Braspag                                                                         |
+| `RequestId`                           | Guid   | 36      | Não         | Identificador do Request definido pela loja, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT |
+| `MerchantOrderId`                     | Texto  | 50      | Sim         | Numero de identificação do Pedido                                                                                        |
+| `Customer.Name`                       | Texto  | 255     | Sim         | Nome do comprador                                                                                                        |
+| `Customer.Identity`                   | Texto  | 14      | Sim         | Número do RG, CPF ou CNPJ do Cliente                                                                                     |
+| `Customer.IdentityType`               | Texto  | 255     | Sim         | Tipo de documento de identificação do comprador (CPF ou CNPJ)                                                            |
+| `Customer.Email`                      | Texto  | 255     | Sim         | Email do comprador                                                                                                       |
+| `Customer.IpAddress`                  | Texto  | 255     | Sim         | Ip do comprador                                                                                                          |
+| `Customer.Address.Street`             | Texto  | 255     | Não         | Endereço de contato do comprador                                                                                         |
+| `Customer.Address.Number`             | Texto  | 15      | Não         | Número endereço de contato do comprador                                                                                  |
+| `Customer.Address.Complement`         | Texto  | 50      | Não         | Complemento do endereço de contato do Comprador                                                                          |
+| `Customer.Address.ZipCode`            | Texto  | 9       | Sim         | CEP do endereço de contato do comprador                                                                                  |
+| `Customer.Address.City`               | Texto  | 50      | Não         | Cidade do endereço de contato do comprador                                                                               |
+| `Customer.Address.State`              | Texto  | 2       | Não         | Estado do endereço de contato do comprador                                                                               |
+| `Customer.Address.Country`            | Texto  | 35      | Não         | Pais do endereço de contato do comprador                                                                                 |
+| `Customer.Address.District`           | Texto  | 50      | Não         | Bairro do Comprador                                                                                                      |
+| `Customer.DeliveryAddress.Street`     | Texto  | 255     | Não         | Endereço do comprador                                                                                                    |
+| `Customer.DeliveryAddress.Number`     | Texto  | 15      | Não         | Número do endereço de entrega do pedido                                                                                  |
+| `Customer.DeliveryAddress.Complement` | Texto  | 50      | Não         | Complemento do endereço de entrega do pedido                                                                             |
+| `Customer.DeliveryAddress.ZipCode`    | Texto  | 9       | Sim         | CEP do endereço de entrega do pedido                                                                                     |
+| `Customer.DeliveryAddress.City`       | Texto  | 50      | Não         | Cidade do endereço de entrega do pedido                                                                                  |
+| `Customer.DeliveryAddress.State`      | Texto  | 2       | Não         | Estado do endereço de entrega do pedido                                                                                  |
+| `Customer.DeliveryAddress.Country`    | Texto  | 35      | Não         | Pais do endereço de entrega do pedido                                                                                    |
+| `Customer.DeliveryAddress.District`   | Texto  | 50      | Não         | Bairro do Comprador                                                                                                      |
+| `Payment.Provider`                    | Texto  | 15      | Sim         | Nome da provedora de Meio de Pagamento                                                                                   |
+| `Payment.Type`                        | Texto  | 100     | Sim         | Tipo do Meio de Pagamento                                                                                                |
+| `Payment.Amount`                      | Número | 15      | Sim         | Valor do Pedido (ser enviado em centavos)                                                                                |
+| `Payment.Installments`                | Número | 2       | Sim         | Número de Parcelas                                                                                                       |
+| `CreditCard.CardNumber`               | Texto  | 16      | Sim         | Número do Cartão do comprador                                                                                            |
+| `CreditCard.Holder`                   | Texto  | 25      | Sim         | Nome do Comprador impresso no cartão                                                                                     |
+| `CreditCard.ExpirationDate`           | Texto  | 7       | Sim         | Data de validade impresso no cartão, no formato MM/AAAA                                                                  |
+| `CreditCard.SecurityCode`             | Texto  | 4       | Sim         | Código de segurança impresso no verso do cartão                                                                          |
+| `CreditCard.Brand`                    | Texto  | 10      | Sim         | Bandeira do cartão                                                                                                       |
 
 ### Resposta
 
@@ -310,13 +310,13 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|-----------|---------|----|-------|-------|
-|`VelocityAnalysis.Id`|Identificador da análise efetuada|GUID|36|
-|`VelocityAnalysis.ResultMessage`|Accept ou Reject|Texto|25|
-|`VelocityAnalysis.Score`|100|Número|10|
-|`VelocityAnalysis.RejectReasons.RuleId`|Código da Regra que rejeitou|Número|10|
-|`VelocityAnalysis.RejectReasons.Message`|Descrição da Regra que rejeitou|Texto|512|
+| Propriedade                              | Descrição                         | Tipo   | Tamanho |
+|------------------------------------------|-----------------------------------|--------|---------|
+| `VelocityAnalysis.Id`                    | Identificador da análise efetuada | GUID   | 36      |
+| `VelocityAnalysis.ResultMessage`         | Accept ou Reject                  | Texto  | 25      |
+| `VelocityAnalysis.Score`                 | 100                               | Número | 10      |
+| `VelocityAnalysis.RejectReasons.RuleId`  | Código da Regra que rejeitou      | Número | 10      |
+| `VelocityAnalysis.RejectReasons.Message` | Descrição da Regra que rejeitou   | Texto  | 512     |
 
 
 
