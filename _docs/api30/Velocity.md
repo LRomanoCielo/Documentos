@@ -5,14 +5,41 @@ order: 6
 ---
 ### O que é Velocity
 
-O Velocity é um tipo de mecanismo de prevenção às tentativas de fraude, que analisa especificamente o conceito de "velocidade X dados transacionais". Ele analisa a frequência que determinados dados seão sutilizados em transações de um determinado lojista. A ferramnete analisa dados chamados de "Elementos de rastreabilidade" tais como:
+O Velocity é um tipo de mecanismo de prevenção às tentativas de fraude, que analisa especificamente o conceito de "velocidade X dados transacionais". 
+Ela analisa a frequência que determinados dados são utilizados e se esse dados estão inscritos em uma lista de comportamento ações de segurança.
 
+
+O Velocity oferece 4 tipos de funcionalidades para validar dados transacionais:
+
+
+
+| Funcionalidade                   | Descrição                                                                                                                                          |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Regras de segurança velocity** | O Lojista defini um grupo de regras de segurança que vão avaliar se determinados dados transacionais se repetem em um intervalo de tempo suspeito  |
+| **Quarentena**                   | XXXXXXXXXXXXXXXX                                                                                                                                   |
+| **BlackList**                    | Criação de uma lista de dados que ao serem identificados impedem a transação de ser executada, evitando a criaçção de uma transação fraudulenta    |
+| **Whitelist**                    | Criação de uma lista de dados que ao serem identificados permitem que a transação de seja executada, mesmo que existam regras de segurança em ação |
+
+
+
+
+
+
+
+
+A ferramnete analisa dados chamados de "Elementos de rastreabilidade" tais como:
 * Número do Cartão
 * CPF
 * CEP de entrega
 
-A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja pela equipe de Suporte Cielo Ecommer. 
 
+
+
+
+
+
+
+A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja pela equipe de Suporte Cielo Ecommer. 
 
 
 * Auxiliar na detecção de suspeitas de fraude. 
