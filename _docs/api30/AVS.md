@@ -148,14 +148,14 @@ Response: **AVS**
 
 Conteudo do Response
 
-| Paramêtro      | Descrição                                       | Tipo    | Tamanho |
-|----------------|-------------------------------------------------|---------|---------|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | Não         |
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      | Não         |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      | Não         |
+| Paramêtro      | Descrição                                       | Tipo  | Tamanho |
+|----------------|-------------------------------------------------|-------|---------|
+| Avs.Cpf        | CPF do portador                                 | texto | 11      | 
+| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | 
+| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      |
+| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | 
+| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      |
+| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      |
 | AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
 | AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
 
