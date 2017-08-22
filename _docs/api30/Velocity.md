@@ -1,9 +1,9 @@
 ---
-title: AVS
+title: Velocity
 category: API CIELO ECOMMERCE
-order: 5
+order: 6
 ---
-### O QUE É O AVS
+### O QUE É O Velocity
 
 O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
 Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
