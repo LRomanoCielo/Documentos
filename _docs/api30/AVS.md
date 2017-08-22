@@ -149,7 +149,7 @@ Response: **AVS**
 Conteudo do Response
 
 | Paramêtro      | Descrição                                       | Tipo  | Tamanho |
-|----------------|-------------------------------------------------|-------|---------|
+|----------------|-------------------------------------------------|-------|:-------:|
 | Avs.Cpf        | CPF do portador                                 | texto | 11      | 
 | Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | 
 | Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      |
