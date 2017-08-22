@@ -11,11 +11,14 @@ Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análi
 
 ### Integração
 
-Para realizar uma transação utilizando o **AVS**, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce,criando uma  transação que contenha o nó **AVS** dentro do nó 
+Para realizar uma transação utilizando o **AVS**, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce,criando uma  transação que contenha o nó **AVS** dentro do nó `Payment.CreditCard`.
+
+Vale Destacar que o AVS deve ser utilizado valendo-se das regras abaixo:
+
 
 **Regras do AVS**
 
-* Disponível apenas para as bandeiras Visa, Mastercard e AmEx.
+* Disponível apenas para as bandeiras **Visa, Mastercard e Amex**.
 * Produtos permitidos: somente crédito.
 * O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
 * Cada um deles pode ter os seguintes valores: 
