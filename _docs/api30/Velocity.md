@@ -68,7 +68,7 @@ Essas variaveis são analisadas seguindo a seguinte formula:
 
 **Regra** = Máximo de 5 hits de cartão em 12 hora(s) 
  
-> Com isso, o Velocity executa a seguinte comparação:
+> **Com isso, o Velocity executa a seguinte comparação:**
 Ao receber a 6ª transação com o mesmo número de cartão (ER) das outras 5 anteriores, a regra acima ao ser executada e detectar que a quantidade (Q) excedeu as 5 permitidas no período (P) entre a data da primeira transação e a data da 6ª recebida, a mesma terá o **status de rejeitada**, o cartão irá para quarentena e a resposta terá o conteúdo de que a transação foi bloqueada devido a regra. 
 
 
