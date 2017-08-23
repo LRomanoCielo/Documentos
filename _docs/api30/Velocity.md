@@ -31,8 +31,6 @@ A funcionalidade deve ser contratada à parte, e posteriormente habilitada em su
 
 ## Criando Regras de segurança Velocity 
 
-O Velocity funciona analisando dados enviados na integração padrão da API Cielo Ecommerce. Não é necessario incluir nenhuma nós adicional a integração da loja.
-
 Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e que as regras seja definidas sobre os "Elementos de rastreabilidade"
 
 "Elementos de rastreabilidade" são:
@@ -72,43 +70,14 @@ Essas variaveis são analisadas seguindo a seguinte formula:
 Ao receber a 6ª transação com o mesmo número de cartão (ER) das outras 5 anteriores, a regra acima ao ser executada e detectar que a quantidade (Q) excedeu as 5 permitidas no período (P) entre a data da primeira transação e a data da 6ª recebida, a mesma terá o **status de rejeitada**, o cartão irá para quarentena e a resposta terá o conteúdo de que a transação foi bloqueada devido a regra. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Transação com Velocity 
 
+O Velocity funciona analisando dados enviados na integração padrão da API Cielo Ecommerce. Não é necessario incluir nenhuma nós adicional a integração da loja para a criação da venda, mas será necessario alterar a forma como os dados são recebidos response.
 
 Quando o Velocity está ativo, a resposta da transação trará um nó específico chamado "Velocity", com os detalhes da análise.
 
-No caso da rejeição pela regra de Velocity, o ProviderReasonCode será BP171 - Rejected by fraud risk (velocity, com ReasonCode 16 - AbortedByFraud 
-
 
 Dados dos retornados pelo Velocity
-
-
 
 | Propriedade                              | Descrição                         | Tipo   | Tamanho |
 |------------------------------------------|-----------------------------------|--------|---------|
