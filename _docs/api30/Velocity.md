@@ -39,16 +39,16 @@ Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e 
 
 
 | **Elementos de Rastreabilidade**          |
-|-------------------------------------------|
+|:-----------------------------------------:|
 | Nome do portador do cartão de crédito     |
 | Número do cartão de crédito               |
 | 12 primeiros dígitos do cartão de crédito |
-| Documento do comprador                    |
-| E-mail do comprador                       |
-| IP do comprador                           |
 | CEP do endereço de entrega                |
 | CEP do endereço de cobrança               |
+| Documento do comprador                    |
+| E-mail do comprador                       |
 | Número do pedido                          |
+| IP do comprador                           |
 
 
 A análise ocorre em cima de cada elemento de rastreabilidade (ER), contando quantas vezes (Q) o elemento foi identificado dentro de um determinado período (P)
