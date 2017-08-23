@@ -170,14 +170,14 @@ Dados dos retornados pelo Velocity
 
 A Quarentena é  uma tabela que armazena os valores por tipo de elementos de rastreabilidade com um determinado tempo de expiração.
 
-Ao cadastrar uma regra é possível especificar quanto tempo o valor de um determinado elemento de rastreabilidade irá ser levado em consideração nas próximas análises, ou seja, se o cliente quiser identificar a quantidade de vezes que o mesmo número de cartão se repetiu para um período de 12 horas dentro de um intervalo de 2 dias, não será necessário o Velocity Check realizar esta contagem retroativa agrupando por período. Neste cenário por exemplo, a aplicação teria que realizar a contagem para os seguintes intervalos: 
+Ao cadastrar uma regra é possível especificar quanto tempo o valor de um determinado elemento de rastreabilidade irá ser levado em consideração nas próximas análises, ou seja, se o cliente quiser identificar a quantidade de vezes que o mesmo número de cartão se repetiu para um período de 12 horas dentro de um intervalo de 2 dias, não será necessário o Velocity  realizar esta contagem retroativa agrupando por período. Neste cenário por exemplo, a aplicação teria que realizar a contagem para os seguintes intervalos: 
 
 * D-2 = 0h as 12h 
 * D-2 = 12h as 0h 
 * D-1 = 0h as 12h 
 * D-1 = 12h as 0h 
 
-
+Com a quarentena, a aplicação não irá realizar essa contagem retroativa por período, pois ao realizar uma análise, a mesma verifica se existe o valor do elemento de rastreabilidade em quarentena. Por exemplo: para a regra acima, o tempo de expiração se definido em 2 dias, a regra será analisada apenas para o período já configurado, ou seja, 12 horas para traz e irá verificar durante 2 dias se número do cartão se encontra em quarentena. 
 
 
 ## Blacklist
