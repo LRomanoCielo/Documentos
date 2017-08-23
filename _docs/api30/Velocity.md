@@ -40,11 +40,11 @@ Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e 
 
 | **Elementos de Rastreabilidade**          |
 |:-----------------------------------------:|
-| Nome do portador do cartão de crédito     |
-| Número do cartão de crédito               |
 | 12 primeiros dígitos do cartão de crédito |
-| CEP do endereço de entrega                |
+| Nome do portador do cartão de crédito     |
 | CEP do endereço de cobrança               |
+| Número do cartão de crédito               |
+| CEP do endereço de entrega                |
 | Documento do comprador                    |
 | E-mail do comprador                       |
 | Número do pedido                          |
