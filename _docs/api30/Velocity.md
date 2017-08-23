@@ -239,10 +239,20 @@ Dados dos retornados pelo Velocity
 ```
 
 
+## Quarentena 
 
 
 
 
+
+
+## Blacklist
+
+
+
+
+
+## Whitelist
 
 
 
