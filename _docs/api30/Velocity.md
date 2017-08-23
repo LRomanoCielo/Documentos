@@ -18,8 +18,29 @@ O Velocity oferece 4 tipos de funcionalidades para validar dados transacionais:
 | **BlackList**                    | Criação de uma lista de dados que ao serem identificados impedem a transação de ser executada, evitando a criação de uma transação fraudulenta     |
 | **Whitelist**                    | Criação de uma lista de dados que ao serem identificados permitem que a transação de seja executada, mesmo que existam regras de segurança em ação |
 
+As principais funções do Velocity são:
 
-O Velocity funciona analisando dados enviados na integração padrão da API Cielo Ecommerce.
+* Auxiliar na detecção de elementos suspeitos de fraude. 
+* Fonte de dados para bloquear ataques em rajada (testes de cartão, por exemplo), bem como avaliações de comportamentos suspeitos de compra. 
+* Cálculos baseados em análise de velocidade de elementos rastreáveis e a incidência dos mesmos em determinados intervalos de tempo
+
+
+
+A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja pela equipe de Suporte Cielo Ecommer. 
+
+
+
+
+
+
+
+
+## Criando Regras de segurança Velocity 
+
+
+
+
+O Velocity funciona analisando dados enviados na integração padrão da API Cielo Ecommerce. Não é necessario incluir
 
 
 
@@ -37,13 +58,6 @@ A ferramnete analisa dados chamados de "Elementos de rastreabilidade" tais como:
 
 
 
-
-A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja pela equipe de Suporte Cielo Ecommer. 
-
-
-* Auxiliar na detecção de suspeitas de fraude. 
-* Aliada para bloquear ataques em rajada (testes de cartão, por exemplo), bem como avaliações de comportamentos suspeitos de compra. 
-* Cálculos baseados em análise de velocidade de elementos rastreáveis e a incidência dos mesmos em determinados intervalos de tempo
 
 
 
