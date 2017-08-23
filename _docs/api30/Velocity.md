@@ -5,8 +5,8 @@ order: 6
 ---
 ### O que é Velocity
 
-O Velocity é um tipo de mecanismo de prevenção às tentativas de fraude, que analisa especificamente o conceito de "velocidade X dados transacionais". 
-Ela analisa a frequência que determinados dados são utilizados e se esse dados estão inscritos em uma lista de comportamento ações de segurança.
+O Velocity é um tipo de mecanismo de prevenção à tentativas de fraude, que analisa especificamente o conceito de "velocidade X dados transacionais". 
+Ela analisa a frequência que determinados dados são utilizados e se esse dados estão inscritos em uma lista de comportamentos passiveis de ações de segurança.
 
 
 O Velocity oferece 4 tipos de funcionalidades para validar dados transacionais:
@@ -19,7 +19,7 @@ O Velocity oferece 4 tipos de funcionalidades para validar dados transacionais:
 | **Whitelist**                    | Criação de uma lista de dados que ao serem identificados permitem que a transação de seja executada, mesmo que existam regras de segurança em ação |
 
 
-O Velocity funciona
+O Velocity funciona analisando dados enviados na integração padrão da API Cielo Ecommerce.
 
 
 
