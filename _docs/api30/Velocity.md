@@ -38,7 +38,7 @@ Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e 
 "Elementos de rastreabilidade" são:
 
 
-| Elementos de Rastreabilidade              |
+| **Elementos de Rastreabilidade**          |
 |-------------------------------------------|
 | Nome do portador do cartão de crédito     |
 | Número do cartão de crédito               |
@@ -51,20 +51,25 @@ Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e 
 | Número do pedido                          |
 
 
-A análise ocorre em cima de cada elemento de rastreabilidade (ER), contando quantas vezes (Q) o mesmo passou na Braspag dentro de um determinado período (P)? 
+A análise ocorre em cima de cada elemento de rastreabilidade (ER), contando quantas vezes (Q) o elemento foi identificado dentro de um determinado período (P)
  
-ER = Elemento de Rastreabilidade Q = Quantidade 
+| Variavel | Descrição                   |
+|----------|-----------------------------|
+| **ER**   | Elemento de Rastreabilidade |
+| **Q**    | Quantidade                  |
+| **P**    | Período                     |
 
+
+Essas variaveis são analisadas seguindo a seguinte formula:
+
+* **ER** = Número do cartão de crédito
+* **Q** = Máximo de 5 hits 
+* **P** = 12 horas 
+
+**Regra** = Máximo de 5 hits de cartão em 12 hora(s) 
  
- 
-BRASPAG.COM.BR 
-P = Período 
- 
-Logo, teríamos a seguinte regra, onde: 
- 
-ER = Número do cartão de crédito Q = Máximo de 5 hits P = 12 horas Regra = Máximo de 5 hits de cartão em 12 hora(s) 
- 
-Com isso, o Velocity Check ao receber a 6ª transação com o mesmo número de cartão (ER) das outras 5 anteriores, a regra acima ao ser executada e detectar que a quantidade (Q) excedeu as 5 permitidas no período (P) entre a data da primeira transação e a data da 6ª recebida, a mesma terá o status de rejeitada, o cartão irá para quarentena e a resposta terá o conteúdo de que a transação foi bloqueada devido a regra. 
+> Com isso, o Velocity executa a seguinte comparação:
+Ao receber a 6ª transação com o mesmo número de cartão (ER) das outras 5 anteriores, a regra acima ao ser executada e detectar que a quantidade (Q) excedeu as 5 permitidas no período (P) entre a data da primeira transação e a data da 6ª recebida, a mesma terá o **status de rejeitada**, o cartão irá para quarentena e a resposta terá o conteúdo de que a transação foi bloqueada devido a regra. 
 
 
 
