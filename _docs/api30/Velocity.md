@@ -231,9 +231,20 @@ Máximo de 7 Hits de Documentos em 7 dias
 
 ## Blacklist
 
-A BlackList é uma tabela oferecida pelo Velocity onde es armazena valores por tipo de `elementos de rastreabilidades`, podendo ser
-blacklist por loja ou global a aplicação.
+A BlackList é uma tabela oferecida pelo Velocity onde se armazena valores por tipo de `elementos de rastreabilidades` que o lojista deseja **bloquear** automaticamente.
 
+Em transação a ser analisada, caso  `elementos de rastreabilidades`/Documento que esteja na blacklist, a mesma será bloqueada, independente de existir
+regra cadastra para este tipo de elemento de rastreabilidade ou não, e terá o retorno informado que a mesma foi **bloqueada pela blacklist**, ou seja, a transação não será enviada a Autorização
+
+
+### Como configurar uma Blacklist
+
+ A configuração da Blacklist é realizada via o HD Cielo. Basta solicitar a liberação da funcionalidade no Velocity informando os dados abaixo:
+ 
+* Qual `elemento de rastreabilidade` deverá ser bloqueado / EX: Identidade
+* Informar o valor do `elemento de rastreabilidade`a ser bloqueado /EX: Identidade = 21.435.787-95
+
+É possivel realizar varios cadastros para diferentes `elementos de rastreabilidades`. Caso eles sejam reconhecidos no contrato, a transação não será enviada a Autorização
 
 
 
