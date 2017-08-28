@@ -33,7 +33,7 @@ A funcionalidade deve ser contratada à parte, e posteriormente habilitada em su
 
 Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e que as regras seja definidas sobre os "Elementos de rastreabilidade"
 
-"Elementos de rastreabilidade" são:
+`Elementos de rastreabilidade` são:
 
 
 | **Elementos de Rastreabilidade**          |
@@ -49,7 +49,7 @@ Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e 
 | IP do comprador                           |
 
 
-A análise ocorre em cima de cada elemento de rastreabilidade (ER), contando quantas vezes (Q) o elemento foi identificado dentro de um determinado período (P)
+A análise ocorre em cima de cada `elemento de rastreabilidade` (ER), contando quantas vezes (Q) o elemento foi identificado dentro de um determinado período (P)
  
 | Variavel | Descrição                   |
 |----------|-----------------------------|
