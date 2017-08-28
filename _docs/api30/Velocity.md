@@ -278,7 +278,7 @@ regra cadastra para este tipo de elemento de rastreabilidade ou não, sendo envi
 
 | Versão | Data       | Descrição                                                                                                      |
 |:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 22/08/2017 | ✓ Versão inicial                                                                                               |
+| 1.0    | 28/08/2017 | ✓ Versão inicial                                                                                               |
 
 
 
