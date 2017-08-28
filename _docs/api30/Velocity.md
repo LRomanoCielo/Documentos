@@ -223,8 +223,16 @@ Máximo de 5 Hits de Documentos em 12 horas
 Máximo de 7 Hits de Cartão em 7 dias
 Máximo de 7 Hits de Documentos em 7 dias
 
+
+
+
+
+
+
 ## Blacklist
 
+A BlackList é uma tabela oferecida pelo Velocity onde es armazena valores por tipo de `elementos de rastreabilidades`, podendo ser
+blacklist por loja ou global a aplicação.
 
 
 
