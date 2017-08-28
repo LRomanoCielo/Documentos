@@ -248,9 +248,26 @@ regra cadastra para este tipo de elemento de rastreabilidade ou não, e terá o 
 
 
 
+
+
+
 ## Whitelist
 
 
+A Whitelist é uma tabela oferecida pelo Velocity onde se armazena valores por tipo de `elementos de rastreabilidades` que o lojista deseja **liberar** automaticamente das regras de segurança do velocity.
+
+Em transação a ser analisada, caso  `elementos de rastreabilidades`/Documento que esteja na Whitelist, a mesma será não será analisada pelo velocity, independente de existir
+regra cadastra para este tipo de elemento de rastreabilidade ou não, e terá o retorno informado que a mesma foi **bloqueada pela blacklist**, ou seja, a transação não será enviada a Autorização
+
+
+### Como configurar uma Whitelist
+
+ A configuração da Whitelist é realizada via o HD Cielo. Basta solicitar a liberação da funcionalidade no Velocity informando os dados abaixo:
+ 
+* Qual `elemento de rastreabilidade` deverá ser bloqueado / EX: Identidade
+* Informar o valor do `elemento de rastreabilidade`a ser bloqueado /EX: Identidade = 21.435.787-95
+
+É possivel realizar varios cadastros para diferentes `elementos de rastreabilidades`. Caso eles sejam reconhecidos no contrato, a transação não será enviada a Autorização
 
 
 
