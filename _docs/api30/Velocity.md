@@ -157,7 +157,7 @@ Dados dos retornados pelo Velocity
       {
         "Method": "GET",
         "Rel": "self",
-        "Href": "https://apiquerysandbox.braspag.com.br/v2/sales/2d5e0463-47be-4964-b8ac-622a16a2b6c4"
+        "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/2d5e0463-47be-4964-b8ac-622a16a2b6c4"
       }
     ]
   }
@@ -202,14 +202,12 @@ ea7549c148b9",
    {  
       "Method":"GET",
       "Rel":"self",
-      "Href":"https://velocity.braspag.com.br/Analysis/a221f50c-14b4-483d-bfe3-ea7549c148b9"
+      "Href":"https://apiquery.cieloecommerce.cielo.com.br/Analysis/a221f50c-14b4-483d-bfe3-ea7549c148b9"
    }
 ]
 }
 
 ```
-
-
 
 
 ### Como configurar uma Quarentena 
