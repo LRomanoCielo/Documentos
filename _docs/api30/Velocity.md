@@ -212,8 +212,16 @@ ea7549c148b9",
 
 ### Como configurar uma Quarentena 
 
+ A configuração da Quarentena é realizada via o HD Cielo. Basta solicitar a liberação da funcionalidade Velocity informando os dados abaixo:
+ 
+* Valor
+* Data da expiração da quarentena
+* Regras:
 
-
+Máximo de 5 Hits de Cartão em 12 horas
+Máximo de 5 Hits de Documentos em 12 horas
+Máximo de 7 Hits de Cartão em 7 dias
+Máximo de 7 Hits de Documentos em 7 dias
 
 ## Blacklist
 
