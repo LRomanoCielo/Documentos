@@ -31,7 +31,7 @@ A funcionalidade deve ser contratada à parte, e posteriormente habilitada em su
 
 ## Criando Regras de segurança Velocity 
 
-Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e que as regras seja definidas sobre os "Elementos de rastreabilidade"
+Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e que as regras seja definidas sobre os `Elementos de rastreabilidade`
 
 `Elementos de rastreabilidade` são:
 
