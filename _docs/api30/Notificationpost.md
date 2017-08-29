@@ -15,8 +15,8 @@ The passive notification events are:
 | Credit Card | Capture |
 | Credit Card | Cancellation |
 | Credit Card | Contact Us |
-| Ticket | Conciliation |
-| Ticket | Manual Cancellation |
+| Ticket/Boleto/Bank Slip | Conciliation |
+| Ticket/Boleto/Bank Slip | Manual Conciliation |
 | Electronic transfer | Confirmed |
 
 
