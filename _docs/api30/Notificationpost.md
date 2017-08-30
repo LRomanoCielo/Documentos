@@ -10,15 +10,19 @@ The Notification Post is sent based on a selection of events to be made in the C
 
 The passive notification events are:
 
-| Payment Method | Event |
-| -------------- | ---------- |
-| Credit Card | Capture |
-| Credit Card | Cancellation |
-| Credit Card | Contact Us |
-| Ticket/Boleto/Bank Slip | Conciliation |
-| Ticket/Boleto/Bank Slip | Manual Conciliation |
-| Electronic transfer | Confirmed |
-
+| Payment Method          | Event                                                                    |
+|-------------------------|--------------------------------------------------------------------------|
+| Credit Card             | Capture                                                                  |
+| Credit Card             | Cancellation                                                             |
+| Credit Card             | Contact Us                                                               |
+| Ticket/Boleto/Bank Slip | Conciliation                                                             |
+| Ticket/Boleto/Bank Slip | Manual void                                                              |
+| Electronic transfer     | Confirmed                                                                |
+| Recurrence              | Disabled after reaching maximum number of attempts (Denied transactions) |
+| Recurrence              | Waiting for ticket/Boleto conciliation                                   |
+| Recurrence              | Restart - After payment of the ticket/Boleto                             |
+| Recurrence              | Finished - "enddate" reached                                             |
+| Recurrence              | Deactivation                                                             |
 
 
 * **Debit Card**:  We do not notify Debit Card transactions. We suggest creating a RETURN URL, where the buyer will be sent if the transaction is completed inside the bank environment. When this URL is actived, we suggest that a `GET` should be executed, updating the transaction Status 
