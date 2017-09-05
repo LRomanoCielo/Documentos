@@ -1,6 +1,6 @@
 ---
 title: Zero Auth
-category: API CIELO ECOMMERCE
+category: API CIELO ECOMMERCE (English)
 order: 2
 ---
 ### O QUE É O ZERO AUTH?
