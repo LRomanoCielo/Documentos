@@ -80,7 +80,7 @@ Below is the list of Requisition fields:
 
 | Field| Description | Type | Size | Required |
 | ---------------- | -------------------------------- -------------------------------------------------- ------------------------- | --------- | - ------- |: -----------: |
-| CardType | Defines the type of card used: <br> <br> * CreditCard * <br> * DebitCard * <br> <br> If not sent, CreditCard as default | Text | 255 | No |
+| CardType | Defines the type of card used: <br> <br> *CreditCard* <br> *DebitCard* <br> <br> If not sent, CreditCard as default | Text | 255 | No |
 | CardNumber | Buyer Card Number | Text | 16 | sim |
 | Holder | Buyer's name printed on the card. | Text | 25 | not |
 | ExpirationDate |  Expiration Date printed on the card. | Text | 7 | sim |
