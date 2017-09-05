@@ -196,7 +196,7 @@ It should be used for sales analysis, assisting in the decision to capture the t
 
 * It is necessary to enable the AVS option on the Cielo Ecommerce API system. To enable the AVS option, contact Cielo eCommerce Support 
 
-18/5000
+
 **POST - WITH AVS**
 
 ```
