@@ -1,6 +1,6 @@
 ---
 title: Notification Post
-category: API CIELO ECOMMERCE
+category: API CIELO ECOMMERCE (English)
 order: 6
 ---
 
