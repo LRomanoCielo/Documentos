@@ -243,19 +243,14 @@ Response Content
 
 
 
-## Histórico de Atualizações:
+## Update History:
 
-| Versão | Data       | Descrição                                                                                                      |
-|:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 16/09/2016 | ✓ Versão inicial                                                                                               |
-| 1.1    | 25/10/2016 | ✓ Atualização de parâmetros                                                                                    |
-| 1.2    | 05/01/2017 | ✓ Inclusão da tabela de parâmetros obrigatórios <br> ✓ Inclusão do contrato sem AVS <br>✓ Inclusão do contrato com Cardtoken 
-| 1.3    | 15/05/2017 | ✓ Complemento da tabela com os campos do contrato de requisição <br> ✓ Alteração da tabela com os campos do contrato de resposta 
-| 1.4    | 31/05/2017 | ✓ Adicionado o tópico de bandeiras suportadas <br> ✓ Indicação que tokens 1.5 não são suportados <br>✓ Resposta para cartões com bandeira não suportada <br>✓ Resposta para requisições que resultem em erro e consequentemente na não validação do cartão.<br> ✓ Atualização do tamanho dos campos do contrato de requisição  |
-| 1.5    | 07/06/2017 | ✓ Adicionada URL de produção <br> ✓ Adicionado código de retorno 00 para consultas que retornem cartões válidos.|
-| 1.6    | 03/07/2017 | ✓ Adicionada retorno do AVS <br> ✓ Adicionado regras do AVS                                                    |
-
-
-
-
-
+| Version | Date | Description |
+|-|-|-|
+| 1.0 | 16/09/2016 | ✓ Initial release |
+| 1.1 | 10/25/2016 | ✓ Fields update |
+| 1.2 | 05/01/2017 | ✓ Inclusion of the mandatory parameter table <br> ✓ Inclusion of the contract without AVS <br> ✓ Inclusion of the contract with Cardtoken
+| 1.3 | 05/15/2017 | ✓ Complement of the table with the fields of the requisition contract <br> ✓ Alteration of the table with the fields of the contract of response
+| 1.4 | 05/31/2017 | ✓ Added the supported Card Brands topic <br> ✓ Indication that tokens 1.5 are not supported <br> ✓ Response to cards with unsupported  Brand<br> ✓ Response to requests that result in an error and consequently to non-validation of the card. > ✓ Update of the size of the fields of the requisition contract |
+| 1.5 | 06/07/2017 | ✓ Added production URL <br> ✓ Added return code 00 for queries that return valid cards.|
+| 1.6 | 07/03/2017 | ✓ Added AVS Return <br> ✓ Added AVS Rules |
