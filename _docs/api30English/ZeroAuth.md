@@ -235,7 +235,7 @@ Response Content
 
 | Field         | Description                                                               | Type    | Size       |
 |---------------|---------------------------------------------------------------------------|---------|------------|
-| Valid         | Card Status: <br> **True** - Valid Card <BR> **False** - Invalid Card | Boolean | ---        |
+| Valid         | Card Status: <br> **True** - Valid Card <BR> **False** - Invalid Card     | Boolean | ---        |
 | ReturnCode    | Return code                                                               | text    | 2          |
 | ReturnMessage | Return message                                                            | text    | 255        |
 | AvsCepReturnCode | Status of the Zipcode (CEP) sent: <br> <br> **C** - Check  <br> **N** - Do not check out <br>**I** - Not available <br>**T** - Temporarily out of stock <br> **X** - Service not supported for this Flag <br> **E** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
