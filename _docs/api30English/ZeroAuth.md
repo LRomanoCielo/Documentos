@@ -124,7 +124,7 @@ Fields returned after validation:
 
 | Field         | Description                                                               | Type    | Size |
 |---------------|---------------------------------------------------------------------------|---------|------|
-| Valid         | Card Status: <br> ** True ** - Valid Card <BR> ** False ** - Invalid Card | Boolean | ---  |
+| Valid         | Card Status: <br> **True** - Valid Card <BR> **False** - Invalid Card | Boolean | ---  |
 | ReturnCode    | Return code                                                               | text    | 2    |
 | ReturnMessage | Return message                                                            | text    | 255  |
 
