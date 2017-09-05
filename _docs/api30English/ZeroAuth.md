@@ -93,7 +93,7 @@ Below is the list of Requisition fields:
 
 ## Request
 
-**STANDARD **
+**STANDARD**
 
 ```
 {
@@ -219,7 +219,7 @@ It should be used for sales analysis, assisting in the decision to capture the t
 }
 ```
 
-Response: ** POSITIVE - With AVS **
+Response: **POSITIVE - With AVS**
 
 ```
 {
