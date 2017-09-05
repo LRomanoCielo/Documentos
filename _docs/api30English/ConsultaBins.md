@@ -7,13 +7,13 @@ order: 1
 ### ** What is "BIN Query" **
 
 
-"** Bins Query **" is a ** credit or debit card ** search service that Cielo Ecommerce API merchants can use to validate if the card provided by the costumer is valid 
+**Bins Query** is a **credit or debit card** search service that Cielo Ecommerce API merchants can use to validate if the card provided by the costumer is valid 
 
 The "** Bins query" ** returns the following data about the card:
 
-* ** Cards Brand ** - Mastercard and Visa
-* ** Card Type: ** Credit, Debit or Multiple (Credit and Debit)
-* ** Card Nationality : ** foreign or national (Brazilian)
+* **Cards Brand:**  Mastercard and Visa
+* **Card Type:**  Credit, Debit or Multiple (Credit and Debit)
+* **Card Nationality:**  foreign or national (Brazilian)
 
 For more information on Cielo Ecommerce API (Sandbox and Production), please visit: <https://developercielo.github.io/Webservice-3.0/>
 
@@ -57,5 +57,5 @@ https://apiquerysandbox.cieloecommerce.cielo.com.br/1/cardBin/420020
 
 | Version | Date       | Description                    |
 |---------|------------|--------------------------------|
-| 1.0     | 19/09/2016 | Home                           |
+| 1.0     | 19/09/2016 | First version                  |
 | 1.1     | 02/14/2017 | Changing "Brand" to "Provider" |
