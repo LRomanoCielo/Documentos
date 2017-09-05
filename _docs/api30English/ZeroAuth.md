@@ -78,17 +78,16 @@ Each type of validation requires a different technical contract. They will resul
 Below is the list of Requisition fields:
 
 
-| Field| Description | Type | Size | Required |
-| ---------------- | -------------------------------- -------------------------------------------------- ------------------------- | --------- | - ------- |: -----------: |
-| CardType | Defines the type of card used: <br> <br> *CreditCard* <br> *DebitCard* <br> <br> If not sent, CreditCard as default | Text | 255 | No |
-| CardNumber | Buyer Card Number | Text | 16 | sim |
-| Holder | Buyer's name printed on the card. | Text | 25 | not |
-| ExpirationDate |  Expiration Date printed on the card. | Text | 7 | sim |
-| SecurityCode | Security code printed on the card. | Text | 4 | not |
-| SaveCard | Boolean that identifies whether the card will be saved to generate the CardToken. | Boolean | --- | No |
-| Brand | Card Flag: <br> <br> Visa and Master <br> | Text | 10 | not |
-| CardToken | Card Token 3.0 | GUID | 36 | Conditional |
-
+| Field              | Description                                                                                                         | Type    | Size |   Required  |
+|--------------------|---------------------------------------------------------------------------------------------------------------------|---------|------|:-----------:|
+| **CardType**       | Defines the type of card used: <br> <br> *CreditCard* <br> *DebitCard* <br> <br> If not sent, CreditCard as default | Text    | 255  |      No     |
+| **CardNumber**     | Buyer Card Number                                                                                                   | Text    | 16   |     sim     |
+| **Holder**         | Buyer's name printed on the card.                                                                                   | Text    | 25   |     not     |
+| **ExpirationDate** | Expiration Date printed on the card.                                                                                | Text    | 7    |     sim     |
+| **SecurityCode**   | Security code printed on the card.                                                                                  | Text    | 4    |     not     |
+| **SaveCard**       | Boolean that identifies whether the card will be saved to generate the CardToken.                                   | Boolean | ---  |      No     |
+| **Brand**          | Card Flag: <br> <br> Visa and Master <br>                                                                           | Text    | 10   |     not     |
+| **CardToken**      | Card Token 3.0                                                                                                      | GUID    | 36   | Conditional |
 
 
 ## Request
