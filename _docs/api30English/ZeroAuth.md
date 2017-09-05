@@ -233,13 +233,22 @@ Response: ** POSITIVE - With AVS **
 
 Response Content
 
-| Field| Description | Type | Contact Us |
-| ---------------------- | -------------------------- --------------------------------------------- | ---- ----- | --------- |
-| Valid | Card Status: <br> ** True ** - Valid Card <BR> ** False ** - Invalid Card | Boolean | --- |
-| ReturnCode | Return code | text | 2 |
-| ReturnMessage | Return message | text | 255 |
-| AvsCepReturnCode | Status of the Zipcode (CEP) sent: <br> <br> ** C ** - Check it out ** ** - ** Do not check out ** I ** - Not available ** ** T ** - Temporarily out of stock <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+| Field         | Description                                                               | Type    | Size       |
+|---------------|---------------------------------------------------------------------------|---------|------------|
+| Valid         | Card Status: <br> **True** - Valid Card <BR> **False** - Invalid Card | Boolean | ---        |
+| ReturnCode    | Return code                                                               | text    | 2          |
+| ReturnMessage | Return message                                                            | text    | 255        |
+| AvsCepReturnCode | Status of the Zipcode (CEP) sent: <br> <br> **C** - Checkt ** ** - ** Do not check out ** I ** - Not available ** ** T ** - Temporarily out of stock <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
 | AvsAddressReturnCode | Analysis of the address sent: <br> <br> ** ** - Check it out ** ** - ** Do not check out ** I ** - Not available ** ** T ** - <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+
+| Field         | Description                                                               | Type    | Size       |
+|---------------|---------------------------------------------------------------------------|---------|------------|
+| AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
+| AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
+
+
+
+
 
 
 
