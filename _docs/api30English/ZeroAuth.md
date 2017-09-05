@@ -3,95 +3,98 @@ title: Zero Auth
 category: API CIELO ECOMMERCE (English)
 order: 2
 ---
-### O QUE É O ZERO AUTH?
+### WHAT IS ZERO AUTH?
 
-O **Zero Auth** é uma ferramenta de validação de cartões da API Cielo. A validação permite que o lojista saiba se o cartão é valido ou não antes de enviar a transação para autorização, antecipando o motivo de uma provável não autorização..
+**Zero Auth** is the Cielo  Card Validation tool. It allows the merchant to know whether or not the card is valid before any bank authorization. It anticipates the reason for a possible non-authorization.
 
-O **Zero Auth** pode ser usado de 3 maneiras:
+The **Zero Auth** can be used in 3 ways:
 
-1. **Padrão** - Envio de um cartão padrão, sem tokenização ou analises adicionais
-2. **Com cartão Tokenizado** - Envio de um TOKEN 3.0 para analise
-3. **Com AVS** - Utilizando o AVS Cielo para validar o cartão
-
-
-É importante destacar que o Zero Auth **não retorna ou analisa** os seguintes itens:
-
-1. Limite de crédito do cartão
-2. Informações sobre o portador
-3. Não aciona a base bancaria (dispara SMS so portador)
+1. **Standard** - Sending a standard card without tokenization or additional analysis
+2. **With Tokenized Card** - Sending a TOKEN 3.0 for analysis
+3. **With AVS** - Using Cielos AVS to validate the card.
 
 
-O Zero Auth suporta as seguintes bandeiras:
+It is important to note that Zero Auth **does not return or analyzes** the following items:
+
+1. The credit card limits
+2. Information about the costumer
+3. Does not trigger any kind of bank response (like warnings SMS's to the costumer)
+
+
+Zero Auth supports the following creditcard brands:
 
 * Visa
 * MasterCard
 
 
-### Caso de uso
+### Use case
 
 
-Este é um exemplo de como usar o zero auth para melhorar sua conversão de vendas
+This is an example of how to use zero auth to improve your sales conversion
 
-O Zero Auth é uma ferramenta da Cielo que permite verificar se um cartão está valido para realizar uma compra antes que o pedido seja finalizado. Ele faz isso simulando uma autorização, mas sem afetar o limite de crédito ou alertar o portados do cartão sobre o teste.
+Zero Auth is a tool from Cielo that allows you to check if a card is valid to  purchase before the order is finalized. 
+It does this by simulating an authorization, but without affecting the credit limit or alerting the card holders about the test.
 
-Ela não informa o limite ou características do cartão ou portador, mas simula uma autorização Cielo, validando dados como:
+It does not inform the limit or characteristics of the card, but simulates a Cielo authorization, validating data such as:
 
-1. Se o cartão está valido junto ao banco emissor
-2. Se o cartão possui limite disponível
-3. Se o cartão funciona no Brasil
-4. Se o número do cartão está correto
-5. Se o CVV é valido
+1. If the card is valid with the issuing bank
+2. If the card has an available limit
+3. If the card works in Brazil
+4. If the card number is correct
+5. If the CVV is valid
 
-O Zero Auth também funciona com Cartões tokenizados na Api Cielo Ecommerce 
+Zero Auth also works with Card tokens created by the Cielo Ecommerce Api
 
-Veja um exemplo de uso: 
+Here's an example of usage:
 
-**Zero auth como validador de cartão**
+**Zero auth as card validator**
 
-Uma empresa de Streaming chamada FlixNet possui um serviço via assinatura, onde além de realizar uma recorrência, ela possui cartões salvos e recebe novas inscrições diariamente. 
-Todas essas etapas exigem que transações sejam realizadas para obter acesso a ferramenta, o que eleva o custo da FlixNet caso as transações não sejam autorizadas. 
+A Streaming company called FlixNet has a subscription service, where in addition to making a recurrence, it has saved cards and receives new subscriptions daily.
 
-Como ela poderia reduzir esse custo? Validando o cartão antes de envia-lo a autorizado.
+All of these steps require that a transaction to be performed so new users can get access to the company library of movies. This flow raises the cost of FlixNet if transactions are not authorized.
 
-A FlixNet usa o Zero Auth em 2 momento diferente:
+How could FlixNet reduce this cost? Validating the card before sending it to authorized.
 
-* **Cadastro**: é necessário incluir um cartão para ganhar 30 dias grátis no primeiro mês. 
-	
-O problema é que ao se encerrar esse período, se o cartão for invalido, o novo cadastro existe, mas não funciona, pois, o cartão salvo é invalido. A Flix Net resolveu esse problema testando o cartão com o Zero Auth no momento do cadastro, assim, ela já sabe se o cartão está valido e libera a criação da conta. Caso não o cartão não seja aceito, a FlixNet pode sugerir o uso de um outro cartão.
-	
-* **Recorrência**: todo mês, antes de realizar a cobrança da Assinatura, a Flixnet testa o cartão com o zero auth, assim sabendo se ele será autorizado ou não.  Isso ajuda o FlixNet a prever quais cartões serão negados, já acionando o assinante para atualização do cadastro antes do dia de pagamento.
+FlixNet uses Zero Auth at 2 different times:
 
+* **Registration**: "You must include a card to earn 30 free days in the first month".
 
+The problem is that at the end of this period, if the card is invalid, the new registered card exists, but it does not work, because the saved card is invalid. FlixNet solved this problem by testing the card with Zero Auth at registration, so it already knows if the card is valid and releases the account creation. If the card is not accepted, FlixNet may suggest the use of another card.
 
-
-### Integração
-
-Para realizar a consulta ao Zero Auth, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce, simulando uma transação. O `POST` deverá ser realizado nas seguintes URL: 
-
-> Sandbox: https://`apisandbox`.cieloecommerce.cielo.com.br/1/`zeroauth`
-
-> Produção: https://`api`.cieloecommerce.cielo.com.br/1/`zeroauth`
-
-Cada tipo de validação necessita de um contrato tecnico diferente. Eles resultarão em _responses diferenciados_.
-
-Abaixo, a listagem de campos da Requisição:
-
-| Paramêtro      | Descrição                                                                                                             | Tipo    | Tamanho | Obrigatório |
-|----------------|-----------------------------------------------------------------------------------------------------------------------|---------|---------|:-----------:|
-| CardType       | Define o tipo de cartão utilizados:<br><br>*CreditCard*<br>*DebitCard*<br><br>Se não enviado, CreditCard como default | Texto   | 255     | Não         |
-| CardNumber     | Número do Cartão do Comprador                                                                                         | Texto   | 16      | sim         |
-| Holder         | Nome do Comprador impresso no cartão.                                                                                 | Texto   | 25      | não         |
-| ExpirationDate | Data de e validade impresso no cartão.                                                                                | Texto   | 7       | sim         |
-| SecurityCode   | Código de segurança impresso no verso do cartão.                                                                      | Texto   | 4       | não         |
-| SaveCard       | Booleano que identifica se o cartão será salvo para gerar o CardToken.                                                | Boolean | ---     | Não         |
-| Brand          | Bandeira do cartão: <br><br>Visa<br>Master<br>| Texto   | 10      | não         |
-| CardToken      | Token do cartão na 3.0                                                                                                | GUID    | 36      | Condicional |
+* **Recurrence**: every month, before it charges their clients Subscription, Flixnet tests the card with zero auth, so knowing if it will be authorized or not. This helps FlixNet to predict which cards will be denied, already alerting the client to update the payment method to be used.
 
 
-## Requisição
+### Integration
+
+In order to use Zero Auth, the merchant must send a `POST` request to the Cielo Ecommerce API, simulating a transaction. 
+The `POST` must be done at the following URLs:
+
+> Sandbox: https: // `apisandbox`.cieloecommerce.cielo.com.br / 1 /` zeroauth`
+
+> Production: https: // `api`.cieloecommerce.cielo.com.br / 1 /` zeroauth`
+
+Each type of validation requires a different technical contract. They will result in differentiated responses.
+
+Below is the list of Requisition fields:
 
 
-Conteudo do **POST - PADRÃO**
+| Field| Description | Type | Size | Required |
+| ---------------- | -------------------------------- -------------------------------------------------- ------------------------- | --------- | - ------- |: -----------: |
+| CardType | Defines the type of card used: <br> <br> * CreditCard * <br> * DebitCard * <br> <br> If not sent, CreditCard as default | Text | 255 | No |
+| CardNumber | Buyer Card Number | Text | 16 | sim |
+| Holder | Buyer's name printed on the card. | Text | 25 | not |
+| ExpirationDate |  Expiration Date printed on the card. | Text | 7 | sim |
+| SecurityCode | Security code printed on the card. | Text | 4 | not |
+| SaveCard | Boolean that identifies whether the card will be saved to generate the CardToken. | Boolean | --- | No |
+| Brand | Card Flag: <br> <br> Visa and Master <br> | Text | 10 | not |
+| CardToken | Card Token 3.0 | GUID | 36 | Conditional |
+
+
+
+## Request
+
+**STANDARD **
+
 ```
 {
     "CardNumber":"1234123412341231",
@@ -102,8 +105,8 @@ Conteudo do **POST - PADRÃO**
     "Brand":"Visa"
 }
 ```
+**With Tokenized Card**
 
-Conteudo do **POST - COM TOKEN**
 ```
 {
   "CardToken":"23712c39-bb08-4030-86b3-490a223a8cc9",
@@ -112,23 +115,25 @@ Conteudo do **POST - COM TOKEN**
 }
 ```
 
-## Resposta
+## Response
 
-A resposta sempre retorna se o cartão pode ser autorizado no momento. Essa informação apenas significa que o _cartão está valido a transacionar_, mas não necessariamente indica que um determinado valor será autorizado.
+The response always returns if the card can be authorized at the moment. 
+This information only means that the card is able to be authorized, but does not necessarily indicate that a certain amount will be authorized.
 
-Abaixo os campos retornados após a validação:
+Fields returned after validation:
+
+| Field         | Description                                                               | Type    | Size |
+|---------------|---------------------------------------------------------------------------|---------|------|
+| Valid         | Card Status: <br> ** True ** - Valid Card <BR> ** False ** - Invalid Card | Boolean | ---  |
+| ReturnCode    | Return code                                                               | text    | 2    |
+| ReturnMessage | Return message                                                            | text    | 255  |
+
+> See more about Return Codes and Return Messages on https://developercielo.github.io/Webservice-3.0/english.html#sales-return-codes
+
+> The return code **85 represents success in Zero Auth**, the other codes are defined according to the documentation above .
 
 
-| Paramêtro     | Descrição                                                                       | Tipo    | Tamanho |
-|---------------|---------------------------------------------------------------------------------|---------|:-------:|
-| Valid         | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido | Boolean | ---     |
-| ReturnCode    | Código de retorno                                                               | texto   | 2       |
-| ReturnMessage | Mensagem de retorno                                                             | texto   | 255     |
-
-
-
-Response: **POSITIVA - Cartão Válido**
-
+Response: **POSITIVE - Valid Card**
 ```
 {
         "Valid": true,
@@ -137,26 +142,7 @@ Response: **POSITIVA - Cartão Válido**
 }
 ```
 
-> Consulte <https://developercielo.github.io/Webservice-3.0/#códigos-de-retorno-das-vendas> para visualizar a descrição dos códigos de retorno. 
-
-> O código de retorno **85 representa sucesso no Zero Auth**, os demais códigos são definidos de acordo com a documentação acima.
-
-
-
-
-
-
-Response: **NEGATIVA - Cartão Inválido**
-
-```
-{
-       "Valid": false,
-       "ReturnCode": "57",
-       "ReturnMessage": "Autorizacao negada"
-}
-```
-
-Response: **NEGATIVA - Cartão com bandeira inválida**
+Response: **NEGATIVE - Card with flag invalid**
 
 ```
   {    
@@ -165,8 +151,9 @@ Response: **NEGATIVA - Cartão com bandeira inválida**
   }
 ```
 
-Caso ocorra algum erro no fluxo, onde não seja possível validar o cartão, o serviço irá retornar erro: 
-* 500 – Internal Server Erro
+If there is any error in request, where it is not possible to validate the card, the service will return error:
+* 500 - Internal Server Error
+
 
 
 ## Zero Auth com AVS
