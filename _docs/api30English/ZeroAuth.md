@@ -156,43 +156,49 @@ If there is any error in request, where it is not possible to validate the card,
 
 
 
-## Zero Auth com AVS
-
-O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
-Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
-
-**Regras do AVS**
-
-* Disponível apenas para as bandeiras Visa, Mastercard e AmEx.
-* Produtos permitidos: somente crédito.
-* O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
-* Cada um deles pode ter os seguintes valores: 
-
-| Valor | Descrição                                                              |
-|:-----:|------------------------------------------------------------------------|
-| C     | Confere                                                                |
-| N     | Não confere                                                            |
-| I     | Indisponível                                                           |
-| T     | Temporariamente indisponível                                           |
-| X     | Serviço não suportado para esta Bandeira                               |
-| E     | Dados enviados incorretos. Verificar se todos os campos foram enviados |
 
 
-* É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
-* Quando o campo não for aplicável (exemplo: complemento), deve ser enviada preenchia com NULL ou N/A
-* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Cielo eCommerce
 
 
-| Paramêtro      | Descrição                                       | Tipo  | Tamanho | Obrigatório |
-|----------------|-------------------------------------------------|-------|:-------:|:-----------:|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | Não         |
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      | Não         |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      | Não         |
+## Zero Auth with AVS
 
-Conteudo do **POST - COM AVS**
+**AVS** is a service  where a validation is performed through the data of the address informed by the buyer
+The validation will compare the informations with the data of the bank responsable by the card.
+This helps reduce the risk of chargeback.
+It should be used for sales analysis, assisting in the decision to capture the transaction.
+
+
+
+
+**AVS Rules**
+
+* Available only for Visa, Mastercard and AmEx.
+* Products allowed: only Credit Card.
+* The return of the query to the AVS is separated into two items: ZIP code and address.
+* Each of them have the following values:
+
+
+
+
+| Value | Description |
+|:------: |---------------- |
+| C | Check |
+| N | Do not check |
+| I | Not Available |
+| T | Temporarily Not Available  |
+| X | Unsupported Service for this Card brand|
+| E | Incorrect data sent. Check if all fields have been sent |
+
+
+* All fields contained in the AVS node must be filled in for analysis to take place.
+
+* When the field is not applicable, it should be submitted filled with NULL or N / A
+
+* It is necessary to enable the AVS option on the Cielo Ecommerce API system. To enable the AVS option, contact Cielo eCommerce Support 
+
+18/5000
+**POST - WITH AVS**
+
 ```
 {
     "CardType": "CreditCard",
@@ -213,7 +219,7 @@ Conteudo do **POST - COM AVS**
 }
 ```
 
-Response: **POSITIVA - Com AVS**
+Response: ** POSITIVE - With AVS **
 
 ```
 {
@@ -224,15 +230,17 @@ Response: **POSITIVA - Com AVS**
        "AvsAddressReturnCode": "I"
 }
 ```
-Conteudo do Response
 
-| Paramêtro            | Descrição                                                             | Tipo    | Tamanho |
-|----------------------|-----------------------------------------------------------------------|---------|---------|
-| Valid                | Situação do cartão:<br> **True** – Cartão válido<BR>**False** – Cartão Inválido | Boolean | ---     |
-| ReturnCode           | Código de retorno                                                     | texto   | 2       |
-| ReturnMessage        | Mensagem de retorno                                                   | texto   | 255     |
-| AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-| AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
+Response Content
+
+| Field| Description | Type | Contact Us |
+| ---------------------- | -------------------------- --------------------------------------------- | ---- ----- | --------- |
+| Valid | Card Status: <br> ** True ** - Valid Card <BR> ** False ** - Invalid Card | Boolean | --- |
+| ReturnCode | Return code | text | 2 |
+| ReturnMessage | Return message | text | 255 |
+| AvsCepReturnCode | Status of the Zipcode (CEP) sent: <br> <br> ** C ** - Check it out ** ** - ** Do not check out ** I ** - Not available ** ** T ** - Temporarily out of stock <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+| AvsAddressReturnCode | Analysis of the address sent: <br> <br> ** ** - Check it out ** ** - ** Do not check out ** I ** - Not available ** ** T ** - <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+
 
 
 
