@@ -4,11 +4,11 @@ category: API CIELO ECOMMERCE
 order: 3
 ---
 
-### O QUE É O MPI EXTERNO
+### What is "External MPI"?
 
-O **MPI** é um processo de autenticação bancário, onde o Banco valida a identidade do comprador durante o fluxo transacional.  O Banco retorna à loja o resultado da validação de identidade, confirmando ou não a autenticação..
+** MPI ** is a bank authentication process, where the Bank validates the buyer's identity during the transaction flow. The Bank returns the identity validation result to the store, confirming authentication or not.
 
-### Integração
+### Integration
 
 Para utilizar o MPI externo, os lojistas que integrarem a [API CIELO ECOMMERCE](https://developercielo.github.io/Webservice-3.0/) deverão incluir um nó adicional na requisição de autorização
 
