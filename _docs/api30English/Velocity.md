@@ -1,7 +1,7 @@
 ---
 title: Velocity
 category: API CIELO ECOMMERCE (English)
-order: 8
+order: 5
 ---
 
 ### What is Velocity?
