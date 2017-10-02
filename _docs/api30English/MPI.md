@@ -16,21 +16,21 @@ The **External MPI** is a intgration that allows Merchants to use their own syst
 
 In order to use external MPI, retailers that integrate the [ECOMMERCE CIELO API] (https://developercielo.github.io/Webservice-3.0/) should include an additional node in the authorization request
 
-> Somente lojistas integrados a API CIELO ECOMMERCE em Produção poderão utilizar esta feature. Ela não se encontra disponivel em `SANDBOX`
+> Only Merchants integrated into the CIELO ECOMMERCE API  will be able to use this feature. This feature is not available in `SANDBOX`.
 
 
-Abaixo, os campos necessarios para o uso do **MPI Externo**
+Required fields for the use of ** External MPI **
 
-| Paramêtro | Descrição                                                               | Tipo  | Tamanho | Obrigatório |
-|-----------|-------------------------------------------------------------------------|-------|---------|-------------|
-| Cavv      | Cardholder authentication verification value – Chave criptográfica      | Texto | 255     | Sim         |
-| XId       | Identificador de transação retornado pelo Banco                         | Texto | 255     | Sim         |
-| Eci       | Eletronic Commerce Indicator - Representa o quão segura é uma transação | Texto | 10      | Sim         |
+| Field     | Description                                                           | Type | Size       | Required |
+|-----------|-----------------------------------------------------------------------|------|------------|----------|
+| Cavv      | Cardholder authentication verification value - Cryptographic Key      | Text | 255        | Yes      |
+| XId       | Transaction identifier returned by the Bank                           | Text | 255        | Yes      |
+| Eci       | Eletronic Commerce Indicator - Represents how secure a transaction is | Text | 10         | Yes      |
 
 
-### Requisição
+### Request
 
-Conteudo de **POST**:
+Request - **POST**:
 ```
 {  
    "MerchantOrderId":"2014111707",
@@ -77,7 +77,7 @@ Conteudo de **POST**:
 ```
 
 
-### Resposta
+### Response
 
 Os parametros retornados são os mesmos respondidos em uma transação padrão, que pode ser visualizado na documentação da [API CIELO ECOMMERCE](https://developercielo.github.io/Webservice-3.0/)
 
