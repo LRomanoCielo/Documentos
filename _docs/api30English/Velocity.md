@@ -11,12 +11,12 @@ It analyzes how often certain data is used and whether this data is inscribed in
 
 Velocity offers 4 types of functionality to validate transactional data:
 
-| Functionality               | Description                                                                                                                                          |
-|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ** Velocity safety rules ** | The Merchant defines a set of security rules that will be used to evaluate if certain transactional data is repeated in a suspicious time interval   |
-| ** Quarantine **            | Creation of a list of data that will be analyzed for a determined period of time before being considered valid or fraudulent                         |
-| ** BlackList **             | Creation of a list of data that, when identified,will prevent the transaction from being executed, avoiding the creation of a fraudulent transaction |
-| ** Whitelist **             | Creation of a list of data that when identified, will allow the transaction to be executed, even if there are security rules in action               |
+| Functionality             | Description                                                                                                                                          |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Velocity safety rules** | The Merchant defines a set of security rules that will be used to evaluate if certain transactional data is repeated in a suspicious time interval   |
+| **Quarantine**            | Creation of a list of data that will be analyzed for a determined period of time before being considered valid or fraudulent                         |
+| **BlackList**             | Creation of a list of data that, when identified,will prevent the transaction from being executed, avoiding the creation of a fraudulent transaction |
+| **Whitelist**             | Creation of a list of data that when identified, will allow the transaction to be executed, even if there are security rules in action               |
 
 
 The main functions of Velocity are:
@@ -33,65 +33,62 @@ The functionality must be enable by Cielo Support Team.
 
 ## Creating Velocity Safety Rules
 
-Just ask HD Cielo that the functionality is activated in your registry and that the rules are defined on the `Elements of traceability`
+
+The functionality must be enable by Cielo Support Team. After Activation, inform Cielo's Support Team of which `Elements of traceability` would be used as Safety rules
 
 
-`Elementos de rastreabilidade` são:
+`Elements of traceability` are:
+
+| ** Traceability elements ** |
+|: -----------------------------------------|
+| 12 first digits of credit card |
+| Credit card holder name |
+| Billing address zip code |
+| Credit card number |
+| Delivery address Zip Code |
+| Buyer's Document/ID |
+| Buyer's Email |
+| Order number |
+| Buyer's IP |
+
+The analysis takes place over each `Elements of traceability` (ER), counting how many times (Q) the element was identified within a given period (P) 
+
+| Variavel | Description |
+| :--------: | ----------------------------- |
+| **ER** | Elements of traceability |
+| **Q** | Quantity |
+| **P** | Period |
 
 
-| **Elementos de Rastreabilidade**          |
-|:-----------------------------------------:|
-| 12 primeiros dígitos do cartão de crédito |
-| Nome do portador do cartão de crédito     |
-| CEP do endereço de cobrança               |
-| Número do cartão de crédito               |
-| CEP do endereço de entrega                |
-| Documento do comprador                    |
-| E-mail do comprador                       |
-| Número do pedido                          |
-| IP do comprador                           |
+These variables are analyzed using the following formula:
+
+* **ER** = Credit card number
+* **Q** = Maximum of 5 hits
+* **P** = 12 hours
+
+**Rule** = Maximum of 5 card hits in 12 hour(s)
 
 
-A análise ocorre em cima de cada `elemento de rastreabilidade` (ER), contando quantas vezes (Q) o elemento foi identificado dentro de um determinado período (P)
- 
-| Variavel | Descrição                   |
-|----------|-----------------------------|
-| **ER**   | Elemento de Rastreabilidade |
-| **Q**    | Quantidade                  |
-| **P**    | Período                     |
+> **With this formula, the Velocity performs the following comparison:**
+When receiving the 6th transaction with the same card number (ER) from the previous 5, the above rule is executed and detects that the quantity (Q) exceeded the 5 allowed in the period (P) between the date of the first transaction and the date of the 6th received, it will have the status **rejected**, the card will be set in quarantine and the Response will contain which  transaction was blocked due to the safety rule.
 
 
-Essas variaveis são analisadas seguindo a seguinte formula:
+## Transaction with Velocity 
 
-* **ER** = Número do cartão de crédito
-* **Q** = Máximo de 5 hits 
-* **P** = 12 horas 
+The Velocity works by analyzing data submitted in the standard Cielo Ecommerce API integration. 
+It is not necessary to include any additional nodes to the integration for the creation of a transction, but it will be necessary to change response treatment .
 
-**Regra** = Máximo de 5 hits de cartão em 12 hora(s) 
- 
-> **Com isso, o Velocity executa a seguinte comparação:**
-Ao receber a 6ª transação com o mesmo número de cartão (ER) das outras 5 anteriores, a regra acima ao ser executada e detectar que a quantidade (Q) excedeu as 5 permitidas no período (P) entre a data da primeira transação e a data da 6ª recebida, a mesma terá o **status de rejeitada**, o cartão irá para quarentena e a resposta terá o conteúdo de que a transação foi bloqueada devido a regra. 
+When Velocity is active, the transaction response will bring a specific node called "Velocity" with the details of the analysis.
 
+| Property                                 | Description                                               | Type   | Size |
+|------------------------------------------|-----------------------------------------------------------|--------|------|
+| `VelocityAnalysis.Id`                    | Analysis confirmation ID                                  | GUID   | 36   |
+| `VelocityAnalysis.ResultMessage`         | Accept or Reject                                          | Text   | 25   |
+| `VelocityAnalysis.Score`                 | 100                                                       | Number | 10   |
+| `VelocityAnalysis.RejectReasons.RuleId`  | Rule Code - Defines which rule was used into the Analysis | Number | 10   |
+| `VelocityAnalysis.RejectReasons.Message` | Description of Rule used into the Analysis                | Text   | 512  |
 
-## Transação com Velocity 
-
-O Velocity funciona analisando dados enviados na integração padrão da API Cielo Ecommerce. Não é necessario incluir nenhuma nós adicional a integração da loja para a criação da venda, mas será necessario alterar a forma como os dados são recebidos response.
-
-Quando o Velocity está ativo, a resposta da transação trará um nó específico chamado "Velocity", com os detalhes da análise.
-
-
-Dados dos retornados pelo Velocity
-
-| Propriedade                              | Descrição                         | Tipo   | Tamanho |
-|------------------------------------------|-----------------------------------|--------|---------|
-| `VelocityAnalysis.Id`                    | Identificador da análise efetuada | GUID   | 36      |
-| `VelocityAnalysis.ResultMessage`         | Accept ou Reject                  | Texto  | 25      |
-| `VelocityAnalysis.Score`                 | 100                               | Número | 10      |
-| `VelocityAnalysis.RejectReasons.RuleId`  | Código da Regra que rejeitou      | Número | 10      |
-| `VelocityAnalysis.RejectReasons.Message` | Descrição da Regra que rejeitou   | Texto  | 512     |
-
-
-### Resposta
+### Response
 
 ```json
 {
@@ -168,19 +165,19 @@ Dados dos retornados pelo Velocity
 ```
 
 
-## Quarentena 
+## Quarantine
 
+Quarantine is a data base that stores the values by type of `Element of traceability` with a given expiration time.
 
-A Quarentena é  uma tabela que armazena os valores por tipo de `Elementos de rastreabilidade` com um determinado tempo de expiração.
-
-Ao cadastrar uma regra é possível especificar quanto tempo o valor de um determinado `Elemento de rastreabilidade` irá ser levado em consideração nas próximas análises, ou seja, se o lojista quiser identificar a quantidade de vezes que o mesmo número de cartão se repetiu para um período de 12 horas dentro de um intervalo de 2 dias, não será necessário o Velocity realizar esta contagem retroativa agrupando por período. Neste cenário por exemplo, a aplicação teria que realizar a contagem para os seguintes intervalos: 
+When registering a rule it is possible to specify how long the value of a particular `Element of traceability` will be taken into account in the next analysis; if the merchant wants to identify the number of times the same card number has been repeated for a 12-hour period within a 2-day interval, Velocity will not be required to perform this retroactive counting by grouping by period. In this scenario,  the application would have to perform the count for the following ranges:
 
 * D-2 = 0h as 12h 
 * D-2 = 12h as 0h 
 * D-1 = 0h as 12h 
 * D-1 = 12h as 0h 
 
-Com a quarentena, a aplicação não irá realizar essa contagem retroativa por período, pois ao realizar uma análise, será  verifica se existe algum valor do `Elemento de rastreabilidade` em quarentena. 
+With the quarantine, the application will not perform this counting by period, because when performing an analysis, it will check if there is any value of the `Element of traceability` in quarantine.
+
 
 **Exemplo:** Usando a regra acima, o tempo de expiração se definido em 2 dias, a regra será analisada apenas para o período já configurado, ou seja, 12 horas para traz e irá verificar durante 2 dias se número do cartão se encontra em quarentena. 
 
