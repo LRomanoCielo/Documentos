@@ -32,27 +32,25 @@ It is worth emphasizing that AVS should be used using the fallow rules:
 |     X | Unsupported Service for this brand                           |
 |     E | Incorrect data sent. Check if all fields have been submitted |
 
+* All fields contained in the AVS node must be send for analysis to take place.
+* When the field is not applicable, it should be sent filled with **NULL or N/A**
+* It is necessary to enable the AVS option in the MerchantID. To enable the AVS option or consult the participating banks, contact Support eCommerce Cielo
 
-* É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
-* Quando o campo não for aplicável (exemplo: complemento), deve ser enviada preenchido com NULL ou N/A
-* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Cielo eCommerce
+**AVS node content**
 
-
-Conteudo do **Nó AVS**
-
-
-| Paramêtro      | Descrição                                       | Tipo  | Tamanho | Obrigatório |
-|----------------|-------------------------------------------------|-------|:-------:|:-----------:|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | Não         |
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      | Não         |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      | Não         |
+| Field            | Description                                      | Type    | Size       | Required       |
+| ---------------- | ------------------------------------------------ | ------- | : -------: | : -----------: |
+| Avs.Cpf          | Buyer's CPF                                      | text    | 11         | No             |
+| Avs.ZipCode      | Zip code - billing address                       | text    | 8          | No             |
+| Avs.Street       | Address of the Buyer's billing address           | text    | 50         | No             |
+| Avs.Number       | Buyer's Billing address number                   | text    | 6          | No             |
+| Avs.Complement   | Supplement - Buyer's billing address             | text    | 30         | No             |
+| Avs.District     | Neighborhood/District - Buyer's billing address  | text    | 20         | No             |
 
 
 
-Conteudo do **POST - COM AVS**
+
+**POST - WITH AVS**
 ```
 {
    "MerchantOrderId":"2014111703",
