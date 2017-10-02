@@ -143,10 +143,6 @@ Response: **AVS**
 
 Response
 
-
-
-
-
 | Field            | Description                                      | Type    | Size       | 
 | ---------------- | ------------------------------------------------ | ------- | : -------: | 
 | Avs.Cpf          | Buyer's CPF                                      | text    | 11         | 
@@ -155,34 +151,17 @@ Response
 | Avs.Number       | Buyer's Billing address number                   | text    | 6          | 
 | Avs.Complement   | Supplement - Buyer's billing address             | text    | 30         | 
 | Avs.District     | Neighborhood/District - Buyer's billing address  | text    | 20         | 
-| AvsCepReturnCode | Status of the  ZIP Codet: <br> <br> **C** - Check <br> **N** - ** Do not check out ** I ** - Not available ** ** T ** - Temporarily out of stock <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
-| AvsAddressReturnCode | Analysis of the address sent: <br> <br> ** ** - ** Check ** ** - ** Check ** ** ** - Not Available ** ** T ** - Temporarily unavailable <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+| AvsCepReturnCode | Status of the  ZIP Code:<br> <br> **C** - Check <br> **N** - Do not check <br> **I** - Not available <br> **T** - Temporarily unavailable <br> **X** - Service not supported for this brand <br> **E** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+| AvsAddressReturnCode |Status of the Adress:<br> <br> **C** - Check <br> **N** - Do not check <br> **I** - Not available <br> **T** - Temporarily unavailable <br> **X** - Service not supported for this brand <br> **E** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
 
 
 
+## Update History:
 
-
-
-| Paramêtro      | Descrição                                       | Tipo  | Tamanho |
-|----------------|-------------------------------------------------|-------|:-------:|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | 
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | 
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | 
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      |
-| AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-| AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-
-
-
-## Histórico de Atualizações:
-
-| Versão | Data       | Descrição                                                                                                      |
-|:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 22/08/2017 | ✓ Versão inicial                                                                                               |
-
-
+| Version | Date       | Description     |
+|---------|------------|-----------------|
+| 1.0     | 08/22/2017 | Initial release |
+| 1.1     | 10/02/2017 | English release |
 
 
 
