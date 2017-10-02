@@ -1,7 +1,7 @@
 ---
 title: AVS
 category: API CIELO ECOMMERCE (English)
-order: 7
+order: 4
 ---
 
 ### What is AVS?
