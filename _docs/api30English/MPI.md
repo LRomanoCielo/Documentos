@@ -79,7 +79,8 @@ Request - **POST**:
 
 ### Response
 
-Os parametros retornados são os mesmos respondidos em uma transação padrão, que pode ser visualizado na documentação da [API CIELO ECOMMERCE](https://developercielo.github.io/Webservice-3.0/)
+The returned fields are the same as those returned in a standard transaction, which can be viewed in [ECOMMERCE CIURE API] documentation (https://developercielo.github.io/Webservice-3.0/)
+
 
 Response
 ```
@@ -150,11 +151,10 @@ Response
 
 
 
-### Histórico de atualizações:
+### Update history:
 
-| Versão | Data       | Descrição      |
-|--------|------------|----------------|
-| 1.0    | 20/09/2016 | Versão inicial |
-
-
+| Version  | Date         | Description     |
+| -------- | ------------ | --------------- |
+| 1.0      | 20/09/2016   | First Version   |
+| 1.1      | 02/10/2017   | English Version |
 
