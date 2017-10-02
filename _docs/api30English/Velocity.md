@@ -178,11 +178,9 @@ When registering a rule it is possible to specify how long the value of a partic
 
 With the quarantine, the application will not perform this counting by period, because when performing an analysis, it will check if there is any value of the `Element of traceability` in quarantine.
 
+**Example:** Using the above rule, the expiration time if set to 2 days,  will be analyzed only for the period already set, ie 12 hours back and will check for 2 days if the card number is in quarantined.
 
-**Exemplo:** Usando a regra acima, o tempo de expiração se definido em 2 dias, a regra será analisada apenas para o período já configurado, ou seja, 12 horas para traz e irá verificar durante 2 dias se número do cartão se encontra em quarentena. 
-
-
-**OBS**: Uma transação analisada, não bloqueada pela regra, mas bloqueada pela quarentena, tem o retorno informando que a mesma foi bloqueada pela quarentena.
+**OBS**: An analyzed transaction, not blocked by the rule, but blocked by the quarantine, will have the API return/response informing that it has been blocked by the quarantine.
 
 ```
 {  
@@ -209,75 +207,60 @@ ea7549c148b9",
 
 ```
 
+### Configuring a Quarantine
 
-### Como configurar uma Quarentena 
+The Quarantine configuration is performed by HD Cielo. inform the following data to the support Team and ask then to setup a quarantine:
 
- A configuração da Quarentena é realizada via o HD Cielo. Basta solicitar a liberação da funcionalidade Velocity informando os dados abaixo:
- 
-* Valor
-* Data da expiração da quarentena
-* Regras:
+* Value
+* Date of quarantine expiration
+* Rules:
 
-Máximo de 5 Hits de Cartão em 12 horas
-Máximo de 5 Hits de Documentos em 12 horas
-Máximo de 7 Hits de Cartão em 7 dias
-Máximo de 7 Hits de Documentos em 7 dias
-
-
-
-
-
+Maximum of 5 Card Hits in 12 hours
+Maximum 5 Hits of Documents in 12 hours
+Maximum 7 Card Hits in 7 Days
+Maximum 7 Hits of Documents in 7 days
 
 
 ## Blacklist
 
-A BlackList é uma tabela oferecida pelo Velocity onde se armazena valores por tipo de `elementos de rastreabilidades` que o lojista deseja **bloquear** automaticamente.
+BlackList is a data base offered by Velocity where types of `Elements of traceability` that the merchant wants to block automatically are registered.
 
-Em transação a ser analisada, caso  `elementos de rastreabilidades`/Documento que esteja na blacklist, a mesma será bloqueada, independente de existir
-regra cadastra para este tipo de elemento de rastreabilidade ou não, e terá o retorno informado que a mesma foi **bloqueada pela blacklist**, ou seja, a transação não será enviada a Autorização
-
-
-### Como configurar uma Blacklist
-
- A configuração da Blacklist é realizada via o HD Cielo. Basta solicitar a liberação da funcionalidade no Velocity informando os dados abaixo:
- 
-* Qual `elemento de rastreabilidade` deverá ser bloqueado / EX: Identidade
-* Informar o valor do `elemento de rastreabilidade`a ser bloqueado /EX: Identidade = 21.435.787-95
-
-É possivel realizar varios cadastros para diferentes `elementos de rastreabilidades`. Caso eles sejam reconhecidos no contrato, a transação não será enviada a Autorização
+In a transaction to be analyzed, if in case of `Elements of traceability` that is resgistered in the blacklist appear, this transaction will be blocked. 
+The API response will informed that it has been **blocked by the blacklist**, ie the transaction will not be sent to Authorization
 
 
+### Setting Up a Blacklist
 
+Blacklist setup is done by HD Cielo. inform the following data to the support Team and ask then to setup a Blacklist:
+
+* Which `Elements of traceability` should be blocked / EX: CPF
+* Enter the value of the `Elements of traceability`  to be blocked / EX: Identity = 121.435.787-95
+
+It is possible to perform several registrations for different `Elements of traceability` . If they are recognized in the API Request, the transaction will not be sent to Authorization
 
 
 
 ## Whitelist
 
 
-A Whitelist é uma tabela oferecida pelo Velocity onde se armazena valores por tipo de `elementos de rastreabilidades` que o lojista deseja **liberar** automaticamente das regras de segurança do velocity.
+Whitelist is a data base offered by Velocity where types of `Elements of traceability` that the merchant don't want to be analyzed by the Velocity Safety Rules are registered.
 
-Em transação a ser analisada, caso  `elementos de rastreabilidades`/Documento que esteja na Whitelist, a mesma  não será analisada pelo velocity, independente de existir
-regra cadastra para este tipo de elemento de rastreabilidade ou não, sendo enviada para a autorização como uma transação normal.
-
-
-### Como configurar uma Whitelist
-
- A configuração da Whitelist é realizada via o HD Cielo. Basta solicitar a liberação da funcionalidade no Velocity informando os dados abaixo:
- 
-* Qual `elemento de rastreabilidade` deverá ser incluso na Whitelist / EX: Identidade
-* Informar o valor do `elemento de rastreabilidade`a ser liberado /EX: Identidade = 21.435.787-95
-
-É possivel realizar varios cadastros para diferentes `elementos de rastreabilidades`. Caso eles sejam reconhecidos no contrato, a transação será enviada a Autorização sem ser analisada pelo Velocity
+In a transaction to be analyzed, in case of 'traceability elements' / Document that is in the Whitelist, it will not be analyzed by velocity, regardless of whether there is
+rule registers for this type of traceability element or not, being sent to the authorization as a normal transaction.
 
 
+In a transaction to be analyzed, if in case of `Elements of traceability` that is resgistered in the Whitelist appear, this transaction will not be analyzed by the Velocity Safety Rules. 
+The transaction will be sent to the authorization process automatically.
 
 
+### Setting Up a Whitelist
 
+The Whitelist setting is performed by  Cielo HelpDesk. Inform the following data to the support Team and ask then to setup a Blacklist:
 
-## Histórico de Atualizações:
+* Which `Elements of traceability` should be included in the Whitelist / EX: CPF
+* Enter the value of the `Elements of traceability` that should not be blocked / EX: Identity = 121.435.787-95
 
-| Versão | Data       | Descrição                                                                                                      |
-|:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 28/08/2017 | ✓ Versão inicial                                                                                               |
+It is possible to perform several registrations for different `Elements of traceability`. If they are recognized in the API Request, the transaction will be sent to Authorization without being analyzed by Velocity
+
 
 
