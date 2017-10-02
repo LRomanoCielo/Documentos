@@ -4,35 +4,37 @@ category: API CIELO ECOMMERCE (English)
 order: 8
 ---
 
-### O que é Velocity
+### What is Velocity?
 
-O Velocity é um tipo de mecanismo de prevenção à tentativas de fraude, que analisa especificamente o conceito de "velocidade X dados transacionais". 
-Ela analisa a frequência que determinados dados são utilizados e se esse dados estão inscritos em uma lista de comportamentos passiveis de ações de segurança.
+Velocity is a type of fraud prevention mechanism that specifically analyzes the concept of "speed X transactional data".
+It analyzes how often certain data is used and whether this data is inscribed in a list of security actions designed to prevent frauds.
+
+Velocity offers 4 types of functionality to validate transactional data:
+
+| Functionality               | Description                                                                                                                                          |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ** Velocity safety rules ** | The Merchant defines a set of security rules that will be used to evaluate if certain transactional data is repeated in a suspicious time interval   |
+| ** Quarantine **            | Creation of a list of data that will be analyzed for a determined period of time before being considered valid or fraudulent                         |
+| ** BlackList **             | Creation of a list of data that, when identified,will prevent the transaction from being executed, avoiding the creation of a fraudulent transaction |
+| ** Whitelist **             | Creation of a list of data that when identified, will allow the transaction to be executed, even if there are security rules in action               |
 
 
-O Velocity oferece 4 tipos de funcionalidades para validar dados transacionais:
-
-| Funcionalidade                   | Descrição                                                                                                                                          |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Regras de segurança velocity** | O Lojista defini um grupo de regras de segurança que vão avaliar se determinados dados transacionais se repetem em um intervalo de tempo suspeito  |
-| **Quarentena**                   | Criação de uma lista de dados que serão analisados por um periodo de tempo determinado antes de serem considerados validos ou fraudulentos         |
-| **BlackList**                    | Criação de uma lista de dados que ao serem identificados impedem a transação de ser executada, evitando a criação de uma transação fraudulenta     |
-| **Whitelist**                    | Criação de uma lista de dados que ao serem identificados permitem que a transação de seja executada, mesmo que existam regras de segurança em ação |
-
-As principais funções do Velocity são:
+The main functions of Velocity are:
 
 * Auxiliar na detecção de elementos suspeitos de fraude. 
 * Fonte de dados para bloquear ataques em rajada (testes de cartão, por exemplo), bem como avaliações de comportamentos suspeitos de compra. 
 * Cálculos baseados em análise de velocidade de elementos rastreáveis e a incidência dos mesmos em determinados intervalos de tempo
 
+* Assist in detecting elements/data suspected of fraud.
+* Data source for blocking attacks (card tests, for example), as well as evaluations of suspicious purchase behavior.
+* Calculations based on speed analysis of traceable elements and their incidence at certain time intervals.
 
-A funcionalidade deve ser contratada à parte, e posteriormente habilitada em sua loja pela equipe de Suporte Cielo Ecommerce. 
+The functionality must be enable by Cielo Support Team.
 
+## Creating Velocity Safety Rules
 
+Just ask HD Cielo that the functionality is activated in your registry and that the rules are defined on the `Elements of traceability`
 
-## Criando Regras de segurança Velocity 
-
-Basta solicitar ao HD Cielo que a funcionalidade seja ativada em seu cadastro e que as regras seja definidas sobre os `Elementos de rastreabilidade`
 
 `Elementos de rastreabilidade` são:
 
