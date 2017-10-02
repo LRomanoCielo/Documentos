@@ -141,10 +141,27 @@ Response: **AVS**
 ```
 
 
+Response
 
 
 
-Conteudo do Response
+
+
+| Field            | Description                                      | Type    | Size       | 
+| ---------------- | ------------------------------------------------ | ------- | : -------: | 
+| Avs.Cpf          | Buyer's CPF                                      | text    | 11         | 
+| Avs.ZipCode      | Zip code - billing address                       | text    | 8          | 
+| Avs.Street       | Address of the Buyer's billing address           | text    | 50         | 
+| Avs.Number       | Buyer's Billing address number                   | text    | 6          | 
+| Avs.Complement   | Supplement - Buyer's billing address             | text    | 30         | 
+| Avs.District     | Neighborhood/District - Buyer's billing address  | text    | 20         | 
+| AvsCepReturnCode | Status of the  ZIP Codet: <br> <br> **C** - Check <br> **N** - ** Do not check out ** I ** - Not available ** ** T ** - Temporarily out of stock <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+| AvsAddressReturnCode | Analysis of the address sent: <br> <br> ** ** - ** Check ** ** - ** Check ** ** ** - Not Available ** ** T ** - Temporarily unavailable <br> ** X ** - Service not supported for this Flag <br> ** E ** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
+
+
+
+
+
 
 | Paramêtro      | Descrição                                       | Tipo  | Tamanho |
 |----------------|-------------------------------------------------|-------|:-------:|
