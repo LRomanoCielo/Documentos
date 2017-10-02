@@ -3,34 +3,34 @@ title: AVS
 category: API CIELO ECOMMERCE (English)
 order: 7
 ---
-### O QUE É O AVS
-
-O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
-Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
+### What is AVS?
 
 
-### Integração
+The **AVS** is a system that analyzes and compares the billing address informed by the buyer to the billing address registered at the bank that issued the credit card. 
+This helps in reducing the risk of chargeback. It should be used for sales analysis, assisting in the decision to capture the transaction.
 
-Para realizar uma transação utilizando o **AVS**, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce,criando uma  transação que contenha o nó **AVS** dentro do nó `Payment.CreditCard`.
+### Integration
 
-Vale Destacar que o AVS deve ser utilizado valendo-se das regras abaixo:
+To perform a transaction using **AVS**, the merchant must send a POST request to the Cielo Ecommerce API, creating a transaction that contains the **AVS** node within the `Payment.CreditCard` node.
 
+It is worth emphasizing that AVS should be used using the fallow rules:
 
-**Regras do AVS**
+**AVS Rules**
 
-* Produtos permitidos: somente crédito.
-* Disponível apenas para as bandeiras **Visa, Mastercard e Amex**.
-* O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
-* Cada um deles pode ter os seguintes valores: 
+* Products allowed: only credit card.
+* Available only for the **Visa, MasterCard and Amex** brands.
+* The return of the query to the AVS is separated into two items: ZIP code and address.
+* Each of them can have the following values:
 
-| Valor | Descrição                                                              |
-|:-----:|------------------------------------------------------------------------|
-| C     | Confere                                                                |
-| N     | Não confere                                                            |
-| I     | Indisponível                                                           |
-| T     | Temporariamente indisponível                                           |
-| X     | Serviço não suportado para esta Bandeira                               |
-| E     | Dados enviados incorretos. Verificar se todos os campos foram enviados |
+ 
+| Value | Description                                                  |
+|:-----:|--------------------------------------------------------------|
+|     C | Check                                                        |
+|     N | Do not check                                                 |
+|     I | Not Available                                                |
+|     T | Temporarily unavailable                                      |
+|     X | Unsupported Service for this brand                           |
+|     E | Incorrect data sent. Check if all fields have been submitted |
 
 
 * É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
