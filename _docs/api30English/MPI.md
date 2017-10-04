@@ -7,7 +7,7 @@ order: 3
 
 ### What is "External MPI"?
 
-** MPI ** is a bank authentication process, where the Bank validates the a buyer's identity during the transaction flow. 
+**MPI** is a bank authentication process, where the Bank validates the a buyer's identity during the transaction flow. 
 The **External MPI** is a intgration that allows Merchants to use their own system to check and validate Buyer's Identities
 
 
@@ -19,7 +19,7 @@ In order to use external MPI, retailers that integrate the [ECOMMERCE CIELO API]
 > Only Merchants integrated into the CIELO ECOMMERCE API  will be able to use this feature. This feature is not available in `SANDBOX`.
 
 
-Required fields for the use of ** External MPI **
+Required fields for the use of **External MPI**
 
 | Field     | Description                                                           | Type | Size       | Required |
 |-----------|-----------------------------------------------------------------------|------|------------|----------|
