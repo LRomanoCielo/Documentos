@@ -13,7 +13,7 @@ Caso deseje utiliza-las entre em contato com a Equipe de PRODUTOS CIELO, e obten
 2. **Zero Auth** - _Valida se cartão é real. Disponivel apenas para Lojas cadastradas junto a Produtos Cielo._
 3. **MPI Externo** - _Permite usar um MPI proprio com a API 3.0 Cielo._
 4. **AVS** - _Permite identificar anomalias entre o endereço de cobrança informado pelo comprador e o registrado no banco_
-4. **Velocity** - _Permite definir regras de segurança que impedem compradores registrados de realizar transações - Criação de Blacklists_
+5. **Velocity** - _Permite definir regras de segurança que impedem compradores registrados de realizar transações - Criação de Blacklists_
 
 
 ### **POSTMAN e Exemplos**
