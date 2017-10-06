@@ -21,8 +21,6 @@ Para mais informações sobre a API Cielo Ecommerce (Sandbox e Produção), aces
 
 ### Caso de Uso
 
-
-
 Este é um exemplo de como usar a consulta bin para identificar o melhor perfil de comprador e ajudar sua conversão.
 
 O Consulta bin é uma ferramenta da Cielo que permite identificar:
@@ -59,8 +57,6 @@ O Submergível pode usar a consulta bins no carrinho para identificar 2 dos prin
 
 **Alertar sobre cartões internacionais**
 O Submergível pode usar a consulta bins no carrinho para alertar compradores internacionais, que caso o cartão não esteja habilitado para transacionar no Brasil, a transação será negada
-
-
 
 
 ### Integração
