@@ -12,7 +12,7 @@ This helps in reducing the risk of chargeback. It should be used for sales analy
 
 ### Integration
 
-To perform a transaction using **AVS**, the merchant must send a POST request to the Cielo Ecommerce API, creating a transaction that contains the **AVS** node within the `Payment.CreditCard` node.
+**To perform** a transaction using **AVS**, the merchant must send a POST request to the Cielo Ecommerce API, creating a transaction that contains the **AVS** node within the `Payment.CreditCard` node.
 
 It is worth emphasizing that AVS should be used using the fallow rules:
 
