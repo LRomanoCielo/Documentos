@@ -11,7 +11,7 @@ order: 1
 
 The "**Bins query** returns the following data about the card:
 
-* **Cards Brand:**  Mastercard and Visa
+* **Cards Brand:**  Any brand/provider supported by Cielo
 * **Card Type:**  Credit, Debit or Multiple (Credit and Debit)
 * **Card Nationality:**  foreign or national (Brazilian)
 
