@@ -28,7 +28,7 @@ O Consulta bin é uma ferramenta da Cielo que permite identificar:
 * Status: Valido ou invalido
 * Origem do cartão: emitido no Brasil ou estrangeiro.
 * O tipo do Cartão: Crédito/Débito ou ambos.
-* A bandeira do cartão: Visa ou Mastercard
+* A bandeira do cartão: Todas suportadas pela Cielo
 
 Essas informações permitem tomar ações no momento do checkout para melhorar a conversão da loja.
 
