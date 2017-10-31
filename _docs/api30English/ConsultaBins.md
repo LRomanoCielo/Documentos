@@ -53,6 +53,8 @@ https://apiquerysandbox.cieloecommerce.cielo.com.br/1/cardBin/420020
 | ** ForeingCard ** | Text | 255        | If the card is a Foreing Card (False / True)                                                                                                                     |
 
 
+> *Attention*: In SANDBOX the returned values are simulations and not actual validations of BINS. Only the  Request format should be considered. For real identification of the BINS, the Production environment must be used
+
 ### Update History
 
 | Version | Date       | Description                    |
