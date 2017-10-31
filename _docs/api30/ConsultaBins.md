@@ -78,7 +78,7 @@ https://apiquerysandbox.cieloecommerce.cielo.com.br/1/cardBin/420020
 ### Resposta
 **Response**
 
-```
+```http
 {
 "Status": "00",
 "Provider": "Visa",
