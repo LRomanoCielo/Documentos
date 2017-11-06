@@ -156,30 +156,6 @@ Response
 | AvsAddressReturnCode |Status of the Adress:<br> <br> **C** - Check <br> **N** - Do not check <br> **I** - Not available <br> **T** - Temporarily unavailable <br> **X** - Service not supported for this brand <br> **E** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
 
 
-```json
-{
-   "MerchantOrderId":"2017051001",
-   "Customer":{
-      "Name":"Nome do Cliente"
-   },
-   "Payment":{
-     "Provider":"Simulado",
-     "Type":"CreditCard",
-     "Amount":10000,
-	 "Capture":true,
-     "Installments":1,
-     "CreditCard":{
-         "CardNumber":"4551870000000181",
-         "Holder":"Nome do Portador",
-         "ExpirationDate":"12/2021",
-         "SecurityCode":"123",
-         "Brand":"Visa"
-     }
-   }
-}
-```
-
-
 ## Update History:
 
 | Version | Date       | Description     |
