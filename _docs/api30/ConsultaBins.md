@@ -23,7 +23,7 @@ Para mais informações sobre a API Cielo Ecommerce (Sandbox e Produção), aces
 
 Este é um exemplo de como usar a consulta bin para identificar o melhor perfil de comprador e ajudar sua conversão.
 
-O Consulta bin é uma ferramenta da Cielo que permite identificar:
+O **Consulta bin** é uma ferramenta da Cielo que permite identificar:
 
 * Status: Valido ou invalido
 * Origem do cartão: emitido no Brasil ou estrangeiro.
