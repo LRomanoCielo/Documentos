@@ -1,176 +1,166 @@
 ---
-title: AVS
+title: Alelo
 category: API CIELO ECOMMERCE
-order: 5
+order: 8
 ---
-### O QUE É O AVS
+### Pagamento usando Cartões ALELO
 
-O **AVS** é um serviço para transações online onde é realizada uma validação cadastral através do batimento dos dados do endereço informado pelo comprador (endereço de entrega da fatura) na loja virtual, com os dados cadastrais do banco emissor do cartão.
-Isso auxilia na redução do risco de chargeback. Deve ser utilizada para análise de vendas, auxiliando na decisão de captura da transação.
+Para criar uma venda que utilizará cartão de Alelo, é necessário fazer um `POST` para o recurso Payment utilizando o contrato técnico de uma venda de `Cartão de Débito`.
 
+> Para mais informações sobre a integração de cartão de Débito via API Cielo Ecommerce, acesse o [Manual de integração](https://developercielo.github.io/manual/cielo-ecommerce#criando-uma-venda-simplificada)
 
-### Integração
+**OBS:** Em transações de Cartão ALELOl, os seguintes parametros devem possuir configurações estáticas
 
-Para realizar uma transação utilizando o **AVS**, o lojista deverá enviar uma requisição `POST` para a API Cielo Ecommerce,criando uma  transação que contenha o nó **AVS** dentro do nó `Payment.CreditCard`.
+### Requisição
 
-Vale Destacar que o AVS deve ser utilizado valendo-se das regras abaixo:
+<aside class="request"><span class="method post">POST</span> <span class="endpoint">/1/sales/</span></aside>
 
-
-**Regras do AVS**
-
-* Produtos permitidos: somente crédito.
-* Disponível apenas para as bandeiras **Visa, Mastercard e Amex**.
-* O retorno da consulta ao AVS é separado em dois itens: CEP e endereço.
-* Cada um deles pode ter os seguintes valores: 
-
-| Valor | Descrição                                                              |
-|:-----:|------------------------------------------------------------------------|
-| C     | Confere                                                                |
-| N     | Não confere                                                            |
-| I     | Indisponível                                                           |
-| T     | Temporariamente indisponível                                           |
-| X     | Serviço não suportado para esta Bandeira                               |
-| E     | Dados enviados incorretos. Verificar se todos os campos foram enviados |
-
-
-* É necessário que todos os campos contidos no nó AVS sejam preenchidos para que a analise seja realizada.
-* Quando o campo não for aplicável (exemplo: complemento), deve ser enviada preenchido com NULL ou N/A
-* Necessário habilitar a opção do AVS no cadastro. Para habilitar a opção AVS no cadastro ou consultar os bancos participantes, entre em contato com o Suporte Cielo eCommerce
-
-
-Conteudo do **Nó AVS**
-
-
-| Paramêtro      | Descrição                                       | Tipo  | Tamanho | Obrigatório |
-|----------------|-------------------------------------------------|-------|:-------:|:-----------:|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | Não         |
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | Não         |
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      | Não         |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | Não         |
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      | Não         |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      | Não         |
-
-
-
-Conteudo do **POST - COM AVS**
-```
-{
-   "MerchantOrderId":"2014111703",
-   "Payment":{
-     "Type":"CreditCard",
+```json
+{  
+   "MerchantOrderId":"2014121201",
+   "Customer":{  
+      "Name":"Comprador Cartão de débito"
+   },
+   "Payment":{  
+     "Type":"DebitCard",
      "Amount":15700,
-     "Installments":1,
-     "SoftDescriptor":"123456789ABCD",
-     "CreditCard":{
-         "CardNumber":"4551870000000181",
+     "ReturnUrl":"http://www.cielo.com.br",
+     "DebitCard":{  
+         "CardNumber":"4551870000000183",
          "Holder":"Teste Holder",
-         "ExpirationDate":"12/2021",
+         "ExpirationDate":"12/2030",
          "SecurityCode":"123",
-         "Brand":"Visa",
-         "Avs":{
-        	"Cpf": "10939107716",
-        	"ZipCode": "24320570",
-        	"Street": "Estrada Caetano Monteiro",
-        	"Number": "391",
-        	"Complement": "Bl",
-        	"District": "Niteroi"
-    	}
-     }
+    }
    }
 }
 ```
 
-Response: **AVS**
-
+```shell
+curl
+--request POST "https://apisandbox.cieloecommerce.cielo.com.br/1/sales/"
+--header "Content-Type: application/json"
+--header "MerchantId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--header "MerchantKey: 0123456789012345678901234567890123456789"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+{  
+   "MerchantOrderId":"2014121201",
+   "Customer":{  
+      "Name":"Comprador Cartão de Alelo"
+   },
+   "Payment":{  
+     "Type":"DebitCard",
+     "Amount":15700,
+     "ReturnUrl":"http://www.cielo.com.br",
+     "DebitCard":{  
+         "CardNumber":"4551870000000183",
+         "Holder":"Teste Holder",
+         "ExpirationDate":"12/2030",
+         "SecurityCode":"123",
+     }
+   }
+}
+--verbose
 ```
+
+| Propriedade                | Descrição                                                                                             | Tipo   | Tamanho | Obrigatório |
+|----------------------------|-------------------------------------------------------------------------------------------------------|--------|---------|-------------|
+| `MerchantId`               | Identificador da loja na API Cielo eCommerce.                                                         | Guid   | 36      | Sim         |
+| `MerchantKey`              | Chave Publica para Autenticação Dupla na API Cielo eCommerce.                                         | Texto  | 40      | Sim         |
+| `RequestId`                | Identificador do Request, utilizado quando o lojista usa diferentes servidores para cada GET/POST/PUT | Guid   | 36      | Não         |
+| `MerchantOrderId`          | Numero de identificação do Pedido.                                                                    | Texto  | 50      | Sim         |
+| `Customer.Name`            | Nome do Comprador.                                                                                    | Texto  | 255     | Não         |
+| `Customer.Status`          | Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude           | Texto  | 255     | Não         |
+| `Payment.Type`             | Tipo do Meio de Pagamento.                                                                            | Texto  | 100     | Sim         |
+| `Payment.Amount`           | Valor do Pedido (ser enviado em centavos).                                                            | Número | 15      | Sim         |
+| `Payment.ReturnUrl`        | Url de retorno do lojista.                                                                            | Texto  | 1024    | Sim         |
+| `Payment.ReturnUrl`        | URI para onde o usuário será redirecionado após o fim do pagamento                                    | Texto  | 1024    | Sim         |
+| `DebitCard.CardNumber`     | Número do Cartão do Comprador.                                                                        | Texto  | 19      | Sim         |
+| `DebitCard.Holder`         | Nome do Comprador impresso no cartão.                                                                 | Texto  | 25      | Não         |
+| `DebitCard.ExpirationDate` | Data de validade impresso no cartão.                                                                  | Texto  | 7       | Sim         |
+| `DebitCard.SecurityCode`   | Código de segurança impresso no verso do cartão.                                                      | Texto  | 4       | Não         |
+| `DebitCard.Brand`          | Bandeira do cartão.                                                                                   | Texto  | 10      | Não         |
+
+### Resposta
+
+```json
 {
-    "MerchantOrderId": "2014111703",
+    "MerchantOrderId": "2014121201",
     "Customer": {
-        "Name": "[Guest]"
+        "Name": "Comprador Cartão de débito"
     },
     "Payment": {
-        "ServiceTaxAmount": 0,
-        "Installments": 1,
-        "Interest": 0,
-        "Capture": false,
-        "Authenticate": false,
-        "Recurrent": false,
-        "CreditCard": {
-            "CardNumber": "455187******0181",
+        "DebitCard": {
+            "CardNumber": "453211******3703",
             "Holder": "Teste Holder",
-            "ExpirationDate": "12/2021",
+            "ExpirationDate": "12/2030",
             "SaveCard": false,
-            "Brand": "Visa",
-            "Avs": {
-                "Cpf": "10939107716",
-                "ZipCode": "24320570",
-                "Street": "Estrada Caetano Monteiro",
-                "Number": "391",
-                "Complement": "Bl",
-                "District": "Niteroi",
-                "Status": 9,
-                "ReturnCode": "I"
-            }
+            "Brand": "Visa"
         },
-        "Tid": "10447480686IHEHPA33B",
-        "ProofOfSale": "279003",
-        "SoftDescriptor": "123456789ABCD",
-        "Provider": "Cielo",
-        "Eci": "7",
-        "VelocityAnalysis": {
-            "Id": "467a37d0-435e-4729-b1b4-6a2c4ea7360e",
-            "ResultMessage": "Accept",
-            "Score": 0
-        },
-        "PaymentId": "467a37d0-435e-4729-b1b4-6a2c4ea7360e",
-        "Type": "CreditCard",
+        "AuthenticationUrl": "https://xxxxxxxxxxxx.xxxxx.xxx.xx/xxx/xxxxx.xxxx?{PaymentId}",
+        "Tid": "1006993069207A31A001",
+        "PaymentId": "0309f44f-fe5a-4de1-ba39-984f456130bd",
+        "Type": "DebitCard",
         "Amount": 15700,
-        "ReceivedDate": "2017-08-22 15:45:06",
         "Currency": "BRL",
         "Country": "BRA",
-        "ReturnCode": "14",
-        "ReturnMessage": "Autorizacao negada",
-        "Status": 3,
+        "ExtraDataCollection": [],
+        "Status": 0,
+        "ReturnCode": "0",
         "Links": [
             {
                 "Method": "GET",
                 "Rel": "self",
-                "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/467a37d0-435e-4729-b1b4-6a2c4ea7360e"
+                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
             }
         ]
     }
 }
 ```
 
+```shell
+--header "Content-Type: application/json"
+--header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+--data-binary
+{
+    "MerchantOrderId": "2014121201",
+    "Customer": {
+        "Name": "Comprador Cartão de débito"
+    },
+    "Payment": {
+        "DebitCard": {
+            "CardNumber": "453211******3703",
+            "Holder": "Teste Holder",
+            "ExpirationDate": "12/2030",
+            "SaveCard": false,
+            "Brand": "Visa"
+        },
+        "AuthenticationUrl": "https://xxxxxxxxxxxx.xxxxx.xxx.xx/xxx/xxxxx.xxxx?{PaymentId}",
+        "Tid": "1006993069207A31A001",
+        "PaymentId": "0309f44f-fe5a-4de1-ba39-984f456130bd",
+        "Type": "DebitCard",
+        "Amount": 15700,
+        "Currency": "BRL",
+        "Country": "BRA",
+        "ExtraDataCollection": [],
+        "Status": 0,
+        "ReturnCode": "0",
+        "Links": [
+            {
+                "Method": "GET",
+                "Rel": "self",
+                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+            }
+        ]
+    }
+}
+```
 
-
-
-
-Conteudo do Response
-
-| Paramêtro      | Descrição                                       | Tipo  | Tamanho |
-|----------------|-------------------------------------------------|-------|:-------:|
-| Avs.Cpf        | CPF do portador                                 | texto | 11      | 
-| Avs.ZipCode    | CEP do endereço de cobrança do portador         | texto | 8       | 
-| Avs.Street     | Logradouro do endereço de cobrança do portador  | texto | 50      |
-| Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | 
-| Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      |
-| Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      |
-| AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-| AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
-
-
-
-## Histórico de Atualizações:
-
-| Versão | Data       | Descrição                                                                                                      |
-|:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 22/08/2017 | ✓ Versão inicial                                                                                               |
-
-
-
-
-
-
-
-
+|Propriedade|Descrição|Tipo|Tamanho|Formato|
+|---|---|---|---|---|
+|`AuthenticationUrl`|URL para qual o Lojista deve redirecionar o Cliente para o fluxo de Débito.|Texto|56|Url de Autenticação|
+|`Tid`|Id da transação na adquirente.|Texto|20|Texto alfanumérico|
+|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
+|`ReturnUrl`|Url de retorno do lojista. URL para onde o lojista vai ser redirecionado no final do fluxo.|Texto|1024|http://www.urllogista.com.br|
+|`Status`|Status da Transação.|Byte|---|0|
+|`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
