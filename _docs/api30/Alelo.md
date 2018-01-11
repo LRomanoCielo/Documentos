@@ -9,7 +9,7 @@ Para criar uma venda que utilizará cartão de Alelo, é necessário fazer um `P
 
 > Para mais informações sobre a integração de cartão de Débito via API Cielo Ecommerce, acesse o [Manual de integração](https://developercielo.github.io/manual/cielo-ecommerce#criando-uma-venda-simplificada)
 
-**OBS:** Em transações de Cartão ALELOl, os seguintes parametros devem possuir configurações estáticas
+**OBS:** Em transações de Cartão ALELO, os seguintes parametros devem possuir configurações estáticas
 
 |Parametro             |Padrão ALELO            |
 |----------------------|------------------------|
@@ -18,7 +18,10 @@ Para criar uma venda que utilizará cartão de Alelo, é necessário fazer um `P
 
 ### Requisição
 
-<aside class="request"><span class="method post">POST</span> <span class="endpoint">/1/sales/</span></aside>
+EndPoints de Produção
+
+* **Requisição de transação**: https://api.cieloecommerce.cielo.com.br/
+* **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/
 
 ```shell
 curl
