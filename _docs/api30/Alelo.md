@@ -11,29 +11,14 @@ Para criar uma venda que utilizará cartão de Alelo, é necessário fazer um `P
 
 **OBS:** Em transações de Cartão ALELOl, os seguintes parametros devem possuir configurações estáticas
 
+|Parametro             |Padrão ALELO            |
+|----------------------|------------------------|
+|`Payment.Authenticate`| **FALSE**              |
+|`DebitCard.Brand`     | Não precisa ser enviado| 
+
 ### Requisição
 
 <aside class="request"><span class="method post">POST</span> <span class="endpoint">/1/sales/</span></aside>
-
-```json
-{  
-   "MerchantOrderId":"2014121201",
-   "Customer":{  
-      "Name":"Comprador Cartão de débito"
-   },
-   "Payment":{  
-     "Type":"DebitCard",
-     "Amount":15700,
-     "ReturnUrl":"http://www.cielo.com.br",
-     "DebitCard":{  
-         "CardNumber":"4551870000000183",
-         "Holder":"Teste Holder",
-         "ExpirationDate":"12/2030",
-         "SecurityCode":"123",
-    }
-   }
-}
-```
 
 ```shell
 curl
@@ -71,6 +56,7 @@ curl
 | `MerchantOrderId`          | Numero de identificação do Pedido.                                                                    | Texto  | 50      | Sim         |
 | `Customer.Name`            | Nome do Comprador.                                                                                    | Texto  | 255     | Não         |
 | `Customer.Status`          | Status de cadastro do comprador na loja (NEW / EXISTING) - Utilizado pela análise de fraude           | Texto  | 255     | Não         |
+| `Payment.Authenticate`     | Define se o comprador será direcionado ao Banco emissor para autenticação do cartão                   | Booleano|        |Não (Default false)
 | `Payment.Type`             | Tipo do Meio de Pagamento.                                                                            | Texto  | 100     | Sim         |
 | `Payment.Amount`           | Valor do Pedido (ser enviado em centavos).                                                            | Número | 15      | Sim         |
 | `Payment.ReturnUrl`        | Url de retorno do lojista.                                                                            | Texto  | 1024    | Sim         |
@@ -82,41 +68,6 @@ curl
 | `DebitCard.Brand`          | Bandeira do cartão.                                                                                   | Texto  | 10      | Não         |
 
 ### Resposta
-
-```json
-{
-    "MerchantOrderId": "2014121201",
-    "Customer": {
-        "Name": "Comprador Cartão de débito"
-    },
-    "Payment": {
-        "DebitCard": {
-            "CardNumber": "453211******3703",
-            "Holder": "Teste Holder",
-            "ExpirationDate": "12/2030",
-            "SaveCard": false,
-            "Brand": "Visa"
-        },
-        "AuthenticationUrl": "https://xxxxxxxxxxxx.xxxxx.xxx.xx/xxx/xxxxx.xxxx?{PaymentId}",
-        "Tid": "1006993069207A31A001",
-        "PaymentId": "0309f44f-fe5a-4de1-ba39-984f456130bd",
-        "Type": "DebitCard",
-        "Amount": 15700,
-        "Currency": "BRL",
-        "Country": "BRA",
-        "ExtraDataCollection": [],
-        "Status": 0,
-        "ReturnCode": "0",
-        "Links": [
-            {
-                "Method": "GET",
-                "Rel": "self",
-                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
-            }
-        ]
-    }
-}
-```
 
 ```shell
 --header "Content-Type: application/json"
@@ -156,11 +107,11 @@ curl
 }
 ```
 
-|Propriedade|Descrição|Tipo|Tamanho|Formato|
-|---|---|---|---|---|
-|`AuthenticationUrl`|URL para qual o Lojista deve redirecionar o Cliente para o fluxo de Débito.|Texto|56|Url de Autenticação|
-|`Tid`|Id da transação na adquirente.|Texto|20|Texto alfanumérico|
-|`PaymentId`|Campo Identificador do Pedido.|Guid|36|xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx|
-|`ReturnUrl`|Url de retorno do lojista. URL para onde o lojista vai ser redirecionado no final do fluxo.|Texto|1024|http://www.urllogista.com.br|
-|`Status`|Status da Transação.|Byte|---|0|
-|`ReturnCode`|Código de retorno da Adquirência.|Texto|32|Texto alfanumérico|
+| Propriedade         | Descrição                                                                                   | Tipo  | Tamanho | Formato                              |
+|---------------------|---------------------------------------------------------------------------------------------|-------|---------|--------------------------------------|
+| `AuthenticationUrl` | URL para qual o Lojista deve redirecionar o Cliente para o fluxo de Débito.                 | Texto | 56      | Url de Autenticação                  |
+| `Tid`               | Id da transação na adquirente.                                                              | Texto | 20      | Texto alfanumérico                   |
+| `PaymentId`         | Campo Identificador do Pedido.                                                              | Guid  | 36      | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |
+| `ReturnUrl`         | Url de retorno do lojista. URL para onde o lojista vai ser redirecionado no final do fluxo. | Texto | 1024    | http://www.urllogista.com.br         |
+| `Status`            | Status da Transação.                                                                        | Byte  | ---     | 0                                    |
+| `ReturnCode`        | Código de retorno da Adquirência.                                                           | Texto | 32      | Texto alfanumérico                   |
