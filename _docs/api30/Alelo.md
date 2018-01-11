@@ -20,8 +20,8 @@ Para criar uma venda que utilizará cartão de Alelo, é necessário fazer um `P
 
 EndPoints de Produção
 
-* **Requisição de transação**: https://api.cieloecommerce.cielo.com.br/
-* **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/
+> **Requisição de transação**: https://api.cieloecommerce.cielo.com.br/
+> **Consulta transação**: https://apiquery.cieloecommerce.cielo.com.br/
 
 ```shell
 curl
