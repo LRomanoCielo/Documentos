@@ -67,8 +67,8 @@ curl
 | `DebitCard.CardNumber`     | Número do Cartão do Comprador.                                                                        | Texto  | 19      | Sim         |
 | `DebitCard.Holder`         | Nome do Comprador impresso no cartão.                                                                 | Texto  | 25      | Não         |
 | `DebitCard.ExpirationDate` | Data de validade impresso no cartão.                                                                  | Texto  | 7       | Sim         |
-| `DebitCard.SecurityCode`   | Código de segurança impresso no verso do cartão.                                                      | Texto  | 4       | Não         |
-| `DebitCard.Brand`          | Bandeira do cartão.                                                                                   | Texto  | 10      | Não         |
+| `DebitCard.SecurityCode`   | Código de segurança impresso no verso do cartão.                                                      | Texto  | 4       | **Sim**         |
+
 
 ### Resposta
 
@@ -87,7 +87,6 @@ curl
             "Holder": "Teste Holder",
             "ExpirationDate": "12/2030",
             "SaveCard": false,
-            "Brand": "Visa"
         },
         "AuthenticationUrl": "https://xxxxxxxxxxxx.xxxxx.xxx.xx/xxx/xxxxx.xxxx?{PaymentId}",
         "Tid": "1006993069207A31A001",
