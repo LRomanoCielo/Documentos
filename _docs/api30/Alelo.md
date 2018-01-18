@@ -11,10 +11,10 @@ Para criar uma venda que utilizará cartão de Alelo, é necessário fazer um `P
 
 **OBS:** Em transações de Cartão ALELO, os seguintes parametros devem possuir configurações estáticas
 
-|Parametro             |Padrão ALELO            |
-|----------------------|------------------------|
-|`Payment.Authenticate`| **FALSE**              |
-|`DebitCard.Brand`     | Não precisa ser enviado| 
+|Parametro             |Padrão ALELO                 |
+|----------------------|-----------------------------|
+|`Payment.Authenticate`| **FALSE** ou não enviado    |
+|`DebitCard.Brand`     | Precisa ser enviado como ELO| 
 
 ### Requisição
 
