@@ -38,17 +38,19 @@ curl
    },
    "Payment":{  
      "Type":"DebitCard",
-     "Amount":100,
+     "Authenticate":false,
+     "Amount":50,
      "ReturnUrl":"http://www.cielo.com.br",
      "DebitCard":{  
-         "CardNumber":"5067550487508095",
+         "CardNumber":"5080540487508044",
          "Holder":"Comprador Cartão de Alelo",
-         "ExpirationDate":"09/2029",
-         "SecurityCode":"871",
+         "ExpirationDate":"07/2029",
+         "SecurityCode":"841",
          "brand": "Elo"
      }
    }
 }
+
 --verbose
 ```
 
@@ -83,26 +85,29 @@ curl
     },
     "Payment": {
         "DebitCard": {
-            "CardNumber": "506755******8095",
+            "CardNumber": "508054******8044",
             "Holder": "Comprador Cartão de Alelo",
-            "ExpirationDate": "09/2029",
+            "ExpirationDate": "07/2029",
             "SaveCard": false,
             "Brand": "Elo"
         },
         "Provider": "Cielo",
+        "AuthorizationCode": "803247",
         "Eci": "7",
-        "Tid": "189282838979N34BAUEB",
-        "ProofOfSale": "031002",
-        "Authenticate": true,
+        "Tid": "107703563079N41O9DJB",
+        "ProofOfSale": "770857",
+        "Authenticate": false,
         "Recurrent": false,
-        "Amount": 100,
-        "ReceivedDate": "2018-01-30 11:36:03",
+        "Amount": 50,
+        "ReceivedDate": "2018-01-30 15:00:24",
+        "CapturedAmount": 50,
+        "CapturedDate": "2018-01-30 15:00:25",
         "ReturnUrl": "http://www.cielo.com.br",
-        "Status": 3,
+        "Status": 2,
         "IsSplitted": false,
-        "ReturnMessage": "Autorizacao negada",
-        "ReturnCode": "KE",
-        "PaymentId": "ecb02979-7981-42c6-84de-905b3d344240",
+        "ReturnMessage": "Transacao capturada com sucesso",
+        "ReturnCode": "00",
+        "PaymentId": "f8504766-4ae4-4a1f-811f-035964b6c4ee",
         "Type": "DebitCard",
         "Currency": "BRL",
         "Country": "BRA",
@@ -110,7 +115,7 @@ curl
             {
                 "Method": "GET",
                 "Rel": "self",
-                "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/ecb02979-7981-42c6-84de-905b3d344240"
+                "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/f8504766-4ae4-4a1f-811f-035964b6c4ee"
             }
         ]
     }
