@@ -38,13 +38,14 @@ curl
    },
    "Payment":{  
      "Type":"DebitCard",
-     "Amount":15700,
+     "Amount":100,
      "ReturnUrl":"http://www.cielo.com.br",
      "DebitCard":{  
-         "CardNumber":"4551870000000183",
-         "Holder":"Teste Holder",
-         "ExpirationDate":"12/2030",
-         "SecurityCode":"123",
+         "CardNumber":"5067550487508095",
+         "Holder":"Comprador Cartão de Alelo",
+         "ExpirationDate":"09/2029",
+         "SecurityCode":"871",
+         "brand": "Elo"
      }
    }
 }
@@ -75,34 +76,41 @@ curl
 ```shell
 --header "Content-Type: application/json"
 --header "RequestId: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
---data-binary
 {
     "MerchantOrderId": "2014121201",
     "Customer": {
-        "Name": "Comprador Cartão de débito"
+        "Name": "Comprador Cartão de Alelo"
     },
     "Payment": {
         "DebitCard": {
-            "CardNumber": "453211******3703",
-            "Holder": "Teste Holder",
-            "ExpirationDate": "12/2030",
+            "CardNumber": "506755******8095",
+            "Holder": "Comprador Cartão de Alelo",
+            "ExpirationDate": "09/2029",
             "SaveCard": false,
+            "Brand": "Elo"
         },
-        "AuthenticationUrl": "https://xxxxxxxxxxxx.xxxxx.xxx.xx/xxx/xxxxx.xxxx?{PaymentId}",
-        "Tid": "1006993069207A31A001",
-        "PaymentId": "0309f44f-fe5a-4de1-ba39-984f456130bd",
+        "Provider": "Cielo",
+        "Eci": "7",
+        "Tid": "189282838979N34BAUEB",
+        "ProofOfSale": "031002",
+        "Authenticate": true,
+        "Recurrent": false,
+        "Amount": 100,
+        "ReceivedDate": "2018-01-30 11:36:03",
+        "ReturnUrl": "http://www.cielo.com.br",
+        "Status": 3,
+        "IsSplitted": false,
+        "ReturnMessage": "Autorizacao negada",
+        "ReturnCode": "KE",
+        "PaymentId": "ecb02979-7981-42c6-84de-905b3d344240",
         "Type": "DebitCard",
-        "Amount": 15700,
         "Currency": "BRL",
         "Country": "BRA",
-        "ExtraDataCollection": [],
-        "Status": 0,
-        "ReturnCode": "0",
         "Links": [
             {
                 "Method": "GET",
                 "Rel": "self",
-                "Href": "https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/{PaymentId}"
+                "Href": "https://apiquery.cieloecommerce.cielo.com.br/1/sales/ecb02979-7981-42c6-84de-905b3d344240"
             }
         ]
     }
