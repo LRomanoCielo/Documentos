@@ -1,8 +1,4 @@
----
-title: Wallets 
-category: API CIELO ECOMMERCE
-order: 1
----
+
 
 # Wallet/Carteiras
 
