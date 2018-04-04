@@ -142,10 +142,6 @@ Response: **AVS**
 }
 ```
 
-
-
-
-
 Conteudo do Response
 
 | Paramêtro      | Descrição                                       | Tipo  | Tamanho |
@@ -156,21 +152,56 @@ Conteudo do Response
 | Avs.Number     | Número do endereço de cobrança do portador      | texto | 6       | 
 | Avs.Complement | Complemento do endereço de cobrança do portador | texto | 30      |
 | Avs.District   | Bairro do endereço de cobrança do portador      | texto | 20      |
+| Avs.Status     | Indica o status da analise do AVS -  Ver tabela Status | texto | 20      |
+| Avs.ReturnCode | Descreve o motivo do status da analise - ver tabela Return Code | texto | 20      |
 | AvsCepReturnCode     | Situação do CEP enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
 | AvsAddressReturnCode | Analise do endereço enviado:<br><br>**C** - Confere<br>**N** - Não confere<br>**I** - Indisponível<br>**T** - Temporariamente indisponível<br>**X** - Serviço não suportado para esta Bandeira<br>**E** - Dados enviados incorretos. Verificar se todos os campos foram enviados<br> | Texto   | 1       |
 
+*AVS.Status*
 
+| Status | Descrição                                 |
+|--------|-------------------------------------------|
+| 0      | Dados comparados são correspondentes      |
+| 1      | CEP e CPF confirmados                     |
+| 2      | Address e CPF confirmados                 |
+| 3      | CEP e Address confirmados                 |
+| 4      | Cpf confirmado                            |
+| 5      | Address confirmado                        |
+| 6      | CEP Confirmado                            |
+| 7      | Não confirmado ou não suportado           |
+| 8      | Emissor do cartão no oferece AVS          |
+| 9      | Sistema do emissor de cartão indisponivel |
+| 10     | Address indisponivel                      |
+| 11     | Nenhum dado confirmado                    |
+| 12     | Nenhum dado retornado pelo emissor        |
+| 13     | AVS indisponivel para o lojista           |
+| 14     | Resposta do emissor indisponivel          |
 
-## Histórico de Atualizações:
+| Status | Description                   |
+|--------|-------------------------------|
+| 0      | Exact Match                   |
+| 1      | ZipCode And Cpf Match         |
+| 2      | Address And Cpf Match         |
+| 3      | ZipCode And Address Match     |
+| 4      | Cpf Match                     |
+| 5      | Address Match                 |
+| 6      | ZipCode Match                 |
+| 7      | Not Supported Or Not Verified |
+| 8      | Issuer Do Not Participate     |
+| 9      | Issuer System Unavailable     |
+| 10     | Address Unavailable           |
+| 11     | Nothing Match                 |
+| 12     | Nothing Provided              |
+| 13     | No tAvailable For Merchant    |
+| 14     | Invalid Response              |
 
-| Versão | Data       | Descrição                                                                                                      |
-|:------:|------------|----------------------------------------------------------------------------------------------------------------|
-| 1.0    | 22/08/2017 | ✓ Versão inicial                                                                                               |
+*Return Code*
 
-
-
-
-
-
-
-
+| Valor | Descrição                                                              |
+|:-----:|------------------------------------------------------------------------|
+| C     | Confere                                                                |
+| N     | Não confere                                                            |
+| I     | Indisponível                                                           |
+| T     | Temporariamente indisponível                                           |
+| X     | Serviço não suportado para esta Bandeira                               |
+| E     | Dados enviados incorretos. Verificar se todos os campos foram enviados |
