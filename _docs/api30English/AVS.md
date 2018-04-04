@@ -152,19 +152,39 @@ Response
 | Avs.Number       | Buyer's Billing address number                   | text    | 6          | 
 | Avs.Complement   | Supplement - Buyer's billing address             | text    | 30         | 
 | Avs.District     | Neighborhood/District - Buyer's billing address  | text    | 20         | 
+| Avs.Status       | Indicates AVS analysis status - See Status table | text    | 20         |
+| Avs.ReturnCode   | Describes the reason for the analysis status - see table Return Code | text | 20      |
 | AvsCepReturnCode | Status of the  ZIP Code:<br> <br> **C** - Check <br> **N** - Do not check <br> **I** - Not available <br> **T** - Temporarily unavailable <br> **X** - Service not supported for this brand <br> **E** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
 | AvsAddressReturnCode |Status of the Adress:<br> <br> **C** - Check <br> **N** - Do not check <br> **I** - Not available <br> **T** - Temporarily unavailable <br> **X** - Service not supported for this brand <br> **E** - Incorrect data sent. Check that all fields have been submitted | Text | 1 |
 
+*AVS.Status*
 
-## Update History:
+| Status | Description                   |
+|--------|-------------------------------|
+| 0      | Exact Match                   |
+| 1      | ZipCode And Cpf Match         |
+| 2      | Address And Cpf Match         |
+| 3      | ZipCode And Address Match     |
+| 4      | Cpf Match                     |
+| 5      | Address Match                 |
+| 6      | ZipCode Match                 |
+| 7      | Not Supported Or Not Verified |
+| 8      | Issuer Do Not Participate     |
+| 9      | Issuer System Unavailable     |
+| 10     | Address Unavailable           |
+| 11     | Nothing Match                 |
+| 12     | Nothing Provided              |
+| 13     | No tAvailable For Merchant    |
+| 14     | Invalid Response              |
 
-| Version | Date       | Description     |
-|---------|------------|-----------------|
-| 1.0     | 08/22/2017 | Initial release |
-| 1.1     | 10/02/2017 | English release |
+*Return Code*
 
-
-
-
-
+| Value | Description                                                  |
+|:-----:|--------------------------------------------------------------|
+|     C | Check                                                        |
+|     N | Do not check                                                 |
+|     I | Not Available                                                |
+|     T | Temporarily unavailable                                      |
+|     X | Unsupported Service for this brand                           |
+|     E | Incorrect data sent. Check if all fields have been submitted |
 
